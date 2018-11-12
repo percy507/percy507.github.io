@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Stylus 常用语法 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-css-stylus" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-06T04:12:00.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Stylus 常用语法
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>传统 CSS 语法不够强大：无法嵌套、没有变量、没有合理的样式复用机制，造成后期很不好维护，所以就出现 CSS 预处理器。</p>
+<p>本文只谈 Stylus~</p>
+<blockquote>
+<p><a href="http://beautifytools.com/stylus-compiler.php" target="_blank" rel="noopener"><strong>Stylus Online Compiler</strong></a></p>
+</blockquote>
+<h3 id="选择器（Selectors）"><a href="#选择器（Selectors）" class="headerlink" title="选择器（Selectors）"></a>选择器（Selectors）</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* &amp; 表示对父选择器的引用 */</span></span><br><span class="line">.father</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.2em</span></span><br><span class="line"></span><br><span class="line">    &amp;:hover</span><br><span class="line">        <span class="attribute">background</span>: red</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 为多个选择器同时定义属性 */</span></span><br><span class="line">textarea</span><br><span class="line">input</span><br><span class="line">    <span class="attribute">border</span> <span class="number">1px</span> solid <span class="number">#eee</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量（Variables）"><a href="#变量（Variables）" class="headerlink" title="变量（Variables）"></a>变量（Variables）</h3><ul>
+<li><strong>变量以一个美元符号开头</strong></li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="variable">$error</span>-<span class="attribute">color</span> = <span class="number">#F33</span>            <span class="comment">/* 全局变量 */</span></span><br><span class="line"></span><br><span class="line">.error</span><br><span class="line">    <span class="variable">$normal</span>-size = <span class="number">1.2em</span>       <span class="comment">/* 局部变量 */</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$normal</span>-size</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$error</span>-color</span><br><span class="line"></span><br><span class="line">.big-error</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$normal</span>-size    <span class="comment">/* 错误用法，使用了别人的局部变量 */</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$error</span>-color</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>使用 <code>@propertyName</code> 进行属性查找</strong></li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 属性查找 Property Lookup */</span></span><br><span class="line">#logo</span><br><span class="line">    <span class="attribute">position</span>: absolute</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span></span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">80px</span></span><br><span class="line">    <span class="attribute">margin-left</span>: -(@width / <span class="number">2</span>)</span><br><span class="line">    <span class="attribute">margin-top</span>: -(@height / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="插值（Interpolation）"><a href="#插值（Interpolation）" class="headerlink" title="插值（Interpolation）"></a>插值（Interpolation）</h3><p>Stylus 支持通过使用{}字符包围表达式来插入值，其会变成标识符的一部分。例如，<code>-webkit-{&#39;border&#39; + &#39;-radius&#39;}</code> 等同于 <code>-webkit-border-radius</code></p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 选择器插值 */</span></span><br><span class="line">table</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">        <span class="selector-tag">tr</span>:nth-child(&#123;row&#125;)</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">10px</span> * row</span><br></pre></td></tr></table></figure>
+<h3 id="运算符（Operators）"><a href="#运算符（Operators）" class="headerlink" title="运算符（Operators）"></a>运算符（Operators）</h3><ul>
+<li><strong>使用除法运算时，需要给表达式加个括号，否则不能正常计算</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/* 范围 .. */</span><br><span class="line">1..5        // =&gt; 1 2 3 4 5</span><br><span class="line"></span><br><span class="line">/* 加减乘除、取余运算 */</span><br><span class="line">15px + 5px    // 20px</span><br><span class="line">15px - 5px    // 10px</span><br><span class="line">15px * 5px    // 75px</span><br><span class="line">(15px / 5px)  // 3px</span><br><span class="line">15px % 5px    // 0px</span><br><span class="line"></span><br><span class="line">/* 相等不相等运算符 */</span><br><span class="line">#FFF == #666  // false</span><br><span class="line">#FFF != #666  // true</span><br></pre></td></tr></table></figure>
+<h3 id="混入（Mixins）"><a href="#混入（Mixins）" class="headerlink" title="混入（Mixins）"></a>混入（Mixins）</h3><ul>
+<li>混入和函数定义方法一致，但是应用却大相径庭。</li>
+</ul>
+<p>例如，下面有定义的 border-radius(n)方法，其却作为一个 mixin（如，作为状态调用，而非表达式）调用。</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">border-radius</span><span class="params">(n)</span></span></span><br><span class="line">  -webkit-<span class="attribute">border-radius</span> n</span><br><span class="line">  -moz-<span class="attribute">border-radius</span> n</span><br><span class="line">  <span class="attribute">border-radius</span> n</span><br><span class="line"></span><br><span class="line">form</span><br><span class="line">  <span class="attribute">border-radius</span>(<span class="number">5px</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="函数（Functions）"><a href="#函数（Functions）" class="headerlink" title="函数（Functions）"></a>函数（Functions）</h3><h3 id="内置函数（Build-in-Functions）"><a href="#内置函数（Build-in-Functions）" class="headerlink" title="内置函数（Build-in Functions）"></a>内置函数（Build-in Functions）</h3><ul>
+<li><strong>red(color)：</strong> 返回指定颜色中红色占的比重</li>
+<li><strong>green(color)：</strong> 返回指定颜色中绿色占的比重</li>
+<li><strong>blue(color)：</strong> 返回指定颜色中蓝色占的比重</li>
+<li><strong>alpha(color)</strong> 返回指定颜色中透明度占的比重</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">red(rgba(<span class="number">200</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.5</span>)); <span class="comment">// 200</span></span><br><span class="line">green(rgba(<span class="number">200</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.5</span>)); <span class="comment">// 100</span></span><br><span class="line">blue(rgba(<span class="number">200</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.5</span>)); <span class="comment">// 0</span></span><br><span class="line">alpha(rgba(<span class="number">200</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0.5</span>)); <span class="comment">// 0.5</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>dark(color)：</strong> 返回一个布尔值，判断指定颜色是否是暗色</li>
+<li><strong>light(color)：</strong> 返回一个布尔值，判断指定颜色是否是亮色</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dark(#666)   // true</span><br><span class="line">light(#666)  // false</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>unit(unit[,type])：</strong> 返回 unit 类型的字符串或空字符串，或者赋予 type 值而无需单位转换</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">unit(<span class="number">15</span>deg)      <span class="comment">// 'deg'</span></span><br><span class="line">unit(<span class="number">15</span>deg, px)  <span class="comment">// 15px</span></span><br></pre></td></tr></table></figure>
+<h3 id="条件（Conditionals）"><a href="#条件（Conditionals）" class="headerlink" title="条件（Conditionals）"></a>条件（Conditionals）</h3><ul>
+<li>三个：<code>if</code>、<code>else if</code>、<code>else</code></li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">overload-<span class="attribute">padding</span> = true</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> overload-<span class="attribute">padding</span></span><br><span class="line">  <span class="attribute">padding</span>(y, x)</span><br><span class="line">    <span class="attribute">margin</span> y x</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  <span class="attribute">padding</span> <span class="number">5px</span> <span class="number">10px</span></span><br></pre></td></tr></table></figure>
+<h3 id="迭代（Iteration）"><a href="#迭代（Iteration）" class="headerlink" title="迭代（Iteration）"></a>迭代（Iteration）</h3><ul>
+<li><strong>使用 <code>for/in</code> 进行迭代</strong></li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">table</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">        <span class="selector-tag">tr</span>:nth-child(&#123;row&#125;)</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">10px</span> * row</span><br></pre></td></tr></table></figure>
+<h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><ul>
+<li><strong>使用 @import 可导入相应的 CSS 文件或 Stylus 文件（*.styl）</strong></li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 正常引入 */</span></span><br><span class="line"></span><br><span class="line">@import <span class="string">'./header.styl'</span></span><br><span class="line"></span><br><span class="line">@import <span class="string">'./main/*'</span></span><br><span class="line"></span><br><span class="line">@import <span class="string">'./footer.styl'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 在块儿内引入 */</span></span><br><span class="line"></span><br><span class="line">.container</span><br><span class="line">  @import <span class="string">'pc.styl'</span></span><br><span class="line"></span><br><span class="line">@media screen and (<span class="attribute">min-width</span>: <span class="number">640px</span>)</span><br><span class="line">  @import <span class="string">'mobile.styl'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 上面代码将被渲染为 */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> .warp&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (<span class="attribute">min-width</span>: <span class="number">640px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.warp</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="media"><a href="#media" class="headerlink" title="@media"></a>@media</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 正常情况下的 @media */</span></span><br><span class="line"></span><br><span class="line">@media screen and (<span class="attribute">min-width</span>: <span class="number">600px</span>) &#123;</span><br><span class="line">    body</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">400px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 嵌套的 @media */</span></span><br><span class="line"></span><br><span class="line">.widget</span><br><span class="line">  <span class="attribute">padding</span> <span class="number">10px</span></span><br><span class="line"></span><br><span class="line">  @media screen and (<span class="attribute">min-width</span>: <span class="number">600px</span>)</span><br><span class="line">    <span class="attribute">padding</span> <span class="number">20px</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 上面代码将被渲染为 */</span></span><br><span class="line"><span class="selector-class">.widget</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (<span class="attribute">min-width</span>: <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.widget</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="font-face"><a href="#font-face" class="headerlink" title="@font-face"></a>@font-face</h3><p>用法和普通 CSS 用法基本相同。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@font-face</span><br><span class="line">    font-family userFont</span><br><span class="line">    font-style normal</span><br><span class="line">    src url(fonts/user-font.ttf)</span><br></pre></td></tr></table></figure>
+<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="variable">$keyframe</span>-name = animateName</span><br><span class="line">@keyframes &#123;<span class="variable">$keyframe</span>-name&#125;</span><br><span class="line">  <span class="keyword">for</span> <span class="selector-tag">i</span> <span class="keyword">in</span> <span class="number">0</span>..<span class="number">5</span></span><br><span class="line">    &#123;20% * i&#125;</span><br><span class="line">      <span class="attribute">opacity</span> (i/<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 上面代码将被渲染如下 */</span></span><br><span class="line">@keyframes animateName &#123;</span><br><span class="line">    <span class="number">0%</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">20%</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0.1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">40%</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0.2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">60%</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">80%</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0.4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0.5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="继承-extend"><a href="#继承-extend" class="headerlink" title="继承 @extend"></a>继承 @extend</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">.father</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#000</span></span><br><span class="line">.son</span><br><span class="line">    @extend .father</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 以上代码将被编译为 */</span></span><br><span class="line"><span class="selector-class">.father</span>,</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【文档】<a href="http://stylus-lang.com/" target="_blank" rel="noopener">Stylus 官网 Document</a></li>
+<li>【文档】<a href="http://www.zhangxinxu.com/jq/stylus/" target="_blank" rel="noopener">stylus 中文版参考文档之综述</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/html5-file-api/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            HTML5 File API
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/html5-server-sent-events/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              HTML5 服务器发送事件（SSE）
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

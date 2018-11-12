@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            JavaScript 异步编程的演变 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-the-history-of-async-programming" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-07-16T04:12:00.000Z" itemprop="datePublished">2017-07-16</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 异步编程的演变
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>我尝试用更简洁的方式总结阮一峰老师有关异步编程的四篇文章，顺便还有一些自己的看法和一些比较易懂的实例。</p>
+<blockquote>
+<p>详细版本请看阮一峰老师下面的四篇文章</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2015/04/generator.html" target="_blank" rel="noopener">Generator 函数的含义与用法</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/05/thunk.html" target="_blank" rel="noopener">Thunk 函数的含义与用法</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/05/co.html" target="_blank" rel="noopener">co 函数库的含义与用法</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/05/async.html" target="_blank" rel="noopener">async 函数的含义与用法</a></li>
+</ul>
+</blockquote>
+<h3 id="有关异步编程"><a href="#有关异步编程" class="headerlink" title="有关异步编程"></a>有关异步编程</h3><p><strong>异步编程的最终目标是让它的写法看起来更像同步编程的写法，而不是让我们深陷回调地狱。</strong></p>
+<ul>
+<li>为了实现这个目标，JavaScript 异步编程经历了下面 4 个阶段<ul>
+<li><strong>回调函数</strong></li>
+<li><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise 对象</a>（ES6）</strong></li>
+<li><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="noopener">生成器函数（generator function）</a>（ES6）</strong></li>
+<li><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank" rel="noopener">异步函数（async function）</a>（ES8）</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>使用异步函数来进行异步编程被认为是目前最好的方法</strong>，至于以后是什么样子，让我们一起期待吧！</p>
+<h3 id="设定需求"><a href="#设定需求" class="headerlink" title="设定需求"></a>设定需求</h3><p><strong>为了能使用例子更直观地表述出 JavaScript 异步编程的变化，我们现在设定下面的一个需求。</strong></p>
+<ul>
+<li><strong>需求有以下规则</strong><ul>
+<li><strong>只能使用 <code>fs.readFile(path, [options,] callback)</code> 来读文件</strong></li>
+<li><strong>按顺序读取 5 个文件 (1.txt、2.txt、3.txt、4.txt、5.txt)</strong></li>
+<li><strong>打印读取到的数据</strong></li>
+<li><strong>不需要向 <code>fs.readFile</code> 函数传选项对象（options）</strong></li>
+<li><strong>为了让代码看起来更直观，回调函数不会使用箭头函数写法</strong></li>
+<li><strong>做好错误处理工作</strong></li>
+</ul>
+</li>
+</ul>
+<p>为了方便查看读取到的数据，建议上面要被读取的 5 个文件只要有少量的唯一的内容即可。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我每次读完文件后打印的数据如下</span></span><br><span class="line"></span><br><span class="line"><span class="number">1111111111</span></span><br><span class="line"><span class="number">2222222222</span></span><br><span class="line"><span class="number">333333333</span></span><br><span class="line"><span class="number">444444444</span></span><br><span class="line"><span class="number">55555555</span></span><br><span class="line">读取完毕 ~</span><br></pre></td></tr></table></figure>
+<h3 id="回调函数写法"><a href="#回调函数写法" class="headerlink" title="回调函数写法"></a>回调函数写法</h3><ul>
+<li><strong>不得不说，纯粹的回调函数写法拥有最正宗的回调地狱(callback hell)</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 纯粹的嵌套回调函数</span></span><br><span class="line">fs.readFile(<span class="string">"1.txt"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  fs.readFile(<span class="string">"2.txt"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">    fs.readFile(<span class="string">"3.txt"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">      <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">      fs.readFile(<span class="string">"4.txt"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">        <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">        fs.readFile(<span class="string">"5.txt"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">          <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 深陷回调地狱，不能自拔</span></span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">"读取完毕 ~"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Promise-写法"><a href="#Promise-写法" class="headerlink" title="Promise 写法"></a>Promise 写法</h3><p>为了更方便的使用 promise 对象，我们需要把 <code>fs.readFile</code> 用函数封装为其对应的 Promise 版本。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 封装 fs.readFile 为 Promise 版本</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">readFilePromise</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(path, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        resolve(data);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 执行任务</span></span><br><span class="line">readFilePromise(<span class="string">"1.txt"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> readFilePromise(<span class="string">"2.txt"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> readFilePromise(<span class="string">"3.txt"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> readFilePromise(<span class="string">"4.txt"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> readFilePromise(<span class="string">"5.txt"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"读取完毕 ～"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>Promise 的链式写法的确比回调函数看起来好很多，但是放眼望去，一堆 <code>then</code>，难免有代码冗余之嫌，并且原来的语义也变得不是很清楚。</strong></p>
+<h3 id="Generator-函数写法"><a href="#Generator-函数写法" class="headerlink" title="Generator 函数写法"></a>Generator 函数写法</h3><p><strong>利用 Generator 函数的 <code>可暂停性</code> 可以对一个或多个异步任务进行封装，封装后，Generator 函数就变为一个封装异步任务的容器。</strong></p>
+<p><strong>Generator 函数中，每一个有异步任务的地方，都需要用 yield 语句注明，即在 yield 语句后面书写异步任务的代码。</strong></p>
+<p>一般地，yield 语句后可以直接跟异步代码，或者也可以跟使用某种方式封装好的异步代码（常见的封装就是 <strong>promise 封装</strong> 和 <strong>thunk 函数封装</strong>）。<strong>（使用封装写法的好处是可以使代码看起来更像同步代码）</strong></p>
+<blockquote>
+<p>thunk 函数封装请参考阮一峰老师的文章，我这里只专注 promise 封装</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用 generator 函数封装异步任务</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">asyncTaskWrapper</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">yield</span> readFilePromise(<span class="string">"1.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">yield</span> readFilePromise(<span class="string">"2.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">yield</span> readFilePromise(<span class="string">"3.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">yield</span> readFilePromise(<span class="string">"4.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">yield</span> readFilePromise(<span class="string">"5.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"读取完毕 ～"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>好了，上面的异步任务倒是封装完了，接下来就该执行了。我们先根据 generator 函数的特性手动地使用 next() 方法一步一步地执行。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 手动执行上面的 generator 函数</span></span><br><span class="line"><span class="keyword">var</span> g = asyncTaskWrapper();</span><br><span class="line"></span><br><span class="line">g.next().value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  g.next(data).value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    g.next(data).value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      g.next(data).value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        g.next(data).value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">          g.next(data);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>通过 next(value) 方法向生成器函数传入的参数将作为上次 yield 语句的返回值</strong></p>
+</blockquote>
+<p>好像，我们又陷入回调地狱了。。。</p>
+<p>是的，手动执行 generator 函数不仅累，并且效率低。观察上面手动执行的代码，其实我们可以写一个函数，<strong>利用递归来自动执行 generator 函数。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 工具函数，利用递归使执行 generator 函数自动化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">gen</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> g = gen();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = g.next(data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.done) &#123;</span><br><span class="line">      <span class="keyword">return</span> result.value;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      result.value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        next(data);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行上面的工具函数，自动执行上面的 generator 函数</span></span><br><span class="line">run(asyncTaskWrapper);</span><br></pre></td></tr></table></figure>
+<p>针对上面的情况，nodejs 界的 <code>tj 大神</code> 写了一个工具模块 <a href="https://github.com/tj/co" target="_blank" rel="noopener"><code>co</code></a>， 专门用来自动执行 Generator 函数。（细节可参看文首阮一峰老师相关的文章）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 借助 co 模块，自动执行上面的 generator 函数</span></span><br><span class="line"><span class="comment">// 使用 npm install co 来安装模块</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> co = <span class="built_in">require</span>(<span class="string">"co"</span>);</span><br><span class="line"></span><br><span class="line">co(asyncTaskWrapper);</span><br></pre></td></tr></table></figure>
+<h3 id="异步函数写法"><a href="#异步函数写法" class="headerlink" title="异步函数写法"></a>异步函数写法</h3><p>异步函数使用 <code>async/await</code> 语法，其解决上面的需求的代码如下。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncTaskWrapper</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">await</span> readFilePromise(<span class="string">"1.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">await</span> readFilePromise(<span class="string">"2.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">await</span> readFilePromise(<span class="string">"3.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">await</span> readFilePromise(<span class="string">"4.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  data = <span class="keyword">await</span> readFilePromise(<span class="string">"5.txt"</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(data.toString());</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"读取完毕 ～"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asyncTaskWrapper();</span><br></pre></td></tr></table></figure>
+<p>放眼望去，就如同步函数写法一样。拿上面的代码与上一节 generator 函数封装异步任务的代码相比，颇为相似，只不过 async 函数写法就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await。</p>
+<p><strong>可以说，async 函数就是 Generator 函数的语法糖。</strong></p>
+<ul>
+<li>只不过，相对 generator 函数，async 函数还是有所改进的<ul>
+<li><strong>async 函数内置执行器。</strong> Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。</li>
+<li><strong>更好的语义</strong></li>
+<li><strong>更广的适用性。</strong> co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</li>
+</ul>
+</li>
+</ul>
+<p>以上。</p>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/shell-grammar/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Shell 入门
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/es8-async-function/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              ES8 （async/await）异步函数
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            一些窗口滚动和窗口、元素宽度高度的 Web APIs |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-webapi-broswer-scroll-size-apis" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2016-08-19T04:12:00.000Z" itemprop="datePublished">2016-08-19</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      一些窗口滚动和窗口、元素宽度高度的 Web APIs
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-API/">Web API</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-02-22T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-02-22
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p><strong>未经特殊声明，通过下面 API 获得的值的单位均为：像素（px）</strong></p>
+<h3 id="Window-对象和-Screen、Element-接口"><a href="#Window-对象和-Screen、Element-接口" class="headerlink" title="Window 对象和 Screen、Element 接口"></a>Window 对象和 Screen、Element 接口</h3><blockquote>
+<p><strong><code>Window</code> 表示窗口对象</strong></p>
+<blockquote>
+<ul>
+<li>Window 对象表示一个浏览器窗口或一个框架</li>
+<li>window 对象表示一个包含 DOM 文档的窗口，其 document 属性指向窗口中载入的 DOM 文档 。</li>
+<li>如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。</li>
+</ul>
+</blockquote>
+<p><strong><code>Screen</code></strong> 接口是 Window 的一个对象，它代表了一个屏幕，通常以一个窗口呈现，可通过 <code>window.screen</code> 来获得屏幕的详细信息</p>
+<p><strong><code>Element</code></strong> 接口是 Document 的一个对象。</p>
+<ul>
+<li>这个接口描述了所有相同种类的元素所普遍具有的方法和属性。 这些继承自 Element 并且增加了一些额外功能的接口描述了具体的行为。 例如， HTMLElement 接口是所有 HTML 元素的基础接口， 而 SVGElement 接口是所有 SVG 元素的基本接口。</li>
+</ul>
+<p><strong>An <code>HTMLElement</code> is an <code>Element</code></strong> , as defined in the <a href="//www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-58190037">HTML extension to the DOM Level 2 Core specification</a> :<br><a href="//stackoverflow.com/questions/6581680/whats-the-difference-between-htmlelement-and-element">参考链接</a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">interface HTMLElement : Element &#123;</span><br><span class="line">  attribute DOMString     id;</span><br><span class="line">  attribute DOMString     title;</span><br><span class="line">  attribute DOMString     lang;</span><br><span class="line">  attribute DOMString     dir;</span><br><span class="line">  attribute DOMString     className;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="窗口滚动-API"><a href="#窗口滚动-API" class="headerlink" title="窗口滚动 API"></a>窗口滚动 API</h3><ul>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollX"><strong>Window.scrollX</strong></a>： 返回该文档从左侧开始水平方向上滚动的像素值</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollY"><strong>Window.scrollY</strong></a>： 返回文档从顶部开始垂直方向上滚动过的像素值</li>
+</ul>
+<blockquote>
+<p><code>pageXOffset</code> 属性是 <code>scrollX</code> 属性的别名<br><code>pageYOffset</code> 属性是 <code>scrollY</code> 属性的别名</p>
+<p><strong>为了跨浏览器兼容，请使用 window.page*Offset 代替 window.scroll*</strong><br><strong>注：</strong>旧版本 IE（&lt;9）对两个属性都不支持，必须使用其他的非标准属性</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.pageXOffset === <span class="built_in">window</span>.scrollX; <span class="comment">// true</span></span><br><span class="line"><span class="built_in">window</span>.pageYOffset === <span class="built_in">window</span>.scrollY; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 完整的兼容性代码如下：</span></span><br><span class="line"><span class="keyword">var</span> x =</span><br><span class="line">  <span class="built_in">window</span>.pageXOffset !== <span class="literal">undefined</span></span><br><span class="line">    ? <span class="built_in">window</span>.pageXOffset</span><br><span class="line">    : (<span class="built_in">document</span>.documentElement || <span class="built_in">document</span>.body.parentNode || <span class="built_in">document</span>.body)</span><br><span class="line">        .scrollLeft;</span><br><span class="line"><span class="keyword">var</span> y =</span><br><span class="line">  <span class="built_in">window</span>.pageYOffset !== <span class="literal">undefined</span></span><br><span class="line">    ? <span class="built_in">window</span>.pageYOffset</span><br><span class="line">    : (<span class="built_in">document</span>.documentElement || <span class="built_in">document</span>.body.parentNode || <span class="built_in">document</span>.body)</span><br><span class="line">        .scrollTop;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="//developer.mozilla.org/en-US/docs/Web/API/Window/scroll"><strong>Window.scroll( x-coord, y-coord )</strong></a>： 滚动到文档的某一个位置坐标点</li>
+<li><a href="//developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo"><strong>Window.scrollTo( x-coord, y-coord )</strong></a>： 滚动到文档的某一个位置坐标点</li>
+</ul>
+<blockquote>
+<p>以上两个<code>window对象</code>的方法 功能一样</p>
+</blockquote>
+<h3 id="窗口宽度高度-API"><a href="#窗口宽度高度-API" class="headerlink" title="窗口宽度高度 API"></a>窗口宽度高度 API</h3><ul>
+<li>屏幕<ul>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Screen/width"><strong>Screen.width</strong></a> : 返回当前设备屏幕的宽度值</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Screen/height"><strong>Screen.height</strong></a> : 返回当前设备屏幕的高度值</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Screen/availWidth"><strong>Screen.availWidth</strong></a> : 返回浏览器窗口在屏幕上可占用的最大水平宽度</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Screen/availHeight"><strong>Screen.availHeight</strong></a> : 返回浏览器窗口在屏幕上可占用的最大垂直空间，即最大高度</li>
+</ul>
+</li>
+<li><p>浏览器</p>
+<ul>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/window/outerWidth"><strong>Window.outerWidth</strong></a>： 获取浏览器窗口外部的宽度。表示整个浏览器窗口的宽度，包括侧边栏（如果存在）、窗口镶边（window chrome）和调正窗口大小的边框（window resizing borders/handles）。</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/window/outerHeight"><strong>Window.outerHeight</strong></a>： 获取整个浏览器窗口的高度，包括侧边栏（如果存在）、窗口镶边（window chrome）和窗口调正边框（window resizing borders/handles）。</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Window/innerWidth"><strong>Window.innerWidth</strong></a>： 浏览器视口（viewport）宽度，如果存在垂直滚动条则包括它。</li>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Window/innerHeight"><strong>Window.innerHeight</strong></a>： 浏览器窗口的视口（viewport）高度，如果存在水平滚动条，则包括它。</li>
+<li><p><code>document.documentElement</code> : 返回文档对象（document）的根元素（例如，HTML 文档的 元素）。</p>
+<blockquote>
+<p><code>document.documentElement.clientWidth</code> : 返回浏览器视口宽度，不包括垂直滚动条<br><code>document.documentElement.clientHeight</code> : 返回浏览器视口高度，不包括水平滚动条</p>
+</blockquote>
+</li>
+<li><p><a href="http://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript" target="_blank" rel="noopener">Get the browser viewport dimensions with JavaScript</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>兼容性处理</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> w =</span><br><span class="line">  <span class="built_in">window</span>.innerWidth ||</span><br><span class="line">  <span class="built_in">document</span>.documentElement.clientWidth ||</span><br><span class="line">  <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line"><span class="keyword">var</span> h =</span><br><span class="line">  <span class="built_in">window</span>.innerHeight ||</span><br><span class="line">  <span class="built_in">document</span>.documentElement.clientHeight ||</span><br><span class="line">  <span class="built_in">document</span>.body.clientHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Internet Explorer 9+、Chrome、Firefox、Opera 以及 Safari 支持 window.innerWidth &amp; window.innerHeight</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 后面的代码是为了兼容万恶的 IE 5-8</span></span><br></pre></td></tr></table></figure>
+<h3 id="元素宽度高度-API"><a href="#元素宽度高度-API" class="headerlink" title="元素宽度高度 API"></a>元素宽度高度 API</h3><ul>
+<li><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Element/clientWidth"><strong>Element.clientWidth</strong></a>： 返回元素 <code>可见内容</code> 的宽度和左右 padding，但不包括垂直滚动条、border 和 margin。</li>
+<li><p><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight"><strong>Element.clientHeight</strong></a>： 返回元素 <code>可见内容</code> 的高度和上下 padding，但不包括水平滚动条、border 和 margin。</p>
+</li>
+<li><p><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollWidth"><strong>Element.scrollWidth</strong></a>： 返回元素 <code>所有内容</code> 的宽度（包括用 <code>overflow:hidden;</code> 隐藏的内容）和左右 padding，但不包括水平滚动条、border 和 margin。</p>
+</li>
+<li><p><a href="//developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollHeight"><strong>Element.scrollHeight</strong></a>： 返回元素 <code>所有内容</code> 的高度（包括用 <code>overflow:hidden;</code> 隐藏的内容）和上下 padding，但不包括水平滚动条、border 和 margin。</p>
+</li>
+<li><p><a href="//developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetWidth"><strong>HTMLElement.offsetWidth</strong></a>： 返回元素 <code>可见内容</code> 的宽度和左右 padding，并且包括垂直滚动条的宽度、左右 border，但是不包括左右 margin。</p>
+</li>
+<li><p><a href="//developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight"><strong>HTMLElement.offsetHeight</strong></a>： 返回元素 <code>可见内容</code> 的高度和上下 padding，并且包括水平滚动条的高度、上下 border，但是不包括上下 margin。</p>
+</li>
+</ul>
+<p><a href="/img/clientHeight-sccrollHeight-offsetHeight.png"><img src="/img/clientHeight-sccrollHeight-offsetHeight.png" alt="three-height"></a></p>
+<blockquote>
+<p>以上图片截图自 <code>stackoverflow</code>，<a href="//stackoverflow.com/questions/22675126/what-is-offsetheight-clientheight-scrollheight">原文链接</a></p>
+</blockquote>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/javascript-timers/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            JavaScript 计时器
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/protocol-http/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              HTTP 协议详解
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

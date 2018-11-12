@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Vuex 学习笔记 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-vue-vuex-note" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-10-13T04:12:00.000Z" itemprop="datePublished">2017-10-13</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Vuex 学习笔记
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
+<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ul>
+<li><p><strong>state：</strong> 存放各种状态</p>
+</li>
+<li><p><strong>getter：</strong> 存放某些状态基于某个条件计算后的状态</p>
+</li>
+<li><p><strong>mutation：</strong> 用于直接更改 store 中的状态（state）</p>
+</li>
+<li><p><strong>action：</strong> 可以用来封装含有异步逻辑的可复用的代码</p>
+</li>
+<li><p><strong>module：</strong> 模块化状态树，以免单一状态树太过臃肿</p>
+<ul>
+<li><strong><code>namespaced: true</code>：</strong> 启用模块的命名空间，使模块具有更高的封装度和复用性</li>
+</ul>
+</li>
+</ul>
+<h3 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h3><blockquote>
+<p>Vuex 并不限制你的代码结构。但是，它规定了一些<strong>需要遵守的规则：</strong></p>
+<ul>
+<li>应用层级的状态应该集中到单个 store 对象中</li>
+<li>提交 mutation 是更改状态的唯一方法，并且这个过程是同步的</li>
+<li>异步逻辑都应该封装到 action 里面</li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">|...</span><br><span class="line">├── components</span><br><span class="line">│   ├── App.vue</span><br><span class="line">│   └── ...</span><br><span class="line">├── store</span><br><span class="line">│   ├── index.js          <span class="comment"># 我们组装模块并导出 store 的地方</span></span><br><span class="line">│   ├── state.js          <span class="comment"># 根级别的 state</span></span><br><span class="line">│   ├── getters.js        <span class="comment"># 根级别的 getters</span></span><br><span class="line">│   ├── mutations.js      <span class="comment"># 根级别的 mutation</span></span><br><span class="line">│   ├── mutation-types.js <span class="comment"># 统一集中管理 mutation 类型，可选</span></span><br><span class="line">│   ├── actions.js        <span class="comment"># 根级别的 action</span></span><br><span class="line">│   └── modules</span><br><span class="line">│       ├── cart.js       <span class="comment"># 购物车模块</span></span><br><span class="line">│       └── products.js   <span class="comment"># 产品模块</span></span><br><span class="line">└── router</span><br><span class="line">    └── index.js          <span class="comment"># 路由</span></span><br></pre></td></tr></table></figure>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// state: 存储状态的对象</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  count: <span class="number">0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// getter: 可以看作是 store 的计算属性</span></span><br><span class="line"><span class="keyword">const</span> getters = &#123;</span><br><span class="line">  isGreaterThanTen(state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state.count &gt; <span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mutation: 用于更改状态 state</span></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  ADD_ONE(state) &#123;</span><br><span class="line">    state.count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// action: 可以封装可复用的异步操作</span></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  delayAddOne(context) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      context.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  getters,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">"./vuex/store.js"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  store,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    count() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;,</span><br><span class="line">    isGreaterThanTen() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.isGreaterThanTen;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addOne() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    delayAddOne() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">"delayAddOne"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).$mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><blockquote>
+<p>Vuex 使用了单一状态树，即用一个对象就包含了全部的应用层级状态。至此它便作为一个<strong>唯一数据源 (SSOT)</strong>而存在。这也意味着，每个应用（每个组件）将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
+</blockquote>
+<ul>
+<li><strong>在组件中获取 Vuex 状态的最好方式是：使用计算属性</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取一个 Vuex 状态</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    count() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 <code>mapState</code> 辅助函数帮助我们生成计算属性</strong></li>
+</ul>
+<p>当映射的计算属性的名称与 state 的属性名称相同时，我们可以给 mapState 传一个字符串数组，以获取多个 Vuex 状态。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取多个 Vuex 状态</span></span><br><span class="line"><span class="comment">// 在构建版本里可以使用： import &#123; mapState &#125; from 'vuex'</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 映射为 this.state1、this.state2</span></span><br><span class="line">    ...Vuex.mapState([<span class="string">"state1"</span>, <span class="string">"state2"</span>]),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 映射为 this.stateThree</span></span><br><span class="line">    ...Vuex.mapState(&#123;</span><br><span class="line">      stateThree: <span class="string">"state3"</span></span><br><span class="line">    &#125;),</span><br><span class="line"></span><br><span class="line">    count() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.$store.state.count&#125;</span> 次`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Getter"><a href="#Getter" class="headerlink" title="Getter"></a>Getter</h3><blockquote>
+<ul>
+<li><strong>getter：可以认为是 store 的计算属性</strong></li>
+</ul>
+<p>就像 Vue 的计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  todos: [</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">text</span>: <span class="string">"二号去听经"</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">text</span>: <span class="string">"三号去餐厅"</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">text</span>: <span class="string">"晚上住旅店"</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">text</span>: <span class="string">"然后看电影"</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getters = &#123;</span><br><span class="line">  doneTodos: <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> state.todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.done);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  getters</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在组件中，我们可以像获取 state 那样来通过计算属性获取 getters。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取一个 Vuex getters</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    doneTodos() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.doneTodos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>与获取多个 state 类似，使用 <strong><code>mapGetters</code></strong> 辅助函数可以将多个 getter 映射到本地组件的计算属性中</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取多个 Vuex 状态</span></span><br><span class="line"><span class="comment">// 在构建版本里可以使用： import &#123; mapGetters &#125; from 'vuex'</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 映射为 this.getter1、this.getter2</span></span><br><span class="line">    ...Vuex.mapGetters([<span class="string">"getter1"</span>, <span class="string">"getter2"</span>]),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 映射为 this.getterThree</span></span><br><span class="line">    ...Vuex.mapGetters(&#123;</span><br><span class="line">      getterThree: <span class="string">"getter3"</span></span><br><span class="line">    &#125;),</span><br><span class="line"></span><br><span class="line">    count() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.$store.state.count&#125;</span> 次`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h3><blockquote>
+<p><strong>更改 Vuex 的 store 中的状态（state）的唯一方法是显式地提交 mutation。</strong></p>
+</blockquote>
+<p>Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个对应的类型 (type) 和 一个回调函数 (handler)。并且这个函数的第一个参数是 state。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  count: <span class="number">0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  <span class="comment">// 一个类型为 ADD_ONE 的 mutation</span></span><br><span class="line">  ADD_ONE(state) &#123;</span><br><span class="line">    state.count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 显式地提交 commit</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125; &lt;button @click="addOne"&gt;加一&lt;/button&gt;&lt;/div&gt;`</span>,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addOne() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>我们可以向 <code>this.$store.commit</code> 传入额外的参数，即 mutation 的 载荷（payload）</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  ADD_ONE(state) &#123;</span><br><span class="line">    state.count++;</span><br><span class="line">  &#125;,</span><br><span class="line">  ADD_N(state, n) &#123;</span><br><span class="line">    state.count += n;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件中</span></span><br><span class="line"><span class="keyword">this</span>.$store.commit(<span class="string">"ADD_N"</span>, <span class="number">18</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>mutation 类型书写规范</strong></li>
+</ul>
+<p>在大型项目中，会有很多 mutation，这里<strong>建议使用 ES6 的风格来定义 mutation 类型</strong>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 统一对 mutation 类型进行管理，然后暴露出去接口</span></span><br><span class="line"><span class="comment">// mutation-types.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_ONE = <span class="string">"ADD_ONE"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_N = <span class="string">"ADD_N"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// store.js</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ADD_ONE &#125; <span class="keyword">from</span> <span class="string">"./mutation-types"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    [ADD_ONE](state) &#123;</span><br><span class="line">      state.count++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>mutation 必须是同步函数：即函数内部不能有异步操作的代码</strong></li>
+</ul>
+<blockquote>
+<p>原因没搞懂，待补充～</p>
+</blockquote>
+<ul>
+<li>使用 <strong><code>mapMutations</code></strong> 辅助函数可以将组件中的 methods 映射为 this.$store.commit 调用。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在构建版本里可以使用： import &#123; mapMutations &#125; from 'vuex'</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div id="container"&gt;  </span></span><br><span class="line"><span class="string">                    &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">                    &lt;div&gt;&lt;button @click="ADD_ONE"&gt;+1&lt;/button&gt;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">                    &lt;div&gt;&lt;button @click="addNum(10)"&gt;+10&lt;/button&gt;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">                &lt;/div&gt;`</span>,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 映射为 this.ADD_ONE()</span></span><br><span class="line">    ...Vuex.mapMutations([<span class="string">"ADD_ONE"</span>]),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 映射为 this.addNum(n)</span></span><br><span class="line">    ...Vuex.mapMutations(&#123;</span><br><span class="line">      addNum: <span class="string">"ADD_N"</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><ul>
+<li>action 类似于 mutation，不同在于：<ul>
+<li><strong>action 提交的是 mutation，而不是直接变更状态</strong></li>
+<li><strong>action 可以包含任意异步操作，而 mutation 只能包含同步操作</strong></li>
+</ul>
+</li>
+</ul>
+<p>action 函数接受一个与 store 实例具有相同方法和属性的 context 对象，因此你可以调用 context.commit 提交一个 mutation，或者通过 context.state 和 context.getters 来获取 state 和 getters。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  count: <span class="number">0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  ADD_ONE(state) &#123;</span><br><span class="line">    state.count++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  <span class="comment">// 传入 context 对象</span></span><br><span class="line">  delay1sAddOne(context) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      context.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用 ES6 的参数解构，简化代码</span></span><br><span class="line">  delay2sAddOne(&#123; commit &#125;) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      context.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在组件中触发 action</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125; &lt;button @click="doAction"&gt;延迟1秒后加一&lt;/button&gt;&lt;/div&gt;`</span>,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    doAction() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">"delay1sAddOne"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在分发 action 的时候也可以给它传入参数（载荷）</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  delayAddOne(context, time) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      context.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">    &#125;, time);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.$store.dispatch(<span class="string">"delay1sAddOne"</span>, <span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 <strong><code>mapActions</code></strong> 辅助函数可以将组件中的 methods 映射为 this.$store.dispatch 调用。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在构建版本里可以使用： import &#123; mapActions &#125; from 'vuex'</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div id="container"&gt;  </span></span><br><span class="line"><span class="string">                    &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">                    &lt;div&gt;&lt;button @click="delay1sAddOne"&gt;延迟一秒后加一&lt;/button&gt;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">                    &lt;div&gt;&lt;button @click="addOneInTwoSeconds"&gt;延迟两秒后加一&lt;/button&gt;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">                &lt;/div&gt;`</span>,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 映射为 this.delay1sAddOne()</span></span><br><span class="line">    ...Vuex.mapActions([<span class="string">"delay1sAddOne"</span>]),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 映射为 this.addOneInTwoSeconds()</span></span><br><span class="line">    ...Vuex.mapMutations(&#123;</span><br><span class="line">      addOneInTwoSeconds: <span class="string">"delay2sAddOne"</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>由于 action 中的操作可以是异步的，并且 action 函数传入的 context 对象类似 store 实例，所以我们可以组合使用 action</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  actionA(context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        context.commit(<span class="string">"ADD_ONE"</span>);</span><br><span class="line">        resolve();</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// action 中调用 action</span></span><br><span class="line">  actionB(context) &#123;</span><br><span class="line">    context.dispatch(<span class="string">"actionA"</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"In actionB, actionA resolved"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h3><p><strong>如果在大型应用中使用 <code>单一状态树</code>，那么 vuex 的 state 对象将变的无比巨大和臃肿，非常不好维护。</strong></p>
+<p><strong>为了解决这个问题，vuex 允许我们将 store 分割成多个模块（module）。每个模块可以拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 子模块 userPage</span></span><br><span class="line"><span class="keyword">const</span> userPage = &#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    status: <span class="string">"online"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    SIGN_OUT(state) &#123;</span><br><span class="line">      <span class="comment">// 这里的 `state` 对象是模块的局部状态</span></span><br><span class="line">      state.status = <span class="string">"offline"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子模块 articlePage</span></span><br><span class="line"><span class="keyword">const</span> articlePage = &#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    isCodeHighlight: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    TOGGLE_CODE_HIGHLIGHT(state) &#123;</span><br><span class="line">      state.isCodeHighlight = !state.isCodeHighlight;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义 vuex 根模块状态</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  isShowSidebar: <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  TOGGLE_SIDEBAR(state) &#123;</span><br><span class="line">    state.isShowSidebar = !state.isShowSidebar;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  mutations,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// vuex 根模块引入子模块</span></span><br><span class="line">  modules: &#123;</span><br><span class="line">    userPage,</span><br><span class="line">    articlePage</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>isShowSidebar:&#123;&#123; isShowSidebar.toString() &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"toggleSidebar"</span>&gt;</span>toggleSidebar<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>userStatus:&#123;&#123; userStatus &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"signOut"</span>&gt;</span>signOut<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 新建 vue 实例</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  store,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    isShowSidebar() &#123;</span><br><span class="line">      <span class="comment">// 获取 vuex 根模块中的状态</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.isShowSidebar;</span><br><span class="line">    &#125;,</span><br><span class="line">    userStatus() &#123;</span><br><span class="line">      <span class="comment">// 获取 vuex 子模块中的状态</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.userPage.status;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggleSidebar() &#123;</span><br><span class="line">      <span class="comment">// 提交 vuex 根模块的 mutation</span></span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">"TOGGLE_SIDEBAR"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    signOut() &#123;</span><br><span class="line">      <span class="comment">// 提交 vuex 子模块的 mutation</span></span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">"SIGN_OUT"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).$mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="子模块的命名空间"><a href="#子模块的命名空间" class="headerlink" title="子模块的命名空间"></a>子模块的命名空间</h4><p><strong>默认情况下，子模块内部的 action、mutation 和 getter 是注册在全局命名空间的，这样使得多个模块能够对同一 mutation 或 action 作出响应，容易混乱逻辑。</strong></p>
+<p><strong>如果希望你的模块具有更高的封装度和复用性，你可以通过添加 <code>namespaced: true</code> 的方式使其成为命名空间模块。当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名。</strong></p>
+<blockquote>
+<p><strong>建议在使用模块时启用命名空间～</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 启用命名空间的子模块 userPage</span></span><br><span class="line"><span class="keyword">const</span> userPage = &#123;</span><br><span class="line">  <span class="comment">// 启用命名空间</span></span><br><span class="line">  namespaced: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">  state: &#123;</span><br><span class="line">    <span class="comment">// 模块内的状态已经是嵌套的了，使用 `namespaced` 属性不会对其产生影响</span></span><br><span class="line">    status: <span class="string">"online"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    isOnline(state) &#123;</span><br><span class="line">      <span class="keyword">return</span> state.status === <span class="string">"online"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    SIGN_OUT(state) &#123;</span><br><span class="line">      state.status = <span class="string">"offline"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    FORCE_SIGN_OUT(context) &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        context.state.status = <span class="string">"offline"</span>;</span><br><span class="line">      &#125;, <span class="number">10000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 嵌套模块</span></span><br><span class="line">  modules: &#123;</span><br><span class="line">    <span class="comment">// 嵌套的模块会继承父模块的命名空间</span></span><br><span class="line">    testModule1: &#123;</span><br><span class="line">      state: &#123;&#125;,</span><br><span class="line">      getters: &#123;</span><br><span class="line">        test1() &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">"test111"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 嵌套的模块也启用命名空间</span></span><br><span class="line">    testModule2: &#123;</span><br><span class="line">      namespaced: <span class="literal">true</span>,</span><br><span class="line">      state: &#123;&#125;,</span><br><span class="line">      getters: &#123;</span><br><span class="line">        test2() &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">"test222"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  store,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 获取子模块的 state</span></span><br><span class="line">    userStatus() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.userPage.status;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 获取子模块的 getter</span></span><br><span class="line">    isOnline() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters[<span class="string">"userPage/isOnline"</span>];</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 获取子模块的 未设置命名空间的 嵌套模块的 getter</span></span><br><span class="line">    test1() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters[<span class="string">"userPage/test1"</span>];</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 获取子模块的 设置了命名空间的 嵌套模块的 getter</span></span><br><span class="line">    test2() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters[<span class="string">"userPage/testModule2/test2"</span>];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 提交 vuex 子模块的 mutation</span></span><br><span class="line">    signOut() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">"userPage/SIGN_OUT"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 分发 vuex 子模块的 action</span></span><br><span class="line">    fouceSignOut() &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">"userPage/FORCE_SIGN_OUT"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).$mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="getter、mutation、action-的参数问题"><a href="#getter、mutation、action-的参数问题" class="headerlink" title="getter、mutation、action 的参数问题"></a>getter、mutation、action 的参数问题</h3><ul>
+<li><p><strong>对于模块内部的 mutation 和 getter，接收的第一个参数是模块的局部状态对象 <code>state</code></strong></p>
+</li>
+<li><p><strong>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code></strong></p>
+</li>
+<li><p><strong>对于模块内部的 getter，根节点状态会作为第三个参数暴露出来 <code>(state, getters, rootState, rootGetters)</code></strong></p>
+</li>
+<li><p><strong>mutation 和 action 的第二个参数都是 <code>payload</code></strong></p>
+</li>
+<li><p><strong>action 的第一个参数是 <code>context</code></strong></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// context 包含以下属性</span></span><br><span class="line">&#123;</span><br><span class="line">  state, <span class="comment">// 等同于 store.state, 若在模块中则为局部状态</span></span><br><span class="line">    rootState, <span class="comment">// 等同于 store.state, 只存在于模块中</span></span><br><span class="line">    commit, <span class="comment">// 等同于 store.commit</span></span><br><span class="line">    dispatch, <span class="comment">// 等同于 store.dispatch</span></span><br><span class="line">    getters; <span class="comment">// 等同于 store.getters</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="v-model-双向绑定-Vuex-状态"><a href="#v-model-双向绑定-Vuex-状态" class="headerlink" title="v-model 双向绑定 Vuex 状态"></a>v-model 双向绑定 Vuex 状态</h3><p>在组件中，可以使用 <code>v-model</code> 来双向绑定 data 中的属性的值。但是如果现在与 v-model 绑定的值是一个 vuex 的状态呢？</p>
+<p>由于 vuex 的状态只能通过 mutation 来进行改变，所以我们可以<strong>使用属性的 <code>getter</code> 和 <code>setter</code> 来使得 v-model 与 vuex 的一个状态也可以进行双向绑定</strong>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    CHANGE_COUNT(state, value) &#123;</span><br><span class="line">      state.count = value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件</span></span><br><span class="line"><span class="keyword">const</span> Counter = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;  </span></span><br><span class="line"><span class="string">        &lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;  </span></span><br><span class="line"><span class="string">        &lt;div&gt; &lt;input v-model="count"/&gt; &lt;/div&gt;  </span></span><br><span class="line"><span class="string">    &lt;/div&gt;`</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    count: &#123;</span><br><span class="line">      get() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count;</span><br><span class="line">      &#125;,</span><br><span class="line">      set(value) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$store.commit(<span class="string">"CHANGE_COUNT"</span>, value);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/javascript-typescript/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            TypeScript 学习笔记
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/vue-router-note/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Vue-Router 学习笔记
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

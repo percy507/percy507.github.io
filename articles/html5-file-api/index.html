@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            HTML5 File API |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-html5-file-api" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-08T04:12:00.000Z" itemprop="datePublished">2017-03-08</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 File API
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-API/">Web API</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <blockquote>
+<p>由于 File API 还在完善中，以下内容仅供参考，因为以后可能会发生变动~</p>
+</blockquote>
+<p><strong>File API 是 HTML5 为我们提供的一种规范，主要定义了与本地文件交互的标准方式。</strong></p>
+<p><strong>File API 实现了这些接口：Blob、File、FileList、FileReader、FileReaderSync、URL。</strong></p>
+<h3 id="Blob-对象"><a href="#Blob-对象" class="headerlink" title="Blob 对象"></a>Blob 对象</h3><p><strong>注意，Blob 不是 JavaScript 内置对象。</strong></p>
+<blockquote>
+<p>网上有人说 blob 对象最先在 ECMAScript 5 中引入，但是我搜索遍整个 ES5 文档却找不到一个 blob 关键词。（逗我呢。。）</p>
+<p>不信请查阅：<a href="https://es5.github.io/" target="_blank" rel="noopener"><strong>Annotated ECMAScript 5.1</strong></a></p>
+<p>我觉得 Blob 最早是由 W3C 制定 File API 时起草的（<a href="https://www.w3.org/TR/2009/WD-FileAPI-20091117/#dfn-Blob" target="_blank" rel="noopener">File API W3C Working Draft 17 November 2009</a>）</p>
+</blockquote>
+<p>Lol…</p>
+<blockquote>
+<p><a href="https://w3c.github.io/FileAPI/#blob" target="_blank" rel="noopener"><strong>下面是 W3C 上对 Blob 的解释</strong></a></p>
+<ul>
+<li><strong>A Blob object refers to a byte sequence, and has a size attribute which is the total number of bytes in the byte sequence, and a type attribute, which is an ASCII-encoded string in lower case representing the media type of the byte sequence.</strong></li>
+</ul>
+</blockquote>
+<p>可以看出，<strong>Blob 对象只是一个存储二进制数据的容器。</strong></p>
+<p>生成 Blob 对象有两种方法：一种是使用 Blob 构造函数，另一种是对现有的 Blob 对象使用 slice 方法切出一部分。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line"><span class="keyword">var</span> blob = <span class="keyword">new</span> Blob([data], &#123; <span class="attr">type</span>: <span class="string">"text/xml"</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oldBlob = blob;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二</span></span><br><span class="line"><span class="keyword">var</span> newBlob = oldBlob.slice(<span class="number">0</span>, <span class="number">10</span>, <span class="string">"text/plain"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>new Blob( array, options )</strong></p>
+<ul>
+<li><strong>array：</strong> 是一个数组，数组内容可能包含 ArrayBuffer、ArrayBufferView、Blob、DOMString 等数据类型的数据</li>
+<li><strong>options：</strong> 可选值，它是一个对象，主要设置放入到 blob 中的数组内容的 MIME 类型，默认为空字符串</li>
+</ul>
+</li>
+<li><p><strong>2 个属性</strong></p>
+<ul>
+<li><strong>size：</strong> 表示 Blob 对象中所包含数据的大小（字节）</li>
+<li><strong>type：</strong> 一个字符串，表明该 Blob 对象所包含数据的 MIME 类型，默认为空字符串</li>
+</ul>
+</li>
+<li><p><strong>Blob.slice([start [, end [, contentType]]])：</strong> 返回一个新的 Blob 对象，包含了原 Blob 对象中指定范围内的数据</p>
+</li>
+</ul>
+<h3 id="File-对象"><a href="#File-对象" class="headerlink" title="File 对象"></a>File 对象</h3><blockquote>
+<p><strong>A File object is a Blob object</strong> with a name attribute, which is a string; it can be created within the web application via a constructor, or is a reference to a byte sequence from a file from the underlying (OS) file system.</p>
+</blockquote>
+<p><strong>File 对象继承自 Blob 对象，它提供了文件的相关信息。</strong></p>
+<ul>
+<li><p><strong>现有属性</strong></p>
+<ul>
+<li><strong>name：</strong> 当前 File 对象所引用文件的文件名</li>
+<li><strong>size：</strong> 当前 File 对象所引用文件的文件大小，单位为字节</li>
+<li><strong>type：</strong> 当前 File 对象所引用文件的文件类型（MIME 类型）</li>
+<li><strong>lastModified：</strong> 当前 File 对象所引用文件最后一次修改的时间</li>
+</ul>
+</li>
+</ul>
+<h3 id="FileList-对象"><a href="#FileList-对象" class="headerlink" title="FileList 对象"></a>FileList 对象</h3><p><strong>一个 FileList 对象通常来自于一个 HTML input 元素的 files 属性</strong>，你可以通过这个对象访问到用户所选择的文件。<strong>该类型的对象还有可能来自用户的拖放操作</strong>（以后的文章再讲拖放）。</p>
+<blockquote>
+<p><strong>HTMLInputElement.files：</strong> 返回一个 FileList 对象</p>
+</blockquote>
+<ul>
+<li><strong>FileList.length：</strong> 返回 FileList 包含的 File 对象的数量</li>
+<li><strong>FileList.item(index)：</strong> 根据给定的索引值，返回 FileList 对象中对应的 File 对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> input = <span class="built_in">document</span>.getElementById(<span class="string">"file"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面两种方法效果一样</span></span><br><span class="line">input.files.item(<span class="number">0</span>);</span><br><span class="line">input.files[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="FileReader-对象"><a href="#FileReader-对象" class="headerlink" title="FileReader 对象"></a>FileReader 对象</h3><p><strong>FileReader 对象允许 Web 应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容并存储到内存中，使用 File 或 Blob 对象指定要读取的文件或数据。</strong></p>
+<p>其中 File 对象可以是来自用户在一个 <code>&lt;input&gt;</code> 元素上选择文件后返回的 FileList 对象，也可以来自拖放操作生成的 DataTransfer 对象，还可以是来自在一个 HTMLCanvasElement 上执行 mozGetAsFile() 方法后返回结果。</p>
+<ul>
+<li><p><strong>属性</strong></p>
+<ul>
+<li><strong>readyState</strong><ul>
+<li><strong>EMPTY：</strong> 0，还没有加载任何数据</li>
+<li><strong>LOADING：</strong> 1，数据正在被加载</li>
+<li><strong>DONE：</strong> 2，已完成全部的读取请求</li>
+</ul>
+</li>
+<li><strong>result：</strong> 返回读取到的文件内容。这个属性只在读取操作完成之后才有效</li>
+<li><strong>error：</strong> 返回错误信息</li>
+</ul>
+</li>
+<li><p><strong>事件</strong></p>
+<ul>
+<li><strong>abort：</strong> 当读取操作被中止时触发</li>
+<li><strong>error：</strong> 当读取操作发生错误时触发</li>
+<li><strong>load：</strong> 当读取操作成功完成时触发</li>
+<li><strong>loadend：</strong> 当读取操作完成时调用,不管是成功还是失败.该事件在 onload 或者 onerror 之后触发</li>
+<li><strong>loadstart：</strong> 当读取操作将要开始之前触发</li>
+<li><strong>progress：</strong> 在读取数据过程中周期性触发</li>
+</ul>
+</li>
+<li><p><strong>方法</strong></p>
+<ul>
+<li><strong>FileReader.abort()：</strong> 终止读取操作</li>
+<li><strong>FileReader.readAsArrayBuffer(blob)：</strong> 读取指定的 Blob 或 File 对象，当读取操作完成的时候，readyState 变成已完成（DONE），并触发 loadend 事件，同时 <strong>result 属性中将包含一个 ArrayBuffer 对象以表示所读取文件的数据</strong></li>
+<li><strong>FileReader.readAsBinaryString(blob)：</strong> 读取指定的 Blob 或 File 对象，当读取完成的时候，readyState 会变成已完成（DONE），并触发 loadend 事件，同时 <strong>result 属性将包含所读取文件原始二进制格式</strong></li>
+<li><strong>FileReader.readAsDataURL(blob)：</strong> 读取指定的 Blob 或 File 对象。读取操作完成的时候，readyState 会变成已完成（DONE），并触发 loadend 事件，同时 <strong>result 属性将包含一个 data:URL 格式的字符串（base64 编码）以表示所读取文件的内容</strong></li>
+<li><strong>FileReader.readAsText(blob [, encoding])：</strong> 将 Blob 或者 File 对象转根据特殊的编码格式转化为内容(字符串形式)</li>
+</ul>
+</li>
+</ul>
+<h3 id="FileReaderSync-对象"><a href="#FileReaderSync-对象" class="headerlink" title="FileReaderSync 对象"></a>FileReaderSync 对象</h3><p>FileReaderSync 接口允许以同步的方式读取 File 或 Blob 对象中的内容。</p>
+<ul>
+<li><strong>该接口只在 Web Workers 里可用，因为在主线程里进行同步 I/O 操作可能会阻塞用户界面</strong></li>
+</ul>
+<h3 id="URL-对象"><a href="#URL-对象" class="headerlink" title="URL 对象"></a>URL 对象</h3><ul>
+<li><strong>new URL(urlString[, baseURLstring])：</strong> 返回一个新创建的 URL 对象，表示由参数定义的 URL</li>
+</ul>
+<p><strong>URL 对象实现了下面 URLUtils 接口的全部属性。</strong></p>
+<ul>
+<li><p><strong>URLUtils 接口：</strong> The URLUtils interface defines utility methods to work with URLs（定义了一些用来处理 URLs 的实用的方法）</p>
+<ul>
+<li><strong>URLUtils.href：</strong> 包含完整 URL 的 DOMString</li>
+<li><strong>URLUtils.protocol：</strong> 包含 URL 协议名的 DOMString，末尾带 ‘:’</li>
+<li><strong>URLUtils.host：</strong> 包含 URL 域名，’:’，和端口号的 DOMString</li>
+<li><strong>URLUtils.hostname：</strong> 包含 URL 域名的 DOMString</li>
+<li><strong>URLUtils.port：</strong> 包含 URL 端口号的 DOMString</li>
+<li><strong>URLUtils.pathname：</strong> 以 ‘/‘ 起头紧跟着 URL 文件路径的 DOMString</li>
+<li><strong>URLUtils.search：</strong> 以 ‘?’ 起头紧跟着 URL 请求参数的 DOMString</li>
+<li><strong>URLUtils.hash：</strong> 以 ‘#’ 起头紧跟着 URL 锚点标记的 DOMString</li>
+<li><strong>URLUtils.username：</strong> 包含在域名前面指定的用户名的 DOMString</li>
+<li><strong>URLUtils.password：</strong> 包含在域名前面指定的密码的 DOMString</li>
+<li><strong>URLUtils.origin：</strong> 返回一个包含协议名、域名和端口号的 DOMString</li>
+<li><strong>URLUtils.searchParams：</strong> 返回一个用来访问当前 URL GET 请求参数的 URLSearchParams 对象</li>
+</ul>
+</li>
+<li><p><strong>URL 静态方法</strong></p>
+<ul>
+<li><strong>URL.createObjectURL(blob)：</strong> 返回一个 DOMString ，包含一个唯一的 blob 链接（该链接协议为 <code>blob:</code>，后跟唯一标识浏览器中的对象的掩码）</li>
+<li><strong>URL.revokeObjectURL(objectURL)：</strong> 释放一个之前通过调用 URL.createObjectURL() 创建的已经存在的 URL 对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><ul>
+<li>使用表单上传文件，并获取文件的基本信息<ul>
+<li>验证上传内容的 mimetype 与其文件扩展名是否匹配（通过检测 File.type 属性的值实现）</li>
+<li>限制上传内容的大小（通过限制 File.size 属性的值实现）</li>
+</ul>
+</li>
+<li>读取即将上传的本地图片，并在页面上显示出来</li>
+<li>将文件分割后进行上传（防止一次将大文件读入内存造成浏览器崩溃等问题）</li>
+<li>监控文件读取进度</li>
+</ul>
+<h3 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h3><ul>
+<li>【文章】<a href="https://www.html5rocks.com/zh/tutorials/file/dndfiles/" target="_blank" rel="noopener">通过 File API 使用 JavaScript 读取文件</a></li>
+<li>【文章】<a href="https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/" target="_blank" rel="noopener">Styling &amp; Customizing File Inputs the Smart Way</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/html5-drag-and-drop/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            HTML5 Drag and Drop
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/css-stylus/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Stylus 常用语法
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

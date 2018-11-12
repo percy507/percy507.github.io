@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Vue 学习心得 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-vue-style" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-10-23T04:12:00.000Z" itemprop="datePublished">2017-10-23</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Vue 学习心得
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-03-18T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-03-18
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <blockquote>
+<p>好巧，刚刚发现 Vue 官方也出了自己的风格指南。<a href="https://cn.vuejs.org/v2/style-guide/" target="_blank" rel="noopener">传送门：Vue 风格指南</a></p>
+</blockquote>
+<p>本文我将结合自己的心得和 Vue 官方给出的风格指南进行汇总。</p>
+<h3 id="组件命名相关"><a href="#组件命名相关" class="headerlink" title="组件命名相关"></a>组件命名相关</h3><ul>
+<li><strong>组件名应该始终是多个单词的，根组件 <code>App</code> 除外</strong></li>
+</ul>
+<p>这样做可以避免跟现有的以及未来新出现的 HTML 元素相冲突，因为目前所有的 HTML 元素名称都是单个单词的。</p>
+<ul>
+<li><strong>单文件组件的文件名应该要么始终是单词大写开头 (PascalCase)，要么始终是横线连接 (kebab-case)</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">mytable.vue;</span><br><span class="line">myTable.vue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">MyTable.vue;</span><br><span class="line">my - table.vue;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>统一为基础组件的文件名以一个特定的前缀开头，比如：<code>Base</code>、<code>App</code>、<code>V</code></strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">MyButton.vue;</span><br><span class="line">VueTable.vue;</span><br><span class="line">Icon.vue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">BaseButton.vue;</span><br><span class="line">BaseTable.vue;</span><br><span class="line">BaseIcon.vue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">AppButton.vue;</span><br><span class="line">AppTable.vue;</span><br><span class="line">AppIcon.vue;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>和父组件紧密耦合的子组件应该以父组件名作为前缀命名</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">TodoList.vue;</span><br><span class="line">TodoItem.vue;</span><br><span class="line">TodoButton.vue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">TodoList.vue;</span><br><span class="line">TodoListItem.vue;</span><br><span class="line">TodoListItemButton.vue;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在模板中组件元素始终以 <code>kebab-case</code> 方式命名</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">&lt;Faces&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Faces</span>&gt;</span></span></span><br><span class="line">&lt;mytable&gt;<span class="xml"><span class="tag">&lt;/<span class="name">mytable</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">&lt;faces&gt;<span class="xml"><span class="tag">&lt;/<span class="name">faces</span>&gt;</span></span></span><br><span class="line">&lt;my-table&gt;<span class="xml"><span class="tag">&lt;/<span class="name">my-table</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>为组件名使用完整单词命名而不是缩写单词</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">SdSettings.vue;</span><br><span class="line">UProfOpts.vue;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">StudentDashboardSettings.vue;</span><br><span class="line">UserProfileOptions.vue;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>当 <code>props</code> 或 <code>compoents</code> 中使用 <code>camelCase (驼峰式命名)</code> 时，请在对应的 HTML 模板中使用相应的 <code>kebab-case (短横线分隔式命名)</code></strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在 JavaScript 中使用 camelCase</span></span><br><span class="line"><span class="keyword">let</span> myComponent = &#123;</span><br><span class="line">  props: [<span class="string">"myMessage"</span>],</span><br><span class="line">  template: <span class="string">"&lt;span&gt;&#123;&#123; myMessage &#125;&#125;&lt;/span&gt;"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    myComponent</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在 HTML 中使用 kebab-case --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">:my-message</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="代码格式"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式</h3><ul>
+<li><strong>多个特性的元素应该分多行撰写，每个特性一行</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- bad --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">msg</span> <span class="attr">class</span>=<span class="string">"my-message"</span> <span class="attr">:message</span>=<span class="string">"message"</span> @<span class="attr">click.native</span>=<span class="string">"showMessage"</span>&gt;</span><span class="tag">&lt;/<span class="name">msg</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- good --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">msg</span> <span class="attr">class</span>=<span class="string">"my-message"</span> <span class="attr">:message</span>=<span class="string">"message"</span> @<span class="attr">click.native</span>=<span class="string">"showMessage"</span>&gt;</span><span class="tag">&lt;/<span class="name">msg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h3><ul>
+<li><strong>组件的 <code>data</code> 选项必须是一个返回对象的函数</strong></li>
+</ul>
+<p>由于对象的引用问题，直接给 data 赋值为一个对象后，会使得该组件的所有实例共享（共同引用）一个数据对象，从而增加了实例间数据的耦合度，不利于组件实例的独立性。</p>
+<ul>
+<li><strong>组件的 <code>props</code> 选项应该尽量描述详细，至少标明属性类型</strong></li>
+</ul>
+<p>这样做可以使组件的 <code>props</code> 选项更加语义化，减少父子组件间通信出错的概率！</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">props: [<span class="string">'message'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">props: &#123;</span><br><span class="line">    message: <span class="built_in">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// better</span></span><br><span class="line">props: &#123;</span><br><span class="line">    message: &#123;</span><br><span class="line">        type: <span class="built_in">String</span>,</span><br><span class="line">        required: <span class="literal">true</span>,</span><br><span class="line">        validator(value) &#123;</span><br><span class="line">            <span class="keyword">return</span> value.length &lt; <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">&lt;div id=<span class="string">"my-name"</span>&gt;&#123;&#123; firstName + <span class="string">' '</span> + lastName &#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ good</span></span><br><span class="line"><span class="regexp">computed:&#123;</span></span><br><span class="line"><span class="regexp">    fullName()&#123;</span></span><br><span class="line"><span class="regexp">        return this.firstName + ' ' + this.lastName;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;div id="my-name"&gt;&#123;&#123; fullName &#125;&#125;&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>把复杂的计算属性尽可能多地分割为更简单的计算属性</strong></li>
+</ul>
+<p>这样做便于阅读，并且有利于后期维护。</p>
+<ul>
+<li><strong>始终为非空 HTML 特性值加上双引号</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">&lt;input type=text /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">&lt;input type=<span class="string">"text"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>始终使用指令缩写</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">&lt;input v-on:focus=<span class="string">"inputFocus"</span> /&gt;</span><br><span class="line">&lt;input v-bind:value=<span class="string">"message"</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">&lt;input @focus=<span class="string">"inputFocus"</span> /&gt;</span><br><span class="line">&lt;input :value=<span class="string">"message"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>为 v-for 元素设置唯一 key 值</strong></li>
+</ul>
+<p>该做法有利于在元素上维护可预测的行为，比如动画中的对象固化 (object constancy)。</p>
+<ul>
+<li><strong>在单文件组件中，最好给每一个组件指定一个唯一的 name 属性，方便路由时在 chrome 扩展工具（Vue） 识别对应的组件</strong></li>
+</ul>
+<p><img src="/img/add-name-for-vue-component.png" alt="add-name-for-vue-component.png"></p>
+<h3 id="性能相关"><a href="#性能相关" class="headerlink" title="性能相关"></a>性能相关</h3><ul>
+<li><strong>为组件样式设置作用域</strong></li>
+</ul>
+<p><strong>追求性能的项目不应该使用 style 的 <code>scoped</code> 特性</strong>，因为使用 scoped 特性会产生大量的元素和特性组合的选择器 (比如 button[data-v-f3f3eg9]) ，而这种选择器会比类和特性组合的选择器慢，所以应该尽可能使用基于某种命名方法（比如 BEM）的类选择器。</p>
+<p>而对于复杂的大型项目，则可以考虑使用 <code>scoped</code> 特性，并且必须保证自己的样式能应用到指定元素。</p>
+<ul>
+<li><strong>为低开销的静态组件使用 v-once，防止不必要的重新渲染</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> bigComponent = &#123;</span><br><span class="line">    template: <span class="string">`&lt;div v-once&gt;</span></span><br><span class="line"><span class="string">        ...很多静态内容...</span></span><br><span class="line"><span class="string">      &lt;/div&gt;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;big-component v-once&gt;<span class="xml"><span class="tag">&lt;/<span class="name">big-component</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>所有的 DOM 操作都由 Vue 来处理，你编写的代码只需要关注业务逻辑</strong></li>
+</ul>
+<p>为 DOM 元素标记 <code>ref</code> 特性，然后使用 <code>this.$refs.xxx</code> 访问 DOM 元素。</p>
+<blockquote>
+<p>待定</p>
+</blockquote>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/vue-note/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Vue 学习笔记
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/javascript-typescript/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              TypeScript 学习笔记
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Vue 生命周期钩子 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-vue-lifecycle" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-10-09T04:12:00.000Z" itemprop="datePublished">2017-10-09</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Vue 生命周期钩子
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-02-22T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-02-22
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="Vue-生命周期"><a href="#Vue-生命周期" class="headerlink" title="Vue 生命周期"></a>Vue 生命周期</h3><blockquote>
+<p>以下注释为个人拙见，会不断完善。下图也会不定期更新。</p>
+</blockquote>
+<p><img src="/img/vue-lifecycle-comment.png" alt="vue-lifecycle-comment.png"></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li><strong><code>mounted</code> 只保证当前组件挂载完毕，但是并不会保证该组件下的所有子组件也都一起挂载完毕。如果你希望等到整个视图都渲染完毕（改组件及其所有子组件都挂载完毕），可以用 <code>this.$nextTick</code> 替换掉 <code>mounted</code></strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    msg</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 需要等到所有子组件被挂载完成后再执行的逻辑写这里</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前组件挂载完成</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>updated</code> 只保证当前组件重绘完毕，但是并不会保证该组件下的所有子组件也都一起重绘完毕。如果你希望等到整个视图都重绘完毕（改组件及其所有子组件都重绘完毕），可以用 <code>this.$nextTick</code> 替换掉 <code>updated</code></strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    msg</span><br><span class="line">  &#125;,</span><br><span class="line">  updated() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 需要等到所有子组件被重绘完成后再执行的逻辑写这里</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前组件重绘完成</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Vue-nextTick-callback"><a href="#Vue-nextTick-callback" class="headerlink" title="Vue.nextTick(callback)"></a>Vue.nextTick(callback)</h3><p><strong>在修改数据之后，如果需要对修改后的 DOM 进行操作，请在修改数据后立即使用 nextTick 函数，因为该函数的回掉函数会在 DOM 更新完成后自动被调用。</strong></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>执行下面的代码！</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Vue 生命周期测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      button &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#666</span>;</span></span><br><span class="line"><span class="undefined">        border: none;</span></span><br><span class="line"><span class="undefined">        border-radius: 5px;</span></span><br><span class="line"><span class="undefined">        padding: 8px;</span></span><br><span class="line"><span class="undefined">        margin: 10px;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn1"</span> @<span class="attr">click</span>=<span class="string">"changeMessage"</span>&gt;</span></span><br><span class="line">        更改 Vue 的 message 变量为一个随机数</span><br><span class="line">      <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span> @<span class="attr">click</span>=<span class="string">"destroyVue"</span>&gt;</span>销毁当前 Vue 实例<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/vue/2.4.4/vue.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="built_in">window</span>.app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">"#app"</span>,</span></span><br><span class="line"><span class="undefined">        data: &#123;</span></span><br><span class="line"><span class="javascript">          message: <span class="string">"最初的数据～"</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        beforeCreate() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"beforeCreate"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        created() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"created"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">          <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.group(<span class="string">"nextTick 被调用"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"注册于：&lt;created&gt; hook"</span>);</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">          &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        beforeMount() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"beforeMount"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        mounted() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"mounted"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        beforeUpdate() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"beforeUpdate"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        updated() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"updated"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        beforeDestroy() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"beforeDestroy"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        destroyed() &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.group(<span class="string">"destroyed"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"el     : "</span> + <span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"data   : "</span> + <span class="keyword">this</span>.$data);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"%c%s"</span>, <span class="string">"color:red"</span>, <span class="string">"message: "</span> + <span class="keyword">this</span>.message);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        methods: &#123;</span></span><br><span class="line"><span class="undefined">          changeMessage() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(</span></span><br><span class="line"><span class="javascript">              <span class="string">"%c%s"</span>,</span></span><br><span class="line"><span class="javascript">              <span class="string">"color:#FFF;background:#666;padding:4px;margin:0 6px 0 -10px"</span>,</span></span><br><span class="line"><span class="javascript">              <span class="string">"changeMessage 方法被调用"</span></span></span><br><span class="line"><span class="undefined">            );</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.message = <span class="built_in">Math</span>.trunc(<span class="built_in">Math</span>.random() * <span class="number">10000</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">              <span class="built_in">console</span>.group(<span class="string">"nextTick 被调用"</span>);</span></span><br><span class="line"><span class="javascript">              <span class="built_in">console</span>.log(</span></span><br><span class="line"><span class="javascript">                <span class="string">"%c%s"</span>,</span></span><br><span class="line"><span class="javascript">                <span class="string">"color:red"</span>,</span></span><br><span class="line"><span class="javascript">                <span class="string">"注册于：&lt;changeMessage&gt; method"</span></span></span><br><span class="line"><span class="undefined">              );</span></span><br><span class="line"><span class="javascript">              <span class="built_in">console</span>.groupEnd();</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">          &#125;,</span></span><br><span class="line"><span class="undefined">          destroyVue() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(</span></span><br><span class="line"><span class="javascript">              <span class="string">"%c%s"</span>,</span></span><br><span class="line"><span class="javascript">              <span class="string">"color:#FFF;background:#666;padding:4px;margin:0 6px 0 -10px"</span>,</span></span><br><span class="line"><span class="javascript">              <span class="string">"destroyVue 方法被调用"</span></span></span><br><span class="line"><span class="undefined">            );</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$destroy();</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/html5-history-api/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            HTML5 History API
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/computer-skill-for-windows-os/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Windows 系统下的小技巧
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

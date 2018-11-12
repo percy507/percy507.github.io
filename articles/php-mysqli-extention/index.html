@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            用 PHP 扩展 mysqli 连接数据库 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-php-mysqli-extention" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-04-14T04:12:00.000Z" itemprop="datePublished">2017-04-14</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      用 PHP 扩展 mysqli 连接数据库
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p><strong>mysqli</strong> 是 PHP 操作 MySQL 的一个扩展，它提供了比原生的 mysql 扩展更强大的功能。<a href="http://php.net/manual/zh/mysqli.overview.php" target="_blank" rel="noopener">详细比较请看这里(mysqli Overview)。</a></p>
+<p>下面只总结了一些入门级或常用的函数，全部的函数请参考：<a href="http://php.net/manual/zh/mysqli.summary.php" target="_blank" rel="noopener"><strong>MySQLi 扩展功能概述</strong></a>。</p>
+<h3 id="创建一个数据库连接"><a href="#创建一个数据库连接" class="headerlink" title="创建一个数据库连接"></a>创建一个数据库连接</h3><ul>
+<li>下面的 $mysqli 代表了 PHP 与数据库的一次连接，它有很多相关的方法或属性</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$mysqli = <span class="keyword">new</span> mysqli($host, $name, $password[, $dbname[, $port]]);</span><br><span class="line"><span class="comment">// $host 主机名，在主机名前面加上 'p:' 可建立持久化连接</span></span><br><span class="line"><span class="comment">// $user MySQL 的用户名</span></span><br><span class="line"><span class="comment">// $password 密码</span></span><br><span class="line"><span class="comment">// $dbname 默认连接的数据库名</span></span><br><span class="line"><span class="comment">// $port 主机端口</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>持久化连接背后的思想是客户端进程和数据库之间的连接可以通过一个客户端进程来保持重用， 而不是多次的创建和销毁。这降低了每次需要创建一个新连接的开销，未使用的连接被缓存起来并且准备随时被重用。</li>
+</ul>
+<h3 id="mysqli-的常用属性"><a href="#mysqli-的常用属性" class="headerlink" title="$mysqli 的常用属性"></a>$mysqli 的常用属性</h3><ul>
+<li><p><strong>$mysqli-&gt;client_info：</strong> 返回字符串类型的 Mysql 客户端版本信息</p>
+</li>
+<li><p><strong>$mysqli-&gt;server_info：</strong> 返回字符串类型的 Mysql 服务端版本的信息</p>
+</li>
+<li><p><strong>$mysqli-&gt;connect_error：</strong> 返回一个字符串，描述了最后一次连接调用的错误代码</p>
+</li>
+<li><p><strong>$mysqli-&gt;error：</strong> 返回字符串，描述了最近一次函数调用产生的错误代码</p>
+</li>
+<li><p><strong>$mysqli-&gt;host_info：</strong> 返回一个能够代表使用的连接类型的字符串</p>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">print_r($conn-&gt;host_info);  <span class="comment">// localhost via TCP/IP</span></span><br></pre></td></tr></table></figure>
+<h3 id="mysqli-的常用方法"><a href="#mysqli-的常用方法" class="headerlink" title="$mysqli 的常用方法"></a>$mysqli 的常用方法</h3><ul>
+<li><strong>字符集相关</strong><ul>
+<li><strong>bool $mysqli-&gt;set_charset($charset)：</strong> 设置数据库连接的默认字符集</li>
+<li><strong>string $mysqli-&gt;character_set_name()：</strong> 返回数据库连接的默认字符集</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">print_r($mysqli-&gt;character_set_name());  <span class="comment">// latin1</span></span><br><span class="line">$mysqli-&gt;set_charset(<span class="string">"utf8"</span>);</span><br><span class="line">print_r($mysqli-&gt;character_set_name());  <span class="comment">// utf8</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>单语句查询</strong></p>
+<ul>
+<li><strong>mixed $mysqli-&gt;query($sql)：</strong> 在数据库上执行一个查询（失败时返回 FALSE，通过 mysqli_query() 成功执行 SELECT, SHOW, DESCRIBE 或 EXPLAIN 查询会返回一个 <strong>mysqli_result 对象</strong>，其他查询则返回 TRUE）</li>
+</ul>
+</li>
+<li><p><strong>多语句查询</strong></p>
+<ul>
+<li><strong>bool $mysqli-&gt;multi_query($sql)：</strong> 在数据库上执行多语句查询，查询成功则返回 true，否则返回 false</li>
+<li><strong>$mysqli-&gt;store_result()：</strong> 返回多语句查询的一个<strong>结果集对象(mysqli_result 对象)</strong>（默认为第一个查询的结果集，然后通过 $mysqli-&gt;next_result() 方法返回第二个，以此类推）</li>
+<li><strong>bool $mysqli-&gt;more_results()：</strong> 检查一个多语句查询是否还有其他查询结果集</li>
+<li><strong>bool $mysqli-&gt;next_result()：</strong> 从 multi_query 中准备下一个结果集</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$sql = <span class="string">"SELECT * FROM lostthings WHERE category='钱包';</span></span><br><span class="line"><span class="string">SELECT title,description FROM lostthings WHERE lost_time LIKE '%03-04%';</span></span><br><span class="line"><span class="string">SELECT * FROM lostthings WHERE category='电子设备' ORDER BY lost_time DESC;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($mysqli-&gt;multi_query($sql)) &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> ($result = $mysqli-&gt;store_result()) &#123;</span><br><span class="line">            print_r($result-&gt;fetch_all());</span><br><span class="line"></span><br><span class="line">            $result-&gt;free();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ($mysqli-&gt;more_results()) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;&lt;br/&gt;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">while</span> ($mysqli-&gt;more_results() <span class="keyword">and</span> $mysqli-&gt;next_result());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>预处理语句：</strong> 预处理语句用于执行多个相同的 SQL 语句，并且执行效率更高<ul>
+<li><strong>mysqli_stmt $mysqli-&gt;prepare(string$query)：</strong> 准备一条预处理语句，成功返回一个状态对象，否则返回 false</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$sql = <span class="string">"INSERT INTO $table_name(name, age) VALUES(?, ?)"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($preSql = $conn-&gt;prepare($sql)) &#123;</span><br><span class="line">    $preSql-&gt;bind_param(<span class="string">"si"</span>, $name, $age);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"出错: "</span>. $conn-&gt;error);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置参数并执行</span></span><br><span class="line">$name = <span class="string">"张 三"</span>;</span><br><span class="line">$age = <span class="number">33</span>;</span><br><span class="line"><span class="keyword">if</span> ($preSql-&gt;execute()) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"execute success~&lt;br/&gt;"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"出错: "</span>. $conn-&gt;error.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$name = <span class="string">"李四"</span>;</span><br><span class="line">$age = <span class="number">44</span>;</span><br><span class="line">$preSql-&gt;execute();</span><br><span class="line"></span><br><span class="line">$name = <span class="string">"王五"</span>;</span><br><span class="line">$age = <span class="number">55</span>;</span><br><span class="line">$preSql-&gt;execute();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 解除绑定</span></span><br><span class="line">$preSql-&gt;close();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>事务处理</strong></p>
+<ul>
+<li><strong>bool $mysqli-&gt;autocommit(bool$mode)：</strong> 打开或关闭本次数据库连接的自动提交事务模式</li>
+<li><strong>bool $mysqli-&gt;rollback()：</strong> 回滚当前事务</li>
+<li><strong>bool $mysqli-&gt;commit()：</strong> 提交一个事务</li>
+</ul>
+</li>
+<li><p><strong>数据库相关</strong></p>
+<ul>
+<li><strong>bool $mysqli-&gt;select_db(string$dbname)：</strong> 选择用于数据库查询的默认数据库</li>
+<li><strong>bool $mysqli-&gt;close()：</strong> 关闭先前打开的数据库连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="mysqli-result-类"><a href="#mysqli-result-类" class="headerlink" title="mysqli_result 类"></a><a href="http://php.net/manual/zh/class.mysqli-result.php" target="_blank" rel="noopener">mysqli_result 类</a></h3><p><strong>一个从数据库查询中获取的结果集是 mysqli_result 类的一个实例。</strong></p>
+<ul>
+<li><strong>mixed $mysqli_result-&gt;fetch_all()：</strong> 抓取所有的结果行，并且以数值索引的关联数组返回</li>
+<li><strong>array $mysqli_result-&gt;fetch_assoc()：</strong> 以一个关联数组方式抓取一行结果</li>
+<li><strong>void $mysqli_result-&gt;free()：</strong> 释放与结果集相关联的内存</li>
+</ul>
+<h3 id="mysqli-stmt-类"><a href="#mysqli-stmt-类" class="headerlink" title="mysqli_stmt 类"></a><a href="http://php.net/manual/zh/class.mysqli-stmt.php" target="_blank" rel="noopener">mysqli_stmt 类</a></h3><p><strong>一个预处理语句是 mysqli_stmt 类的一个实例。</strong></p>
+<ul>
+<li><strong>bool mysqli_stmt-&gt;bind_result(string $types ,mixed &amp;$var1 [,mixed &amp;$… ])：</strong> 将变量作为参数绑定到 prepared 语句上</li>
+<li><strong>bool $mysqli_stmt-&gt;execute()：</strong> 执行一个 prepared 语句</li>
+<li><strong>bool $mysqli_stmt-&gt;close()：</strong> 关闭一个 prepared 语句</li>
+</ul>
+<h3 id="一个简单的模板"><a href="#一个简单的模板" class="headerlink" title="一个简单的模板"></a>一个简单的模板</h3><p>下面是 PHP 利用 mysqli 操作 MySQL 数据库的一个简单例子，可以被当作模板，方便以后直接套用。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$servername = <span class="string">"localhost"</span>;</span><br><span class="line">$username = <span class="string">"root"</span>;</span><br><span class="line">$password = <span class="string">""</span>;</span><br><span class="line">$db_name = <span class="string">"percy"</span>;</span><br><span class="line">$table_name = <span class="string">"lostthings"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建与数据库系统的连接</span></span><br><span class="line">$mysqli = <span class="keyword">new</span> mysqli($servername, $username, $password);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检测连接</span></span><br><span class="line"><span class="keyword">if</span> ($mysqli-&gt;connect_error) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"连接失败: "</span> . $mysqli-&gt;connect_error);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"连接数据库系统成功~&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择指定的数据库进行操作</span></span><br><span class="line"><span class="keyword">if</span> ($mysqli-&gt;select_db($db_name)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"数据库选择成功~&lt;br&gt;"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Error: "</span> . $mysqli-&gt;error.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置默认的客户端字符集</span></span><br><span class="line">$mysqli-&gt;set_charset(<span class="string">"utf8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行查询操作</span></span><br><span class="line">$sql = <span class="string">"SELECT title,description,lost_time FROM $table_name WHERE description LIKE '%王二狗%'"</span>;</span><br><span class="line">$result = $mysqli-&gt;query($sql);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($result-&gt;num_rows &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 输出每行数据</span></span><br><span class="line">    <span class="keyword">while</span> ($row = $result-&gt;fetch_assoc()) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;br&gt; title: "</span>. $row[<span class="string">"title"</span>]. <span class="string">" &lt;br&gt; description: "</span>. $row[<span class="string">"description"</span>].<span class="string">"&lt;br&gt; lost_time: "</span>.$row[<span class="string">"lost_time"</span>].<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"0 个结果"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 断开与数据库的连接</span></span><br><span class="line">$mysqli-&gt;close();</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>最后，安利一片文章：<a href="https://www.renfei.org/blog/build-dynamic-website-with-php-mysql.html" target="_blank" rel="noopener">简单 PHP + MySQL 数据库动态网站制作</a></p>
+</blockquote>
+<p>0.0</p>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/readnote-effective-javascript-68-ways/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            《编写高质量 JavaScript 代码的 68 个有效方法》读书笔记
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/css-layout/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              CSS 布局
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

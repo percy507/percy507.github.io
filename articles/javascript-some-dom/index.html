@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            JavaScript 一些 DOM 的知识点 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-some-dom" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2016-09-17T04:12:00.000Z" itemprop="datePublished">2016-09-17</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 一些 DOM 的知识点
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>本来准备把 DOM 的接口都总结一遍，但是我太天真了，DOM 下面的接口太庞大了，总结起来太费时了，所以只将自己平时没注意到的以及常用到的知识记下来了，更详细的 DOM 还是看 MDN 上的资料吧！</p>
+<h3 id="Node-接口"><a href="#Node-接口" class="headerlink" title="Node 接口"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node" target="_blank" rel="noopener">Node 接口</a></h3><ul>
+<li><p>Node 是一个接口，该接口由 DOM 中的所有的节点类型实现，即所有节点类型（比如最常见的 Element 类型）都继承自 Node 接口。</p>
+</li>
+<li><p>本来，节点类型总共有 12 种，但是随着 DOM4 的出现，有 5 种节点类型被弃用。（<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType#节点类型常量" target="_blank" rel="noopener">详情看这里</a>）</p>
+</li>
+<li><p><strong>Node 接口的很多属性（比如 childNodes 、lastChild、firstChild、nextSibling、previousSibling）针对的是所有的节点类型，并不只是元素节点。</strong></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.childNodes;</span><br></pre></td></tr></table></figure>
+<p>在浏览器控制端输入上面的代码，你会看到显示的结果不仅仅有元素节点，还可能有文本节点、注释节点等！</p>
+<ul>
+<li><strong>Node.appendChild(childNode)：</strong>将节点插入父节点的末尾处，返回这个插入的节点。如果插入的节点已经存在于父节点中，则将其移至父节点的末尾处</li>
+<li><strong>Node.removeChild(childNode)：</strong>从某个父节点中移除指定的子节点，并返回那个子节点</li>
+<li><strong>Node.replaceChild(newChild, oldChild)：</strong>用指定的节点替换当前节点的一个子节点，并返回被替换掉的节点</li>
+<li><strong>Node.cloneNode(deep)：</strong>返回调用该方法的节点的一个副本，如果 deep 为 true，采用深度克隆</li>
+<li><strong>Node.insertBefore(newChild,referenceChild)：</strong>在当前节点的某个子节点之前再插入一个子节点，返回插入的节点</li>
+<li><strong>Node.hasChildNodes()：</strong>检测一个节点下面是否包含一个或多个节点，若是，则返回 true。</li>
+<li><strong>Node.contains(otherNode)：</strong>判断传入的节点是否是调用该方法的节点的后代节点。</li>
+</ul>
+<h3 id="Document-类型（文档节点）"><a href="#Document-类型（文档节点）" class="headerlink" title="Document 类型（文档节点）"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document" target="_blank" rel="noopener">Document 类型</a>（文档节点）</h3><ul>
+<li><p>JavaScript 通过 Document 类型表示文档。document 对象是 window 对象的一个属性。</p>
+</li>
+<li><p>一些 document 对象的属性：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.documentElement; <span class="comment">// 指向 html 元素</span></span><br><span class="line"><span class="built_in">document</span>.head; <span class="comment">// 指向 head 元素（HTML 5 新增）</span></span><br><span class="line"><span class="built_in">document</span>.body; <span class="comment">// 指向 body 元素</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.characterSet; <span class="comment">// 取得文档使用的字符集</span></span><br><span class="line"><span class="built_in">document</span>.title; <span class="comment">// 取得或设置文档的标题</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.URL; <span class="comment">// 取得文档完整的 URL</span></span><br><span class="line"><span class="built_in">document</span>.domain; <span class="comment">// 取得文档所在的域名</span></span><br></pre></td></tr></table></figure>
+<h3 id="Element-类型（元素节点）"><a href="#Element-类型（元素节点）" class="headerlink" title="Element 类型（元素节点）"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element" target="_blank" rel="noopener">Element 类型</a>（元素节点）</h3><ul>
+<li><p>Element 类型节点的 nodeType 的值为 1，nodeName 的值为元素的标签名。</p>
+</li>
+<li><p><strong>有关 Element 类型节点的特性</strong></p>
+<ul>
+<li>获取或设置公认的特性一般直接使用 <code>对应的属性</code></li>
+<li>获取或设置自定义特性，使用 <code>getAttribute()</code>、<code>setAttribute()</code> 方法</li>
+<li>根据 HTML5 规范，自定义特性应该加上 <code>data-</code> 前缀以便验证</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML 代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"class1 class2"</span> <span class="attr">title</span>=<span class="string">"titleValue"</span>&gt;</span></span><br><span class="line">  Some text</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// js 代码，运行于浏览器控制端</span></span><br><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"container"</span>);</span><br><span class="line"></span><br><span class="line">ele.id; <span class="comment">// "container"</span></span><br><span class="line">ele[<span class="string">"id"</span>]; <span class="comment">// "container"</span></span><br><span class="line">ele.className; <span class="comment">// "class1 class2"</span></span><br><span class="line">ele.title; <span class="comment">// "titleValue"</span></span><br><span class="line"></span><br><span class="line">ele.className += <span class="string">" class3"</span>; <span class="comment">// 更改 class 的值</span></span><br><span class="line">ele.className; <span class="comment">// "class1 class2 class3"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 利用 setAttribute() 可以添加元素不存在的特性</span></span><br><span class="line">ele.setAttribute(<span class="string">"data-test"</span>, <span class="string">"just test"</span>); <span class="comment">// 添加自定义特性</span></span><br><span class="line">ele[<span class="string">"data-test"</span>]; <span class="comment">// undefined，不能直接访问自定义特性</span></span><br><span class="line">ele.getAttribute(<span class="string">"data-test"</span>); <span class="comment">// "just test"</span></span><br><span class="line"></span><br><span class="line">ele.removeAttribute(<span class="string">"class"</span>); <span class="comment">// 删除 class 特性</span></span><br><span class="line">ele.className; <span class="comment">// ""，一个空字符串</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>classList 属性</strong></li>
+</ul>
+<p>这个属性是 HTML5 中新增的用来操作元素类名的属性。它比 className 属性使用起来更方便。这个属性返回的是一个新集合类型 DOMTokenList 的实例，它也是一个类数组对象。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"class1 class2"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"container"</span>);</span><br><span class="line">ele.classList; <span class="comment">// ["class1", "class2"]</span></span><br><span class="line">ele.classList[<span class="number">0</span>]; <span class="comment">// "class1"    string 类型</span></span><br><span class="line">ele.classList.length; <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">ele.classList.add(<span class="string">"class3"</span>); <span class="comment">// 添加新类名</span></span><br><span class="line">ele.classList.remove(<span class="string">"class1"</span>); <span class="comment">// 删除类名</span></span><br><span class="line">ele.classList; <span class="comment">// ["class2", "class3"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// contains() 用来检测是否某个类名</span></span><br><span class="line">ele.classList.contains(<span class="string">"class1"</span>); <span class="comment">// false</span></span><br><span class="line">ele.classList.contains(<span class="string">"class2"</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// toggle() 用来交替删除添加某个类名</span></span><br><span class="line">ele.classList.toggle(<span class="string">"class4"</span>); <span class="comment">// 不存在，则添加</span></span><br><span class="line">ele.classList; <span class="comment">// ["class2", "class3", "class4"]</span></span><br><span class="line">ele.classList.toggle(<span class="string">"class4"</span>); <span class="comment">// 存在，则删除</span></span><br><span class="line">ele.classList; <span class="comment">// ["class2", "class3"]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>attributes 属性：</strong>返回一个 <code>NamedNodeMap</code> 类数组对象，它不能使用数组的方法。</li>
+</ul>
+<p>一般不使用这个属性，除非用来遍历元素的特性。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 继续上面的代码</span></span><br><span class="line">ele.attributes; <span class="comment">// NamedNodeMap &#123;0: id, 1: title, 2: data-test, length: 3&#125;</span></span><br><span class="line"></span><br><span class="line">ele.attributes[<span class="number">0</span>].nodeName; <span class="comment">// "id"</span></span><br><span class="line">ele.attributes[<span class="number">0</span>].nodeValue; <span class="comment">// "container"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>document.createElement()：</strong>创建新元素节点</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(div); <span class="comment">// &lt;div&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> div); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line">div.id = <span class="string">"container"</span>;</span><br><span class="line">div.className = <span class="string">"a b c"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(div); <span class="comment">// &lt;div id="container" class="a b c"&gt;&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>元素遍历</strong></li>
+</ul>
+<p>我们前面说过，某个元素节点的 childNodes 属性返回的集合可能会包含注释节点、文本节点等我们一般不会去操作的节点，我们想要的只是元素节点。所以我们可以用下面的方法来达到我们的目的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 原理：通过 if 条件语句过滤掉不是元素节点的其它节点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"container"</span>);</span><br><span class="line"><span class="keyword">var</span> len = ele.childNodes.length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (ele.childNodes[i].nodeType === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// 执行一些操作</span></span><br><span class="line">    ele.childNodes[i].style.color = <span class="string">"green"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很幸运，现在，W3C 已经帮我们搞出了一些新的属性来专门操作元素节点。</p>
+<blockquote>
+<ul>
+<li><strong>Element.children：</strong>返回一个该元素下所有子元素节点的集合</li>
+<li><strong>Element.firstElementChild：</strong>返回第一个子元素节点</li>
+<li><strong>Element.lastElementChild：</strong>返回最后一个子元素节点</li>
+<li><strong>Element.previousElementSibling：</strong>返回前一个同辈元素节点</li>
+<li><strong>Element.nextElementSibling：</strong>返回后一个同辈元素节点</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>插入标记</strong><ul>
+<li><strong>innerHTML：</strong>返回或更改调用它的节点的所有子节点（包括注释节点、文本节点等）</li>
+<li><strong>outerHTML：</strong>返回或更改调用它的元素以及这个元素所有的子节点</li>
+<li>上面两种属性返回的都是字符串</li>
+<li><strong>element.insertAdjacentHTML(position, text)</strong>：将指定的文本解析为 HTML 或 XML，然后将结果节点插入到指定的位置上<ul>
+<li>position 是相对于 element 元素的位置，并且它有四个值</li>
+<li><strong>beforebegin：</strong>在 element 元素之前插入一个紧邻的同辈元素</li>
+<li><strong>afterbegin：</strong>在 element 元素的第一个子节点之前插入</li>
+<li><strong>beforeend：</strong>在 element 元素的最后一个节点之后插入</li>
+<li><strong>afterend：</strong>在 element 元素之后插入一个紧邻的同辈元素</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Text-类型（文本节点）"><a href="#Text-类型（文本节点）" class="headerlink" title="Text 类型（文本节点）"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/Text" target="_blank" rel="noopener">Text 类型</a>（文本节点）</h3><ul>
+<li><p>Text 类型的节点（文本节点）的 nodeType 的值为 3。</p>
+</li>
+<li><p><strong>document.createTextNode(“文本内容”)：</strong>创建新文本节点</p>
+</li>
+<li><p><strong>规范化文本节点</strong></p>
+</li>
+</ul>
+<p>DOM 文档中存在相邻的文本节点很容易导致混乱，因为分不清哪个文本节点表示哪个字符串。所以在 Node 接口中定义了一个 <code>normalize()</code> 方法，用来将当前节点和它的后代节点规范化。<strong>在一个”规范化”后的 DOM 树中，不存在一个空的文本节点，或者两个相邻的文本节点。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">"Hello "</span>);</span><br><span class="line">ele.appendChild(textNode);</span><br><span class="line"><span class="keyword">var</span> anotherTextNode = <span class="built_in">document</span>.createTextNode(<span class="string">"world!"</span>);</span><br><span class="line">ele.appendChild(anotherTextNode);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(ele);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ele.childNodes.length); <span class="comment">// 2</span></span><br><span class="line">ele.normalize(); <span class="comment">// 规范化文本节点</span></span><br><span class="line"><span class="built_in">console</span>.log(ele.childNodes.length); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>innerText 属性：</strong>取得或更改操作元素包含的所有文本内容</li>
+</ul>
+<h3 id="Comment-类型（注释节点）"><a href="#Comment-类型（注释节点）" class="headerlink" title="Comment 类型（注释节点）"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Comment" target="_blank" rel="noopener">Comment 类型</a>（注释节点）</h3><p>一般不会去操作注释节点！</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span><span class="comment">&lt;!-- A comment --&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 注释节点是 div 元素的一个子节点 --&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>document.createComment()：</strong>创建一个注释节点</li>
+</ul>
+<h3 id="选择符-API"><a href="#选择符-API" class="headerlink" title="选择符 API"></a>选择符 API</h3><p><a href="https://www.w3.org/TR/selectors-api/" target="_blank" rel="noopener">Selector API</a> 是由 W3C 发起制定的一个标准，致力于让浏览器原生 JavaScript 支持 CSS 查询。</p>
+<ul>
+<li><a href="https://www.w3.org/TR/selectors-api/" target="_blank" rel="noopener">Selectors API Level 1</a> 的核心是两个方法：<code>querySelector()</code> 和 <code>querySelectorAll()</code>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// selectors 是一个 CSS 选择器字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 从整个文档开始查找</span></span><br><span class="line">Document.querySelector(selectors);</span><br><span class="line">Document.querySelectorAll(selectors);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从 Element 元素的后代元素开始查找</span></span><br><span class="line">Element.querySelector(selectors);</span><br><span class="line">Element.querySelectorAll(selectors);</span><br></pre></td></tr></table></figure>
+<h3 id="文档模式（document-mode）"><a href="#文档模式（document-mode）" class="headerlink" title="文档模式（document mode）"></a>文档模式（document mode）</h3><ul>
+<li>Doctype 是 Document Type (文档类型)的简写，用来说明你用的 XHTML 或者 HTML 是什么版本。它的作用是告知浏览器的解析器，用什么文档类型规范来解析这个文档。</li>
+<li><p>文档模式用于指定 IE 的页面排版引擎（Trident）以哪个版本的方式来解析并渲染网页代码</p>
+</li>
+<li><p><strong>document.compatMode：</strong>检测当前文档的渲染模式</p>
+<ul>
+<li>若值为 <strong>BackCompat</strong>，则为混杂模式</li>
+<li>若值为 <strong>CSS1Compat，</strong>则为标准规范模式</li>
+</ul>
+</li>
+<li><p><strong>document.documentMode：</strong>检测 IE 浏览器是在哪个浏览器模式下（这个属性只适用于 IE 浏览器）</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>参考：</strong><a href="https://github.com/Monkey626/front-end/issues/27" target="_blank" rel="noopener">文档解析——Doctype、严格&amp;混杂模式、浏览器&amp;文档模式</a></p>
+</blockquote>
+<h3 id="DOM2-样式"><a href="#DOM2-样式" class="headerlink" title="DOM2 样式"></a>DOM2 样式</h3><ul>
+<li><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/style" target="_blank" rel="noopener">HTMLElement.style</a>：</strong>返回一个 CSSStyleDeclaration 对象，表示元素的内嵌 style 属性。</li>
+</ul>
+<p><strong>这个属性的返回值只包含了在元素内嵌 style 属性上声明的的 CSS 属性，而不包括来自其他地方声明的样式（比如 head 部分声明的 CSS 属性）。</strong></p>
+<p>由于 style 属性的优先级和通过 style 设置元素的内联样式是一样的，并且在 css 层级样式中拥有最高优先级，因此在为特定的元素设置样式时很有用。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 为元素添加 2 个内嵌的 CSS 规则</span></span><br><span class="line"><span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"container"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法一</span></span><br><span class="line">ele.setAttribute(<span class="string">"style"</span>, <span class="string">"font-size:2em;color:green"</span>);</span><br><span class="line"><span class="comment">// 方法二</span></span><br><span class="line">ele.style.cssText = <span class="string">"font-size:2em;color:green"</span>;</span><br><span class="line"><span class="comment">// 方法三</span></span><br><span class="line"><span class="keyword">var</span> sty = ele.style;</span><br><span class="line">sty.fontSize = <span class="string">"2em"</span>;</span><br><span class="line">sty.color = <span class="string">"green"</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-ElementCSSInlineStyle" target="_blank" rel="noopener">DOM Level 2 Style: ElementCSSInlineStyle.style()</a></p>
+</blockquote>
+<ul>
+<li><strong>要获取一个元素的所有 CSS 属性，你应该使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle" target="_blank" rel="noopener">window.getComputedStyle()</a></strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 单纯地调用这个方法，会和上面的 style 属性一样返回一个 CSSStyleDeclaration 对象</span></span><br><span class="line"><span class="built_in">window</span>.getComputedStyle(ele);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 该方法返回经过叠加计算后的元素的实际样式</span></span><br><span class="line"><span class="built_in">window</span>.getComputedStyle(ele).fontSize;</span><br><span class="line"><span class="built_in">window</span>.getComputedStyle(ele).color;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>document.styleSheets：</strong>只读，返回一个由 StyleSheet 对象组成的 StyleSheetList，每个 StyleSheet 对象都是文档中链接或嵌入的样式表（<strong>即内联样式和外联样式，不包括嵌在元素里的样式</strong>）。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取当前文档中样式表的数量</span></span><br><span class="line"><span class="built_in">document</span>.styleSheets.length;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 禁用第一个样式表</span></span><br><span class="line"><span class="built_in">document</span>.styleSheets[<span class="number">0</span>].disabled = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="DOM2-遍历"><a href="#DOM2-遍历" class="headerlink" title="DOM2 遍历"></a>DOM2 遍历</h3><ul>
+<li><p>DOM2 中定义了两个用于辅助完成顺序遍历 DOM 结构的类型：<strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator" target="_blank" rel="noopener">NodeIterator</a></strong> 和 <strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/TreeWalker" target="_blank" rel="noopener">TreeWalker</a></strong>。</p>
+</li>
+<li><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createNodeIterator" target="_blank" rel="noopener">document.createNodeIterator()</a>：</strong>返回一个 NodeIterator 对象</p>
+</li>
+<li><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createTreeWalker" target="_blank" rel="noopener">document.createTreeWalker()</a>：</strong>返回一个 TreeWalker 对象</p>
+</li>
+</ul>
+<p>这里只简单提一下这两个方法，因为暂时还没用过，所以先不展开了，以后用了再补。</p>
+<h3 id="DOM2-范围（range）"><a href="#DOM2-范围（range）" class="headerlink" title="DOM2 范围（range）"></a>DOM2 范围（range）</h3><ul>
+<li><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Range" target="_blank" rel="noopener">Range 对象</a></strong> 表示一个包含节点和部分文本节点的文档片段</p>
+</li>
+<li><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createRange" target="_blank" rel="noopener">document.createRange()</a>：</strong>返回一个 Range 对象</p>
+</li>
+</ul>
+<p>这个也是简单提一下，以后用到了再补。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【书】《JavaScript 高级程序设计（第三版）》</li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/javascript-event/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            JavaScript DOM 事件初探
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/javascript-bom/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              JavaScript 一些有关 BOM 的笔记
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            JavaScript 变量声明提升 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-hoisting" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2016-08-29T04:12:00.000Z" itemprop="datePublished">2016-08-29</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 变量声明提升
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="一个小例子"><a href="#一个小例子" class="headerlink" title="一个小例子"></a>一个小例子</h3><p>先来看个例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>为什么是这样的结果呢？这是因为 JavaScript 代码在执行之前会有一个 <code>预解析</code> 阶段，在这个阶段，解释器会将所有 <code>变量声明</code> 和 <code>函数声明</code> 提升到他们各自的作用域顶部。</p>
+<p><strong>注：变量声明提升只是预解析阶段的一部分行为！</strong></p>
+<blockquote>
+<p><strong>如果变量在函数体内声明，它的作用域是函数作用域（function-level scope）。否则，它就是全局作用域。</strong></p>
+</blockquote>
+<p>继续上面的例子，因为这个预解析阶段，上面的代码会被解释器预解析成下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h3><blockquote>
+<p>在 ES6 之前，通常通过 <code>var</code> 来声明一个变量，但是 ES6 发布后，又新添了 2 个关键字来声明一个变量：<code>let</code> 和 <code>const</code>。</p>
+</blockquote>
+<ul>
+<li><code>var</code> 声明了一个变量，这个变量的作用域是当前执行位置的上下文：一个函数的内部（声明在函数内）或者全局（声明在函数外）</li>
+<li><code>let</code> 声明了一个块级域的局部变量，并且它声明的变量只在所在的代码块内有效</li>
+<li><code>const</code> 声明了一个只读的块级域的常量，并且它声明的常量也只在所在的代码块内有效</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 代码块</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">const</span> c = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line">  <span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br><span class="line">  <span class="built_in">console</span>.log(c); <span class="comment">// 3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 报错，ReferenceError: b is not defined(…)</span></span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 未执行， 因为上面语句出错，所以这条语句不再执行，如果上面的语句不报错，那么这里就会报错</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">const</span> c = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line">  <span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br><span class="line">  <span class="built_in">console</span>.log(c); <span class="comment">// 3</span></span><br><span class="line">&#125;)(); <span class="comment">// 为了方便，这里使用了自执行函数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 报错，ReferenceError: a is not defined(…)</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 未执行</span></span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 未执行</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>let</code> <code>const</code> 不像 <code>var</code> 那样会发生“变量提升”现象。</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 报错，ReferenceError: a is not defined</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 待执行</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 报错，ReferenceError: a is not defined</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 待执行</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
+</blockquote>
+<h3 id="变量声明提升（Variable-hoisting）"><a href="#变量声明提升（Variable-hoisting）" class="headerlink" title="变量声明提升（Variable hoisting）"></a>变量声明提升（Variable hoisting）</h3><blockquote>
+<p>提升（hoisting）影响了变量的生命周期，一个变量的生命周期包含 3 个阶段：</p>
+<blockquote>
+<ul>
+<li><strong>声明</strong> - 创建一个新变量，例如 var myValue</li>
+<li><strong>初始化</strong> - 用一个值初始化变量 例如 myValue = 150</li>
+<li><strong>使用</strong> - 使用变量的值 例如 alert(myValue)</li>
+</ul>
+</blockquote>
+<p>当代码按照这三个步骤的顺序执行的时候，一切看起来都很简单，自然。</p>
+</blockquote>
+<ul>
+<li><strong>变量提升的部分只是变量的声明，赋值语句和可执行的代码逻辑还保持在原地不动</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">111</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">222</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 222</span></span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 111</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// --------------</span></span><br><span class="line"><span class="comment">//变量提升后</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line">  a = <span class="number">222</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 222</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line">a = <span class="number">111</span>;</span><br><span class="line">fun();</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 111</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在基本的语句（或者说代码块）中</strong>（比如：<code>if语句</code>、<code>for语句</code>、<code>while语句</code>、<code>switch语句</code>、<code>for...in语句</code>等），<strong>不存在变量声明提升</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"aaa"</span>;</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// aaa</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"bbb"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// bbb</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"aaa"</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// aaa</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"bbb"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// bbb</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"aaa"</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> x <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// aaa</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"bbb"</span>;</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// bbb</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数声明提升（Function-Hoisting）"><a href="#函数声明提升（Function-Hoisting）" class="headerlink" title="函数声明提升（Function Hoisting）"></a>函数声明提升（Function Hoisting）</h3><blockquote>
+<p><strong>函数声明（function declarations） 和 函数表达式（function expressions）在语法上其实是等价的，但是有一点不同，就是 JavaScript 引擎 加载他们的方式不一样。简单讲，就是函数声明会被提升到其作用域顶部，而函数表达式不会。</strong></p>
+<p><a href="http://stackoverflow.com/questions/336859/javascript-function-declaration-syntax-var-fn-function-vs-function-fn" target="_blank" rel="noopener">更多细节</a></p>
+</blockquote>
+<ul>
+<li><strong>函数声明会提升，但是函数表达式的函数体就不会提升了</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fun(); <span class="comment">// hello</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --------------</span></span><br><span class="line"><span class="comment">// 提升后</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(); <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fun(); <span class="comment">// 报错，TypeError: fun is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --------------</span></span><br><span class="line"><span class="comment">// 提升后</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun;</span><br><span class="line"></span><br><span class="line">fun(); <span class="comment">// 报错，TypeError: fun is not a function</span></span><br><span class="line"></span><br><span class="line">fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>当函数表达式的函数不再是匿名函数，而是一个有函数名的函数时，会发生什么？</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">foo(); <span class="comment">// 报错，TypeError "foo is not a function"</span></span><br><span class="line">bar(); <span class="comment">// 有效的</span></span><br><span class="line">baz(); <span class="comment">// 报错，TypeError "baz is not a function"</span></span><br><span class="line">spam(); <span class="comment">// 报错，ReferenceError "spam is not defined"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// anonymous function expression ('foo' gets hoisted)</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function declaration ('bar' and the function body get hoisted)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// named function expression (only 'baz' gets hoisted)</span></span><br><span class="line"><span class="keyword">var</span> baz = <span class="function"><span class="keyword">function</span> <span class="title">spam</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// 有效的</span></span><br><span class="line">bar(); <span class="comment">// 有效的</span></span><br><span class="line">baz(); <span class="comment">// 有效的</span></span><br><span class="line">spam(); <span class="comment">// 报错，ReferenceError "spam is not defined"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>如果一个变量和函数同名，函数声明优先于变量声明</strong>（毕竟函数是 JavaScript 的第一等公民），并且与函数名同名的变量声明将会被忽略。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fun(); <span class="comment">// 输出的结果为111</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;;</span><br><span class="line">fun(); <span class="comment">// 输出的结果为222</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// --------------</span></span><br><span class="line"><span class="comment">// 提升后</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line">&#125;</span><br><span class="line">fun(); <span class="comment">// 输出的结果为111</span></span><br><span class="line">fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 重新定义了变量 fun</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">222</span>);</span><br><span class="line">&#125;;</span><br><span class="line">fun(); <span class="comment">// 输出的结果为222</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果定义了相同的函数变量声明，后定义的声明会覆盖掉先前的声明，看如下代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">foo(); <span class="comment">//输出3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><ul>
+<li>alert(foo) 的值是多少？</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!foo) &#123;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  alert(foo); <span class="comment">// ?</span></span><br><span class="line">&#125;</span><br><span class="line">bar();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>alert(a) 的值是多少？</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">b();</span><br><span class="line">alert(a); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+<p>第二题的解析请看 <a href="http://stackoverflow.com/questions/7506844/javascript-function-scoping-and-hoisting" target="_blank" rel="noopener"><strong>这里</strong></a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【文章】<a href="http://adripofjavascript.com/blog/drips/variable-and-function-hoisting" target="_blank" rel="noopener">Variable and Function Hoisting in JavaScript</a></li>
+<li>【文章】<a href="https://rainsoft.io/javascript-hoisting-in-details/" target="_blank" rel="noopener">JavaScript variables hoisting in details</a>（<a href="http://www.zcfy.cc/article/465" target="_blank" rel="noopener">中文版链接</a>）</li>
+<li>【文章】<a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html" target="_blank" rel="noopener">JavaScript Scoping and Hoisting</a>（推荐）</li>
+<li>【文章】<a href="https://segmentfault.com/a/1190000003913151" target="_blank" rel="noopener">JavaScript 变量提升</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/javascript-primitive-wrapper-type/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            JavaScript 你不知道的基本包装类型
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/reship-the-short-way-to-learn-programming/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              学习程序设计的“捷径”——抓大放小，要事为先
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

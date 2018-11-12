@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Python 详谈数据类型 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-python-data-type" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-21T04:12:00.000Z" itemprop="datePublished">2017-03-21</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Python 详谈数据类型
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>首先感谢廖雪峰老师的 Python 教程，因为文章是结合廖雪峰老师的 Python 教程和 Python 官方文档写出来的。</p>
+<p>下面只列出了常见的数据类型，全部数据类型<a href="https://docs.python.org/3/library/stdtypes.html" target="_blank" rel="noopener">参看官方文档</a>。</p>
+<h3 id="Boolean-Types"><a href="#Boolean-Types" class="headerlink" title="Boolean Types"></a>Boolean Types</h3><ul>
+<li><code>True</code></li>
+<li><code>False</code></li>
+<li>可转换为 False 的值有：<code>None</code>、<code>0</code>、<code>0.0</code>、<code>0j</code>、<code>&#39;&#39;</code>、<code>()</code>、<code>[]</code>、<code>{}</code> 等。</li>
+</ul>
+<h3 id="Numeric-Types"><a href="#Numeric-Types" class="headerlink" title="Numeric Types"></a>Numeric Types</h3><ul>
+<li><code>int</code>（整数）</li>
+<li><code>float</code>（小数）</li>
+<li><code>complex</code>（复数）</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="number">0b11101</span>   <span class="comment"># 二进制书写方式</span></span><br><span class="line"><span class="number">0o123</span>     <span class="comment"># 八进制书写方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将一个整数转为二进制字符串</span></span><br><span class="line">bin(5)    =&gt; '0b101'</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 得到商和余数</span></span><br><span class="line">divmod(x,y)      =&gt; (x//y, x%y)</span><br><span class="line">divmod(5.2, 2)   =&gt; (2.0, 1.2000000000000002)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置小数的位数，满五进一</span></span><br><span class="line">round(x[, n])</span><br><span class="line">round(1.235, 2)  =&gt; 1.24</span><br><span class="line">round(2.675, 2)  =&gt; 2.67 （注意有例外）</span><br></pre></td></tr></table></figure>
+<h3 id="Sequence-Types"><a href="#Sequence-Types" class="headerlink" title="Sequence Types"></a>Sequence Types</h3><ul>
+<li><strong>list、tuple、range</strong></li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">###### 下面是一些序列通用的操作方法（连接和重复不适用于 range）</span></span><br><span class="line"></span><br><span class="line">list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计某个元素出现的次数</span></span><br><span class="line">list.count(1) =&gt; 4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算序列长度</span></span><br><span class="line">len(list)     =&gt; 8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接两个同类型的序列</span></span><br><span class="line">(12,'ad') + (True,'ha') =&gt; (12, 'ad', True, 'ha')</span><br><span class="line">[1,2] + ['aa','bb']     =&gt; [1, 2, 'aa', 'bb']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重复序列，s * n，重复最初的 s，n 次，并添加到 s 尾部</span></span><br><span class="line"><span class="comment"># 注意第二个例子，重复后添加的对象和原对象的地址一样</span></span><br><span class="line">(1,'a') * 3 =&gt; (1, 'a', 1, 'a', 1, 'a')</span><br><span class="line">list = [[]] * <span class="number">3</span></span><br><span class="line">print(list)                =&gt; [[], [], []]</span><br><span class="line">print(list[0] is list[1])  =&gt; True</span><br><span class="line">list[<span class="number">0</span>].append(<span class="string">'ha'</span>)</span><br><span class="line">print(list)                =&gt; [['ha'], ['ha'], ['ha']]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>list</code>（列表）：有序列表，可变，类似数组</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># list 常见的操作方法</span></span><br><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'a'</span>,<span class="string">'bb'</span>,<span class="string">'ccc'</span>,<span class="string">'ddd'</span>,<span class="string">'4'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换指定元素的值</span></span><br><span class="line">l[<span class="number">0</span>] = <span class="string">'first'</span></span><br><span class="line">l =&gt; ['first', 2, 3, 'a', 'bb', 'ccc', 'ddd', '4']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换指定区间 [1,4) 的元素</span></span><br><span class="line">l[<span class="number">1</span>:<span class="number">4</span>] = [<span class="string">'二'</span>,<span class="string">'哈'</span>]</span><br><span class="line">l =&gt; ['first', '二', '哈', 'bb', 'ccc', 'ddd', '4']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除索引为 4 的元素</span></span><br><span class="line"><span class="keyword">del</span> l[<span class="number">4</span>]</span><br><span class="line">l =&gt; ['first', '二', '哈', 'bb', 'ddd', '4']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除索引在 [2,4) 之间的元素</span></span><br><span class="line"><span class="keyword">del</span> l[<span class="number">2</span>:<span class="number">4</span>]</span><br><span class="line">l =&gt; ['first', '二', 'ddd', '4']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为列表尾部添加元素</span></span><br><span class="line">l.append(<span class="string">'last'</span>)</span><br><span class="line">l =&gt; ['first', '二', 'ddd', '4', 'last']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定列表添加到当前列表的尾部</span></span><br><span class="line">l1 = [<span class="number">1</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = [<span class="string">'as'</span>,<span class="keyword">True</span>]</span><br><span class="line">l1.extend(l2)</span><br><span class="line">l1 =&gt; [1, 'a', 'as', True]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空列表的所有元素（类似 del l[:]）</span></span><br><span class="line">l.clear()</span><br><span class="line">l =&gt; []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新赋值</span></span><br><span class="line">l = [<span class="string">'first'</span>, <span class="string">'二'</span>, <span class="string">'ddd'</span>, <span class="string">'4'</span>, <span class="string">'last'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回一个 l 的拷贝对象（类似 l[:]）</span></span><br><span class="line">l.copy()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向指定位置插入元素x，其他元素后移</span></span><br><span class="line"><span class="comment"># l.insert(index, x)</span></span><br><span class="line">l.insert(<span class="number">1</span>,<span class="string">'second'</span>)</span><br><span class="line">l = [<span class="string">'first'</span>, <span class="string">'second'</span>, <span class="string">'二'</span>, <span class="string">'ddd'</span>, <span class="string">'4'</span>, <span class="string">'last'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除指定位置的元素，默认去除最后一个</span></span><br><span class="line">l.pop([index])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 反转 list 中的元素</span></span><br><span class="line">l.reverse()</span><br><span class="line">l =&gt; ['last', '4', 'ddd', '二', 'second', 'first']</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 list 变为 索引-元素 对</span></span><br><span class="line">l = [<span class="string">'aaa'</span>,<span class="number">123</span>,<span class="keyword">True</span>]</span><br><span class="line">l = list(enumerate(l))</span><br><span class="line">l =&gt; [(0, 'aaa'), (1, 123), (2, True)]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tuple</code>（元组）：有序列表，一旦初始化，就不可改变</li>
+</ul>
+<p>在某些情况下，tuple 的括号可以省略。tuple 对于赋值语句有特殊的处理。</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x, y = <span class="number">1</span>, <span class="number">2</span>   <span class="comment"># 等价于 x = 1 , y = 2</span></span><br><span class="line">x, y = y, x   <span class="comment"># 交换了 x 于 y 的值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>range</code>（序列）：利用它的方法（range(start, stop, step)），可生成一个整数序列</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">list(range(5))       =&gt; [0, 1, 2, 3, 4]</span><br><span class="line">list(range(2,6))     =&gt; [2, 3, 4, 5]</span><br><span class="line">list(range(2,18,3))  =&gt; [2, 5, 8, 11, 14, 17]</span><br></pre></td></tr></table></figure>
+<h3 id="Text-Sequence-Type"><a href="#Text-Sequence-Type" class="headerlink" title="Text Sequence Type"></a>Text Sequence Type</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 多行字符串</span></span><br><span class="line">print(<span class="string">'''line1</span></span><br><span class="line"><span class="string">line2</span></span><br><span class="line"><span class="string">line3</span></span><br><span class="line"><span class="string">'''</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串内的转义符号不转义（字符串前添加 r）</span></span><br><span class="line">a = <span class="string">'hello\nworld'</span></span><br><span class="line">b = <span class="string">r'hello\nworld'</span></span><br><span class="line">print(a) =&gt; 'hello\nworld'</span><br><span class="line">print(b) =&gt; 'hello\\nworld'</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 重复字符串</span></span><br><span class="line">'hola!' * 3                =&gt; 'hola!hola!hola!'</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接字符串</span></span><br><span class="line">'hello' + ' world'         =&gt; 'hello world'</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以指定的方式连接字符串 str.join(iterable)</span></span><br><span class="line">l = [<span class="string">'abc'</span>,<span class="string">'def'</span>,<span class="string">'123'</span>]</span><br><span class="line">s = <span class="string">'###'</span></span><br><span class="line">s.join(l)                  =&gt; 'abc###def###123'</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计某个字符出现的次数</span></span><br><span class="line">'hello world'.count('l')   =&gt; 3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去掉字符串两边空格</span></span><br><span class="line">'  what is it  '.strip()   =&gt; 'what is it'</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断某个或某些字符是否在字符串内</span></span><br><span class="line">'你hao' in 'hello,你hao'   =&gt; True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切割字符串转为列表</span></span><br><span class="line">str = <span class="string">'1.2.asd'</span></span><br><span class="line">str.split('.')   =&gt; ['1', '2', 'asd']</span><br><span class="line">list(str)        =&gt; ['1', '.', '2', '.', 'a', 's', 'd']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分行转为列表</span></span><br><span class="line">s = <span class="string">'line 1\nline 2\nline 3'</span></span><br><span class="line">s.splitlines()    =&gt; ['line 1', 'line 2', 'line 3']</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断字符串是否以指定前缀、后缀结尾</span></span><br><span class="line">s = <span class="string">'es6-destructuring-assignment.md'</span></span><br><span class="line">s.startswith('es6')   =&gt; True</span><br><span class="line">s.endswith('.md')     =&gt; True</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换字符串 str.replace(old, new[, max])（max 指定替换次数，默认替换所有）</span></span><br><span class="line">s = <span class="string">'line 1\nline 2\nline 3'</span></span><br><span class="line">s.replace('\n','@@@') =&gt; 'line 1@@@line 2@@@line 3'</span><br><span class="line"></span><br><span class="line"><span class="comment"># 大小写转换</span></span><br><span class="line">s = <span class="string">'Hello World'</span></span><br><span class="line">s.lower()     =&gt; 'hello world'</span><br><span class="line">s.upper()     =&gt; 'HELLO WORLD'</span><br><span class="line">s.swapcase()  =&gt; 'hELLO wORLD'</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式化字符串</span></span><br><span class="line">s = <span class="string">'python Is great, is it? i always think so'</span></span><br><span class="line">      <span class="comment"># 首字母大写，其他小写</span></span><br><span class="line">s.capitalize() =&gt; 'Python is great, is it? i always think so'</span><br><span class="line">      <span class="comment"># 首字母都大写</span></span><br><span class="line">s.title()      =&gt; 'Python Is Great, Is It? I Always Think So'</span><br></pre></td></tr></table></figure>
+<h3 id="Binary-Sequence-Types"><a href="#Binary-Sequence-Types" class="headerlink" title="Binary Sequence Types"></a>Binary Sequence Types</h3><ul>
+<li><code>bytes</code>：字节流序列，类似于字符串 str，都是不可变的序列</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个 bytes</span></span><br><span class="line">a = <span class="string">b'asdbf'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 字符串转 bytes</span></span><br><span class="line">s = <span class="string">'hello 波比'</span></span><br><span class="line">bytes(s, encoding='utf-8') =&gt; b'hello \xe6\xb3\xa2\xe6\xaf\x94'</span><br><span class="line">b = s.encode()             =&gt; b'hello \xe6\xb3\xa2\xe6\xaf\x94'</span><br><span class="line"></span><br><span class="line"><span class="comment"># bytes 转字符串</span></span><br><span class="line">b.decode()                 =&gt; 'hello 波比'</span><br></pre></td></tr></table></figure>
+<p><strong>由于 bytes 是一种类似字符串的序列结构，所以它有很多操作方法类似于字符串。</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">b'py' in b'i love python'  =&gt; True</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>bytearray</code>：可以说它也类似于 bytes，也是一个字节流序列，<strong>但它是可变的</strong>，它也有 list 的 append()、extend() 方法。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">s = <span class="string">'hello 哈哈'</span></span><br><span class="line">barr = bytearray(s,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">barr =&gt; bytearray(b'hello \xe5\x93\x88\xe5\x93\x88')</span><br><span class="line"></span><br><span class="line">barr.append(<span class="number">5</span>)</span><br><span class="line">barr =&gt; bytearray(b'hello \xe5\x93\x88\xe5\x93\x88\x05')</span><br><span class="line">barr.append(299)  =&gt; 报错，byte must be in range(0, 256)</span><br></pre></td></tr></table></figure>
+<p><strong>bytes 与 bytearray 的主要区别在于可变与不可变。</strong></p>
+<p>举个例子说明他们的用途：比如现在要从服务器接收一个很大的数据，服务器那边是断断续续地把数据发送过来的，所以客户端这边需要写一个循环进行接收数据，使用 bytes 接收数据的话，每次接收到新的数据，就需要对盛放已经接收的数据的变量进行重新赋值，而使用 bytearray 的话，直接将新接收的数据添加到已经接收的数据的末尾即可。<strong>情况就是这样，使用 bytearray 可以避免每次赋值产生的开销。</strong></p>
+<blockquote>
+<p>参考文章：<a href="http://ze.phyr.us/bytearray/" target="_blank" rel="noopener"><strong>The difference between bytearray and bytes in Python</strong></a></p>
+</blockquote>
+<ul>
+<li><code>memoryview</code>：。。。先空着</li>
+</ul>
+<h3 id="Set-Types"><a href="#Set-Types" class="headerlink" title="Set Types"></a>Set Types</h3><ul>
+<li><code>set</code>：无序集合，是一个键的集合，可变，无重复键</li>
+</ul>
+<blockquote>
+<p>A set object is an unordered collection of distinct hashable objects. Common uses include membership testing, removing duplicates from a sequence, and computing mathematical operations such as intersection, union, difference, and symmetric difference.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一个 set</span></span><br><span class="line">s = &#123;<span class="string">'a'</span>,<span class="number">12</span>,<span class="string">'halo'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加或删除元素</span></span><br><span class="line">s.add(<span class="string">'德玛'</span>)</span><br><span class="line">s =&gt; &#123;'a', 12, '德玛', 'halo'&#125;</span><br><span class="line">s.remove(<span class="string">'halo'</span>)</span><br><span class="line">s =&gt; &#123;'a', 12, '德玛'&#125;</span><br><span class="line">s.clear()</span><br><span class="line">s =&gt; set()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>frozenset</code>：类似于 set，但是它是不可变，即初始化后就不可再变</li>
+</ul>
+<h3 id="Mapping-Types"><a href="#Mapping-Types" class="headerlink" title="Mapping Types"></a>Mapping Types</h3><ul>
+<li><code>dict</code>：使用键-值对（key-value）存储，类似 JavaScript 中的对象，只不过 dict 的键要加引号</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">d = &#123;<span class="string">'name'</span>:<span class="string">'percy'</span>,<span class="string">'age'</span>:<span class="number">22</span>,&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> d:                <span class="comment"># 迭代键</span></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> d.values():     <span class="comment"># 迭代值</span></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> d.items():  <span class="comment"># 迭代键值</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">m1 = &#123;<span class="string">"name"</span>:<span class="string">"森rcy"</span>,<span class="string">"age"</span>:<span class="number">22</span>,<span class="string">"skills"</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算字典元素的个数，即键的个数</span></span><br><span class="line">len(m1)  =&gt; 3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字典以字符串的形式表示</span></span><br><span class="line">str(m1)  =&gt; "&#123;'age': 22, 'skills': [1, 2, 3], 'name': '森rcy'&#125;"</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除指定键的键值对</span></span><br><span class="line">m1.pop(<span class="string">'name'</span>)</span><br><span class="line">m1       =&gt; &#123;'age': 22, 'skills': [1, 2, 3]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向字典中插入新的键值对，并且插入相同的键，不会覆盖原始值</span></span><br><span class="line">m1.setdefault(<span class="string">'who'</span>)</span><br><span class="line">m1       =&gt; &#123;'age': 22, 'skills': [1, 2, 3], 'who': None&#125;</span><br><span class="line">m1.setdefault(<span class="string">'who'</span>, <span class="string">'pppercy'</span>)</span><br><span class="line">m1       =&gt; &#123;'age': 22, 'skills': [1, 2, 3], 'who': None&#125;</span><br><span class="line">m1.pop(<span class="string">'who'</span>)</span><br><span class="line">m1.setdefault(<span class="string">'who'</span>, <span class="string">'pppercy'</span>)</span><br><span class="line">m1       =&gt; &#123;'age': 22, 'skills': [1, 2, 3], 'who': 'pppercy'&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># dict1.update(dict2)</span></span><br><span class="line"><span class="comment"># 将字典dict2的内容更新到dict1，重复的键值对会进行覆盖</span></span><br><span class="line">m2 = &#123;<span class="string">'age'</span>:<span class="number">1000</span>,<span class="string">'skills'</span>:[<span class="string">'html'</span>,<span class="string">'js'</span>],<span class="string">'new'</span>:<span class="string">'newvalue'</span>&#125;</span><br><span class="line">m1.update(m2)</span><br><span class="line">m1       =&gt; &#123;'age': 1000, 'skills': ['html', 'js'], 'who': 'pppercy', 'new': 'newvalue'&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空字典</span></span><br><span class="line">m1.clear()</span><br><span class="line">m1       =&gt; &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Iterator-Types（迭代器类型）"><a href="#Iterator-Types（迭代器类型）" class="headerlink" title="Iterator Types（迭代器类型）"></a>Iterator Types（迭代器类型）</h3><ul>
+<li><strong>把可以直接作用于 for 循环的数据类型称为可迭代对象：<code>Iterable</code></strong><ul>
+<li>一类是集合数据类型：list、tuple、set、dict、str 等</li>
+<li>另一类是迭代器（比如生成器）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 判断一个对象是否是可迭代对象</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterable</span><br><span class="line">isinstance([],Iterable)     =&gt; True</span><br></pre></td></tr></table></figure>
+<ul>
+<li>形成 <strong>生成器（generator）</strong> 有以下两种方式<ul>
+<li>一是通过元组推导式生成</li>
+<li>二是通过函数生成（如果一个函数定义中包含 yield 关键字，那么这个函数就不再是一个普通函数，而是一个 generator。）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 元组推导式</span></span><br><span class="line">g1 = (x*x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>,<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数生成</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="string">'111'</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="string">'222'</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="string">'哈喽，Word'</span></span><br><span class="line">g2 = func()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>可以被 next() 函数调用并不断返回下一个值的对象称为迭代器（Iterator）</strong><ul>
+<li><strong>生成器就是一种迭代器</strong>，而 list、set 等就不是迭代器。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 判断一个对象是否是迭代器</span></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterator</span><br><span class="line">l = [<span class="string">'aaa'</span>,<span class="number">123</span>,<span class="string">'sd'</span>]</span><br><span class="line">isinstance(l, Iterator)   =&gt; False</span><br><span class="line">g = (x <span class="keyword">for</span> x <span class="keyword">in</span> l)</span><br><span class="line">isinstance(g, Iterator)   =&gt; True</span><br></pre></td></tr></table></figure>
+<ul>
+<li>把 list、dict、str 等 Iterable 变成 Iterator 可以使用 <strong>iter()</strong> 函数</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterator</span><br><span class="line">l = [<span class="string">'aaa'</span>,<span class="number">123</span>,<span class="string">'sd'</span>]</span><br><span class="line">isinstance(l, Iterator)        =&gt; False</span><br><span class="line">isinstance(iter(l), Iterator)  =&gt; True</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为什么 list、dict、str 等数据类型不是 Iterator？</p>
+<ul>
+<li><p>这是因为 Python 的 Iterator 对象表示的是一个数据流，Iterator 对象可以被 <strong>next()</strong> 函数调用并不断返回下一个数据，直到没有数据时抛出 <strong>StopIteration</strong> 错误。可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过 next() 函数实现按需计算下一个数据，所以 Iterator 的计算是惰性的，只有在需要返回下一个数据时它才会计算。Iterator 甚至可以表示一个无限大的数据流，例如全体自然数。而使用 list 是永远不可能存储全体自然数的。</p>
+</li>
+<li><p><strong>凡是可作用于 for 循环的对象都是 Iterable 类型</strong></p>
+</li>
+<li><p><strong>凡是可作用于 next()函数的对象都是 Iterator 类型</strong>，它们表示一个惰性计算的序列</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Python 的 for 循环本质上就是通过不断调用 next() 函数实现的</strong></li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment">###### 上面代码等价于下面代码 ######</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 首先获得Iterator对象:</span></span><br><span class="line">it = iter([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="comment"># 循环:</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 获得下一个值:</span></span><br><span class="line">        x = next(it)</span><br><span class="line">    <span class="keyword">except</span> StopIteration:</span><br><span class="line">        <span class="comment"># 遇到StopIteration就退出循环</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p>Python 内置了一些函数来方便地转换数据类型。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">bool('hola')        =&gt; True</span><br><span class="line">int('12')           =&gt; 12</span><br><span class="line">int('12.11')        =&gt; 报错</span><br><span class="line">float('12.11')      =&gt; 12.11</span><br><span class="line">str(True)           =&gt; 'True'</span><br><span class="line">list((1,2))         =&gt; [1, 2]</span><br><span class="line">list(&#123;1,'asd','s'&#125;) =&gt; ['s', 1, 'asd']</span><br><span class="line">tuple(&#123;1,2,3&#125;)      =&gt; (1, 2, 3)</span><br><span class="line">set([1, 2])         =&gt; &#123;1, 2&#125;</span><br><span class="line">dict([1,2])         =&gt; 报错</span><br></pre></td></tr></table></figure>
+<p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="noopener">更多内置函数，点这里。</a></p>
+<h3 id="数据类型检测"><a href="#数据类型检测" class="headerlink" title="数据类型检测"></a>数据类型检测</h3><p>有一个内置函数 <code>type()</code>，虽然可以用来查看数据类型，但还是不太方便进行数据类型判断。因为它返回一个 type 类型的对象。。。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">type(12)         =&gt; &lt;class 'int'&gt;</span><br><span class="line">type(type(12))   =&gt; &lt;class 'type'&gt;</span><br></pre></td></tr></table></figure>
+<p>所以呢，推荐用 <code>isinstance()</code> 进行类型检测。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">isinstance(3.14, int)              =&gt; False</span><br><span class="line">isinstance(3.14, (str, float))     =&gt; True</span><br><span class="line">isinstance(3.14, (str,float,int))  =&gt; True</span><br><span class="line">isinstance([1,2], list)            =&gt; True</span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/python-about-function/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Python 函数相关
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/python-basic-grammar/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Python 基础语法概览
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

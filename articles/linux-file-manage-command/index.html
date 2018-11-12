@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Linux 命令---文件管理 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-linux-file-manage-command" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2018-01-17T04:12:00.000Z" itemprop="datePublished">2018-01-17</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 命令---文件管理
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-17T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-17
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><ul>
+<li><strong><code>mkdir</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  在当前目录下创建一个目录</span></span><br><span class="line">$ mkdir ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -p 选项可以通过一个不存在的路径创建一个目录（并且路径上不存在的目录也会同时被创建）</span></span><br><span class="line">$ mkdir -p ./a/b/c/d</span><br></pre></td></tr></table></figure>
+<h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><ul>
+<li><strong><code>cat</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 cat 创建一个文件，并且可以预写入一些内容</span></span><br><span class="line">$ cat &gt; test.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将多个文件的内容连接起来，以覆盖的形式写入到新的文件</span></span><br><span class="line">$ cat 1.c 2.c &gt; 3.c</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将多个文件的内容连接起来，以追加的形式写入到新的文件</span></span><br><span class="line">$ cat 1.c 2.c &gt; 3.c</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>touch</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 touch 命令创建一个空文件</span></span><br><span class="line">$ touch ./dir/666.jpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次创建多个空文件</span></span><br><span class="line">$ touch 1.txt 2.txt 3.txt</span><br></pre></td></tr></table></figure>
+<h3 id="切换工作目录"><a href="#切换工作目录" class="headerlink" title="切换工作目录"></a>切换工作目录</h3><ul>
+<li><strong><code>pwd</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出当前工作目录的路径</span></span><br><span class="line">$ <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>cd</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 切换到指定目录</span></span><br><span class="line">$ <span class="built_in">cd</span> ./Applications</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> ./Visual\ Studio\ Code</span><br><span class="line">$ <span class="built_in">cd</span> ./<span class="string">'Visual Studio Code'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到当前用户的 home 目录</span></span><br><span class="line">$ <span class="built_in">cd</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到当前目录的父目录</span></span><br><span class="line">$ <span class="built_in">cd</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到最近一次选择的目录</span></span><br><span class="line">$ <span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
+<h3 id="查看属性信息"><a href="#查看属性信息" class="headerlink" title="查看属性信息"></a>查看属性信息</h3><ul>
+<li><strong><code>file</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示文件类型</span></span><br><span class="line">$ file index.html</span><br><span class="line"><span class="comment"># index.html: HTML document text, ASCII text, with very long lines</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>stat</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 输出一个文件或目录的属性信息</span></span><br><span class="line">$ <span class="built_in">stat</span> /bin</span><br><span class="line">$ <span class="built_in">stat</span> /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># -x 以一种比较容易查看的形式输出文件或目录的属性信息</span></span><br><span class="line">$ <span class="built_in">stat</span> -x /bin</span><br><span class="line">$ <span class="built_in">stat</span> -x /bin/bash</span><br></pre></td></tr></table></figure>
+<h3 id="查看目录内容"><a href="#查看目录内容" class="headerlink" title="查看目录内容"></a>查看目录内容</h3><ul>
+<li><strong><code>ls</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出当前目录下可见的内容（不包含隐藏文件）</span></span><br><span class="line">$ ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 展示指定目录下的文件或目录</span></span><br><span class="line">$ ls ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以一行一行的形式列出当前目录的所有可见文件</span></span><br><span class="line">$ ls -1</span><br><span class="line"></span><br><span class="line"><span class="comment"># -l 显示所有可见文件的属性信息</span></span><br><span class="line">$ ls -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># -a 列出所有文件，包括隐藏文件</span></span><br><span class="line">$ ls -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 显示每个文件的 inode</span></span><br><span class="line">$ ls -i</span><br><span class="line"></span><br><span class="line"><span class="comment"># -h 以易读的方式显示文件大小(显示为KB, MB, GB...)</span></span><br><span class="line">$ ls -lh</span><br><span class="line"></span><br><span class="line"><span class="comment"># -R 除过列出当前目录内容外，还同时列出所有子目录层</span></span><br><span class="line">$ ls -R</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>tree</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以树状的形式列出当前目录下可见的内容（不包含隐藏文件）</span></span><br><span class="line">$ tree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以树状图的形式列出一个目录包含的内容</span></span><br><span class="line">$ tree ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -C 对不同类型的文件使用颜色进行区分</span></span><br><span class="line">$ tree -C</span><br><span class="line"></span><br><span class="line"><span class="comment"># -L num 指定显示的目录深度</span></span><br><span class="line">$ tree -L 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -a 显示所有文件，包括隐藏的文件</span></span><br><span class="line">$ tree -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># -d 只显示目录</span></span><br><span class="line">$ tree -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># -f 显示每个文件相对当前目录的完整的相对路径</span></span><br><span class="line">$ tree -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 取消显示的缩进</span></span><br><span class="line">$ tree -i</span><br><span class="line"></span><br><span class="line"><span class="comment"># -P pattern 列出匹配 pattern 的文件</span></span><br><span class="line">$ tree -P <span class="string">"*.jpg"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -o filename 将结果输出至指定文件</span></span><br><span class="line">$ tree -o tree-test.txt</span><br></pre></td></tr></table></figure>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><ul>
+<li><strong><code>cat</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看一个文件的所有内容</span></span><br><span class="line">$ cat file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时查看多个文件的所有内容</span></span><br><span class="line">$ cat file1.txt file2.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -n 命令可以在每行的前面加上行号</span></span><br><span class="line">$ cat -n main.js</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>more</code></strong></li>
+</ul>
+<p>more 命令，功能类似 cat ，cat 命令是将整个文件的内容从上到下显示在屏幕上，而 more 命令会以一页一页的形式显示，方便使用者逐页阅读。使用 more 命令后，按<code>空白键（space）</code>就往下一页显示，按 <code>B 键</code>就会往回（back）一页显示。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以分页的形式显示一个文件的所有内容</span></span><br><span class="line">$ more 1.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>less</code></strong></li>
+</ul>
+<p>less 命令与 more 命令类似，但使用 less 可以随意浏览文件，而 more 仅能向前移动，却不能向后移动，而且 less 在查看之前不会加载整个文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以分页的形式显示一个文件的内容</span></span><br><span class="line">$ less 1.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>head</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认显示文件开头的 10 行文本</span></span><br><span class="line">$ head file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -n 指定要显示的行数</span></span><br><span class="line">$ head -n 5 file.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>tail</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 默认显示文件最后的 10 行文本</span></span><br><span class="line">$ tail file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -n 指定要显示的行数</span></span><br><span class="line">$ tail -n 5 file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -f 循环查看文件内容</span></span><br><span class="line">$ ping baidu.com &gt; ping.log &amp;    <span class="comment"># run ping process background</span></span><br><span class="line">$ tail -f ping.log               <span class="comment"># show file in loop</span></span><br><span class="line">$ <span class="built_in">kill</span> process_id                <span class="comment"># kill the ping process</span></span><br></pre></td></tr></table></figure>
+<h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><ul>
+<li><strong><code>cp</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 直接拷贝一个文件，出现重复则覆盖</span></span><br><span class="line">$ cp file1 file2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -p 拷贝文件1 到文件2 ，并保持文件的权限、属主和时间戳等属性</span></span><br><span class="line">$ cp -p file1 file2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 拷贝 file1 到 file2 ，如果 file2 存在会提示是否覆盖</span></span><br><span class="line">$ cp -i file1 file2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -r 递归复制一个目录</span></span><br><span class="line">$ cp -r dir1 dir2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br><span class="line">$ cp -rv dir1 dir2</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>scp</code></strong></li>
+</ul>
+<p>scp 命令与 cp 命令功能类似，但是 scp 命令是用于本地与远程服务器之间复制文件或目录。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法：scp [参数] local_file remote_username@remote_ip:remote_path</span></span><br><span class="line"><span class="comment"># -r 复制目录</span></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从本地服务器复制到远程服务器（scp 本地 远程）</span></span><br><span class="line">$ scp local_file.tar root@207.226.60.118:~/scp/remote_file.tar</span><br><span class="line">$ scp -rv local_folder root@207.226.60.118:~/scp/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从远程服务器复制到本地服务器（scp 远程 本地）</span></span><br><span class="line">$ scp root@207.226.60.118:~/scp/remote_file.txt ./file_from_remote.txt</span><br></pre></td></tr></table></figure>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><ul>
+<li><strong><code>mv</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移动文件</span></span><br><span class="line">$ mv old.txt ./dir/new.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 将文件名 old.txt 重命名为 new.txt，如果 new.txt 存在，则提示是否覆盖</span></span><br><span class="line">$ mv -i old.txt new.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -f 将文件名 old.txt 重命名为 new.txt，如果 new.txt 存在，则不会询问而直接覆盖</span></span><br><span class="line">$ mv -f old.txt new.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 会输出重命名的过程，当文件名中包含通配符时，这个选项会非常方便</span></span><br><span class="line">$ mv -v old.txt new.txt</span><br></pre></td></tr></table></figure>
+<h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><ul>
+<li><strong><code>mv</code>：</strong>对单个文件或目录进行重命名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 对文件进行重命名，出现重复则直接覆盖</span></span><br><span class="line">$ mv old.txt new.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>rename</code>：</strong>对多个文件或目录进行批量重命名</li>
+</ul>
+<p><strong>参考：</strong><a href="https://stackoverflow.com/questions/3211595/renaming-files-in-a-folder-to-sequential-numbers" target="_blank" rel="noopener">Renaming files in a folder to sequential numbers</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 语法： rename a b</span></span><br><span class="line"><span class="comment"># a：perl regular expression（perl 正则表达式）</span></span><br><span class="line"><span class="comment">#    按字符串替换： s/expr1/expr2/[gi] 使用表达式 expr2 替换 expr1，g 全局替换，i 忽略大小写</span></span><br><span class="line"><span class="comment">#    按字符替换： y/charset1/charset2/</span></span><br><span class="line"><span class="comment">#         举例： y/abc/123/，所有a替换为1，所有b替换为2，所有c替换为3</span></span><br><span class="line"><span class="comment"># b：files 被重命名的文件，可使用通配符</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将后缀为 .html 的文件的后缀统一改为 .php</span></span><br><span class="line">$ rename <span class="string">'s/\.html$/\.php/'</span> *.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将文件名重命名为一系列序列数字</span></span><br><span class="line"><span class="comment"># -N 指定计数命名的格式</span></span><br><span class="line">$ rename -N 0001 <span class="string">'s/.+/$N.php/'</span> *.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将文件名转换为小写模式</span></span><br><span class="line"><span class="comment"># -f 忽律文件已存在的报错信息</span></span><br><span class="line">$ rename -f <span class="string">'y/A-Z/a-z/'</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将文件名的空格替换为下划线</span></span><br><span class="line">$ rename <span class="string">'s/\s+/_/g'</span> *</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><ul>
+<li><strong><code>rm</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 直接删除文件</span></span><br><span class="line">$ rm file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -f 忽略不存在的文件，从不给出提示</span></span><br><span class="line">$ rm -f file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 删除文件前需要先确认一下</span></span><br><span class="line">$ rm -i file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次删除多个文件</span></span><br><span class="line">$ rm 1.txt 2.txt 3.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用正则表达式删除所有匹配的文件</span></span><br><span class="line">$ rm *.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -r 递归删除目录下所有文件，并删除该目录</span></span><br><span class="line">$ rm -r ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 详细显示删除进行的步骤（常用于删除目录时）</span></span><br><span class="line">$ rm -rv ./folder</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>rmdir</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除一个空目录（即该目录下不存在任何形式的文件或目录）</span></span><br><span class="line">rmdir ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -p 子目录 folder2 为空目录，当子目录被删除后，若其父目录 folder 也为空时，父目录会一同被删除</span></span><br><span class="line">rmdir -p ./folder/folder2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br><span class="line">rmdir -pv ./folder</span><br></pre></td></tr></table></figure>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><h4 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h4><ul>
+<li><strong><code>find</code>：</strong> 从指定目录中以某些条件搜索文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 搜索指定目录下的所有文件</span></span><br><span class="line">$ find ./</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索多个指定目录下的所有文件</span></span><br><span class="line">$ find ./folder1 ./folder2</span><br><span class="line"></span><br><span class="line"><span class="comment"># -name 按照文件名来查找文件</span></span><br><span class="line">$ find ./ -name <span class="string">'*.json'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -path 按照路径来查找文件</span></span><br><span class="line">$ find ./ -path <span class="string">'**/js/**'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -empty 按照文件或目录是否为空来查找文件</span></span><br><span class="line">$ find ./ -empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># -prune 忽略指定的目录，即不搜索指定的目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -not 反转匹配文件的条件（-not 与 ! 等义）</span></span><br><span class="line">$ find ./ -not -name <span class="string">'*.js'</span></span><br><span class="line">$ find ./ ! -name <span class="string">'*.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -maxdepth n 设置搜索的深度</span></span><br><span class="line">$ find ./ -maxdepth 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># -mtime n 按照文件的更改时间来查找文件（单位：天）</span></span><br><span class="line"><span class="comment">#        -n 表示距现在小于 n 天，n 表示距现在正好 n 天，+n 表示距现在大于 n 天</span></span><br><span class="line">$ find ./ -mtime -1             <span class="comment"># 返回最近更改时间距现在小于一天（小于24个小时）的所有文件</span></span><br><span class="line">$ find ./ -mtime +1             <span class="comment"># 返回最近更改时间距现在大于一天（大于24个小时）的所有文件</span></span><br><span class="line">$ find ./ -mtime +1  -mtime -2  <span class="comment"># 返回最近更改时间距现在大于一天但小于两天的所有文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -mmin n 按照文件的更改时间来查找文件（单位：分钟）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -type t 按照文件类型查找文件</span></span><br><span class="line"><span class="comment">#       b - 块设备文件</span></span><br><span class="line"><span class="comment">#       d - 目录</span></span><br><span class="line"><span class="comment">#       c - 字符设备文件</span></span><br><span class="line"><span class="comment">#       p - 管道文件</span></span><br><span class="line"><span class="comment">#       l - 符号链接文件</span></span><br><span class="line"><span class="comment">#       f - 普通文件</span></span><br><span class="line">$ find ./ -<span class="built_in">type</span> d</span><br><span class="line"></span><br><span class="line"><span class="comment"># -size n[ckMGTP] 按文件大小来查找文件</span></span><br><span class="line"><span class="comment">#       c - 字节（byte）</span></span><br><span class="line"><span class="comment">#       k - KB</span></span><br><span class="line"><span class="comment">#       M - MB</span></span><br><span class="line"><span class="comment">#       G - GB</span></span><br><span class="line"><span class="comment">#       T - TB</span></span><br><span class="line"><span class="comment">#       P - PB</span></span><br><span class="line">$ find ./ -size +100M          <span class="comment"># 查找文件大小大于 100MB 的文件</span></span><br><span class="line">$ find ./ -size -1G            <span class="comment"># 查找文件大小小于 1GB 的文件</span></span><br><span class="line">$ find ./ -size +1M -size -20M <span class="comment"># 查找文件大小大于 1MB 但小于 20MB 的文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -samefile 匹配是指定文件的硬链接的所有文件</span></span><br><span class="line">$ find ./ -samefile test.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -exec 为找到的每个文件执行指定的命令（注意命令以 `\;` 收尾）</span></span><br><span class="line"><span class="comment"># 将匹配到的每个文件都复制到 collect 目录下</span></span><br><span class="line">$ find ./ -path <span class="string">'**/js/**'</span> -<span class="built_in">exec</span> cp &#123;&#125; ./collect/ \;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将匹配到的每个文件都打包到 png-package.tar 文件中</span></span><br><span class="line">$ find ~/Downloads -name <span class="string">'*.png'</span> -<span class="built_in">exec</span> tar -rvf png-package.tar &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<h4 id="搜索字符串"><a href="#搜索字符串" class="headerlink" title="搜索字符串"></a>搜索字符串</h4><ul>
+<li><strong><code>grep</code>：</strong> 从指定文件或目录中查找指定字符串</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在文件中查找字符串(区分大小写)</span></span><br><span class="line">$ grep <span class="string">'let'</span> 1.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在匹配的文件中查找字符串</span></span><br><span class="line">$ grep <span class="string">'let t'</span> js/*.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 忽略字符串的大小写</span></span><br><span class="line">$ grep -i <span class="string">'let'</span> 1.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># -c 统计匹配字符出现的次数</span></span><br><span class="line">$ grep -c <span class="string">'let'</span> 1.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># -A 输出成功匹配的行，以及该行之后的三行</span></span><br><span class="line">$ grep -A 3 <span class="string">'let'</span> 1.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># -r 在一个目录中递归查询包含指定字符串的文件</span></span><br><span class="line">$ grep -r <span class="string">"ramesh"</span> ./</span><br></pre></td></tr></table></figure>
+<h3 id="更改时间戳"><a href="#更改时间戳" class="headerlink" title="更改时间戳"></a>更改时间戳</h3><ul>
+<li><strong><code>touch</code></strong></li>
+</ul>
+<p>touch 命令一般用来更改文件的访问时间与修改时间。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建一个文件</span></span><br><span class="line">$ touch file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -t 一般只更改文件的最后修改时间与访问时间为指定时间，如果指定时间小于文件当前的创建时间，那么也会更改文件的创建时间至指定时间（仅限 Mac）</span></span><br><span class="line"><span class="comment"># 语法：touch -t YYYYMMDDhhmm file</span></span><br><span class="line">$ touch -t 199901122356 file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Mac 上，可以直接使用 SetFile 命令更改文件的创建时间</span></span><br><span class="line">$ SetFile -d <span class="string">'12/31/1999 23:59:59'</span> file.txt</span><br><span class="line">$ SetFile -d <span class="string">"<span class="variable">$(GetFileInfo -m test.txt)</span>"</span> file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="更改权限"><a href="#更改权限" class="headerlink" title="更改权限"></a>更改权限</h3><ul>
+<li><strong><code>chmod</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用字母表示权限</span></span><br><span class="line"><span class="comment"># chmod &lt;用户类型&gt;&lt;操作符&gt;&lt;权限设置&gt; &lt;文件&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户类型</span></span><br><span class="line"><span class="comment"># u  文件所有者</span></span><br><span class="line"><span class="comment"># g  文件所属用户组下的所有用户</span></span><br><span class="line"><span class="comment"># o  其它用户（既不是文件所有者，也不是文件所属用户组中用户）</span></span><br><span class="line"><span class="comment"># a  所有用户，相当于上 ugo 的简写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作符</span></span><br><span class="line"><span class="comment"># +  为指定用户增加指定权限（如果权限存在则忽略，不存在则加上）</span></span><br><span class="line"><span class="comment"># -  为指定用户减少指定权限（如果权限存在则去掉，不存在则忽略）</span></span><br><span class="line"><span class="comment"># =  为指定用户设置指定权限（指定权限会覆盖掉之前的权限）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 权限代号</span></span><br><span class="line"><span class="comment"># r  可读权限，对应权限数字表示法的 4</span></span><br><span class="line"><span class="comment"># w  可写权限，对应权限数字表示法的 2</span></span><br><span class="line"><span class="comment"># x  可执行权限，对应权限数字表示法的 1</span></span><br><span class="line"><span class="comment"># -  删除权限，对应权限数字表示法的 0</span></span><br><span class="line"><span class="comment"># s  特殊权限（暂不讨论，我也不清楚怎么用）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ chmod u+r 1.txt</span><br><span class="line">$ chmod u+rwx 1.txt</span><br><span class="line">$ chmod ug+x 1.txt</span><br><span class="line">$ chmod a=--- 1.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用数字表示权限（三个数字）</span></span><br><span class="line"><span class="comment"># 比如下面的数字 750 ，7 对应用户权限，5 对应用户组权限，0 对应其它用户权限</span></span><br><span class="line"><span class="comment"># 7 = 4（可读）+ 2（可写）+ 1（可执行）</span></span><br><span class="line"><span class="comment"># 5 = 4（可读）+ 1（可执行）</span></span><br><span class="line"><span class="comment"># 0 = 0（没有权限）</span></span><br><span class="line"></span><br><span class="line">$ chmod 750 file.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -R 更改一个目录的权限</span></span><br><span class="line">$ chmod -R 777 ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时修改不同用户权限</span></span><br><span class="line">$ chmod -R u=rwx,go=r ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将一个文件变为可执行文件</span></span><br><span class="line">$ chmod +x 1.sh        <span class="comment"># 等价于 chmod a+x 1.sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="更改用户或用户组"><a href="#更改用户或用户组" class="headerlink" title="更改用户或用户组"></a>更改用户或用户组</h3><ul>
+<li><strong><code>chgrp</code>：</strong>更改文件所属的用户组</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更改文件所属的用户组</span></span><br><span class="line">$ chgrp bin file.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br><span class="line"><span class="comment"># -R 更改目录所属的用户组</span></span><br><span class="line">$ chgrp -vR bin ./folder</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>chown</code>：</strong>更改文件所属的用户或用户组</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更改文件所属的用户</span></span><br><span class="line">$ chown root file.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改文件所属的用户组</span></span><br><span class="line">$ chown :staff file.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时更改文件所属的用户和用户组</span></span><br><span class="line">$ chown percy507:bin file.png</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br><span class="line"><span class="comment"># -R 更改目录所属的用户、用户组</span></span><br><span class="line">$ chown -vR percy507 ./*</span><br></pre></td></tr></table></figure>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><ul>
+<li><strong><code>wc</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 统计文件的行数、词数和字符数</span></span><br><span class="line">$ wc 1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -l 统计行数</span></span><br><span class="line">$ wc -l 1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -m 统计字符数</span></span><br><span class="line">$ wc -m 1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -w 统计单词数</span></span><br><span class="line">$ wc -w 1.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>ln</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建硬链接</span></span><br><span class="line">$ ln text.txt hardlink.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -s 创建软链接</span></span><br><span class="line">$ ln -s test.txt softlink1.c                <span class="comment"># 基于相对路径</span></span><br><span class="line">$ ln -s /home/<span class="built_in">test</span>/test.txt softlink2.c     <span class="comment"># 基于绝对路径</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>link</code></strong></li>
+</ul>
+<p>link 命令只能用来创建硬链接，不能创建软链接。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建硬链接</span></span><br><span class="line">$ link text.txt hardlink.txt</span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/mac-special-terminal-command/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Mac 特有命令
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/linux-command-package-compress/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Linux 命令---打包压缩
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

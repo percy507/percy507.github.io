@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Linux 命令---打包压缩 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-linux-command-package-compress" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2018-01-17T04:12:00.000Z" itemprop="datePublished">2018-01-17</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 命令---打包压缩
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-08-02T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-08-02
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <blockquote>
+<ul>
+<li><p><strong>区分两个概念</strong></p>
+<ul>
+<li><strong>打包：</strong>将一大堆文件或目录打包成一个档案文件</li>
+<li><strong>压缩：</strong>将一个大的文件通过一些压缩算法压缩成一个较小的文件</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><ul>
+<li><strong><code>tar</code></strong></li>
+</ul>
+<p><strong>tar 用来创建、管理档案文件。虽然为 tar 命令特定的参数（<code>-z</code>）可以压缩文件，但是其本质上是 tar 命令自动调用相关的压缩命令（<code>gzip</code>）对打包后的文件进行了压缩，而 tar 命令本身并不具有压缩功能。</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 必要参数解释</span></span><br><span class="line"><span class="comment"># -c 建立新的档案文件</span></span><br><span class="line"><span class="comment"># -r 向存档文件中添加新的文件</span></span><br><span class="line"><span class="comment"># -x 从档案文件中提取文件</span></span><br><span class="line"><span class="comment"># -t 列出档案文件的内容</span></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br><span class="line"><span class="comment"># -f 指定用于操作（新建、插入、提取）的档案文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打包</span></span><br><span class="line">$ tar -cvf package.tar 1.txt 1.png ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解包</span></span><br><span class="line">$ tar -xvf package.tar</span><br><span class="line"></span><br><span class="line"><span class="comment"># -z 启用 gzip 模式（利用 gzip 压缩或解压）</span></span><br><span class="line"><span class="comment"># 压缩文件（先打包，再压缩）</span></span><br><span class="line">$ tar -czvf pack.tar.gz *.c</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看压缩文件内容</span></span><br><span class="line">$ tar -tzvf pack.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">$ tar -xzvf pack.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><h4 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h4><p>gzip 是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多出 “.gz” 的扩展名。<strong>gzip 不具备打包功能</strong>，所以没法直接通过 gzip 命令一次压缩多个文件为一个文件。</p>
+<ul>
+<li><strong><code>gzip</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">$ gzip file.txt           <span class="comment"># =&gt; file.txt.gz</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -d 解压文件</span></span><br><span class="line">$ gzip -d file.txt.gz     <span class="comment"># =&gt; file.txt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -c 指定压缩或解压的输出到指定文件或目录，而不去更改源文件（默认会将源文件删除）</span></span><br><span class="line">$ gzip -c file.txt &gt; file.gz</span><br><span class="line">$ gzip -<span class="built_in">cd</span> file.gz &gt; folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -l 列出压缩文件的相关信息（比如压缩比率）</span></span><br><span class="line">$ gzip -l file.txt.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># -&lt;num&gt; num 的范围是 1-9，默认为 6</span></span><br><span class="line"><span class="comment"># 1 表示压缩速度最快（低压缩比率）</span></span><br><span class="line"><span class="comment"># 9 表示压缩速度最慢（高压缩比率）</span></span><br><span class="line">$ gzip -9 file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -r 递归压缩或解压目录下的每个文件（一般不这么玩，一般都是把目录打包再进行压缩）</span></span><br><span class="line">$ gzip -r ./folder</span><br><span class="line">$ gzip -dr ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br></pre></td></tr></table></figure>
+<h4 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h4><p>zip 也是个使用广泛的压缩程序，文件经它压缩后会另外产生具有”.zip”扩展名的压缩文件。与 gzip 不同，<strong>zip 具备打包功能</strong>，可以直接通过 zip 命令一次压缩多个文件为一个文件。</p>
+<ul>
+<li><strong><code>zip</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -r 递归地打包压缩一个目录及目录的所有内容</span></span><br><span class="line">$ zip -r pack.zip ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打包压缩多个目录</span></span><br><span class="line">$ zip -r pack.zip ./folder ./folder2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 为压缩文件添加内容</span></span><br><span class="line">$ zip pack.zip *.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># -d 删除压缩文件内的指定内容</span></span><br><span class="line">$ zip -d pack.zip ./folder/js/*</span><br><span class="line"></span><br><span class="line"><span class="comment"># -m 压缩指定文件后，删除源文件（默认不会删除）</span></span><br><span class="line">$ zip -r -m 1.zip *.c</span><br><span class="line"></span><br><span class="line"><span class="comment"># -x 指定压缩时被忽略的文件或目录</span></span><br><span class="line">$ zip -r pack.zip ./folder -x ./folder/*.c</span><br><span class="line">$ zip -r pack.zip ./folder -x ./folder/js/   <span class="comment"># 只会忽略目录自身，但不会忽略目录的内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -&lt;num&gt; num 的范围是 1-9，默认为 6</span></span><br><span class="line"><span class="comment"># 1 表示压缩速度最快（低压缩比率）</span></span><br><span class="line"><span class="comment"># 9 表示压缩速度最慢（高压缩比率）</span></span><br><span class="line">$ gzip -9 file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示指令的执行过程</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>unzip</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 解压 zip 压缩文件</span></span><br><span class="line">$ unzip pack.zip   <span class="comment"># 默认解压到当前文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -d 解压到指定目录</span></span><br><span class="line">$ unzip pack.zip -d ./folder</span><br><span class="line"></span><br><span class="line"><span class="comment"># -l 显示压缩文件内所包含的文件</span></span><br><span class="line">$ unzip -l pack.zip</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>zipinfo</code></strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示 zip 压缩文件的详细信息</span></span><br><span class="line">$ zipinfo pack.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># -v 显示超级详细的压缩文件的信息</span></span><br><span class="line">$ zipinfo -v pack.zip</span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/linux-file-manage-command/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Linux 命令---文件管理
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/linux-wildcard/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Linux 通配符
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

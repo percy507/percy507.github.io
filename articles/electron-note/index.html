@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Electron 学习笔记 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-electron-note" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2018-11-05T04:12:00.000Z" itemprop="datePublished">2018-11-05</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Electron 学习笔记
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-11-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-11-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>Electron 是一个结合了 Chromium、Node.js 和用于调用操作系统本地功能的 API（如打开文件窗口、通知、图标等）的软件框架。</p>
+<h3 id="特殊知识点"><a href="#特殊知识点" class="headerlink" title="特殊知识点"></a>特殊知识点</h3><ul>
+<li>electron 为 <code>File</code> 对象增加了 <code>path</code> 属性，该属性的值是文件在系统下的真实路径</li>
+<li>当在界面中使用 <code>window.open</code> 来创建一个新的窗口时候，将会创建一个 <code>BrowserWindow</code> 的实例，并且将返回一个标识，这个界面通过标识来对这个新的窗口进行有限的控制</li>
+</ul>
+<h3 id="webview-标签"><a href="#webview-标签" class="headerlink" title="webview 标签"></a>webview 标签</h3><p>webview 标签允许为当前页面嵌入一个任意的页面进来。与 iframe 不同，webview 和你的应用运行的是不同的进程。它不拥有渲染进程的权限，并且应用和嵌入内容之间的交互全部都是异步的。因为这能保证应用的安全性不受嵌入内容的影响。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">webview</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"webpage"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://www.github.com"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"width:600px; height:480px"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">webview</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="主进程"><a href="#主进程" class="headerlink" title="主进程"></a>主进程</h3><p>一个 Electron 应用只能存在一个主进程。主进程，通常由运行一个命名为 main.js 的脚本文件产生，该文件是每个 Electron 应用的入口。主进程管理所有的网页页面和与之对应的渲染进程。</p>
+<ul>
+<li><p>主进程可以做：</p>
+<ul>
+<li>控制应用的生命周期（从打开到关闭）</li>
+<li>调用系统级别的原生 API</li>
+<li>创建并管理若干个渲染进程</li>
+<li>监听各种各样的应用事件</li>
+<li>注册全局快捷键</li>
+<li>创建原生菜单、弹窗</li>
+<li>设置软件自更新</li>
+</ul>
+</li>
+<li><p>主进程可以使用的 API 有：</p>
+<ul>
+<li>一部分 Electron API</li>
+<li>所有的 nodejs API 及其第三方模块</li>
+</ul>
+</li>
+</ul>
+<h3 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a>渲染进程</h3><p>每个 <code>BroswerWindow</code> 实例都在自己的渲染进程里运行着一个网页。每个渲染进程都是相互独立的。</p>
+<ul>
+<li>渲染进程可以使用的 API 有：<ul>
+<li>一部分 Electron API</li>
+<li>所有的 nodejs API 及其第三方模块</li>
+<li>所有的 Web API</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块介绍"><a href="#模块介绍" class="headerlink" title="模块介绍"></a>模块介绍</h3><h4 id="app-模块"><a href="#app-模块" class="headerlink" title="app 模块"></a>app 模块</h4><ul>
+<li>app 模块是为了控制整个应用的生命周期设计，其拥有的事件如下：<ul>
+<li><code>ready</code>：当 Electron 完成初始化时被触发</li>
+<li><code>window-all-closed</code>：当所有的窗口都被关闭并且应用没有被强制退出时触发</li>
+<li><code>will-quit</code>: 在用户按下 cmd+Q 或调用 app.quit() 时触发。调用 event.preventDefault() 能防止应用被退出</li>
+<li><code>activate</code>: 当应用被激活时触发，常用于点击应用的 dock 图标的时候</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="built_in">require</span>(<span class="string">"app"</span>);</span><br><span class="line"></span><br><span class="line">app.on(<span class="string">"window-all-closed"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  app.quit();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="ipcMain-与-ipcRenderer"><a href="#ipcMain-与-ipcRenderer" class="headerlink" title="ipcMain 与 ipcRenderer"></a>ipcMain 与 ipcRenderer</h4><ul>
+<li>主进程与渲染进程之间通信通过 ipcMain 和 ipcRenderer 模块实现</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// In main process</span></span><br><span class="line"><span class="keyword">const</span> ipcMain = <span class="built_in">require</span>(<span class="string">"electron"</span>).ipcMain;</span><br><span class="line"></span><br><span class="line">ipcMain.on(<span class="string">"asynchronous-message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, arg</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg); <span class="comment">// prints "ping"</span></span><br><span class="line">  event.sender.send(<span class="string">"asynchronous-reply"</span>, <span class="string">"pong"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ipcMain.on(<span class="string">"synchronous-message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, arg</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg); <span class="comment">// prints "ping"</span></span><br><span class="line">  event.returnValue = <span class="string">"pong"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// In renderer process (web page).</span></span><br><span class="line"><span class="keyword">const</span> ipcRenderer = <span class="built_in">require</span>(<span class="string">"electron"</span>).ipcRenderer;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ipcRenderer.sendSync(<span class="string">"synchronous-message"</span>, <span class="string">"ping"</span>)); <span class="comment">// prints "pong"</span></span><br><span class="line"></span><br><span class="line">ipcRenderer.on(<span class="string">"asynchronous-reply"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event, arg</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg); <span class="comment">// prints "pong"</span></span><br><span class="line">&#125;);</span><br><span class="line">ipcRenderer.send(<span class="string">"asynchronous-message"</span>, <span class="string">"ping"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://wizardforcel.gitbooks.io/electron-doc/content/index.html" target="_blank" rel="noopener">Electron 中文文档</a></li>
+<li><a href="https://medium.com/cameron-nokes/deep-dive-into-electrons-main-and-renderer-processes-7a9599d5c9e2" target="_blank" rel="noopener">Deep dive into Electron’s main and renderer processes</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+        
+          <a href="/articles/es6-typedarray/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              ES6 TypedArray
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            ES6 TypedArray |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-es6-typedarray" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2018-03-03T04:12:00.000Z" itemprop="datePublished">2018-03-03</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      ES6 TypedArray
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-03-04T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-03-04
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>随着 Web 应用程序变得越来越强大，尤其是一些新增加的功能（例如：音频视频编辑，WebGL 绘图，访问 WebSockets 的原始二进制数据等），都需要用 JavaScript 直接操作二进制数据。但是在 ES6 之前，JavaScript 并没有相关的接口去直接操作二进制数据。所以为了解决这个问题，ES6 中引入了 <code>ArrayBuffer</code>、<code>DataView</code>、<code>TypedArray</code> 接口。</p>
+<ul>
+<li>ArrayBuffer：创建一段二进制数据缓冲区</li>
+<li>DataView：创建一个通用的视图</li>
+<li>TypedArray：创建一个有固定数值数据类型的视图</li>
+</ul>
+<blockquote>
+<p>一个完整的操作二进制数据的流程是这样的：先创建一个数据缓冲区，再创建一个视图来操作数据缓冲区中的二进制数据。</p>
+</blockquote>
+<h3 id="数值数据类型"><a href="#数值数据类型" class="headerlink" title="数值数据类型"></a>数值数据类型</h3><p>JavaScript 中的数字是按照 <code>IEEE 754</code> 标准定义的格式存储的，其数值数据类型是 <code>64 位浮点数 (float64)</code>，即在内存中是用 <strong>64 个比特（即 8 个字节）</strong>来存储的。</p>
+<ul>
+<li><strong>目前，共有 8 种数值数据类型</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">有符号的 <span class="number">8</span> 位整数（int8）</span><br><span class="line">无符号的 <span class="number">8</span> 位整数（uint8）</span><br><span class="line">有符号的 <span class="number">16</span> 位整数（int16）</span><br><span class="line">无符号的 <span class="number">16</span> 位整数（uint16）</span><br><span class="line">有符号的 <span class="number">32</span> 位整数（int32）</span><br><span class="line">无符号的 <span class="number">32</span> 位整数（uint32）</span><br><span class="line"><span class="number">32</span> 位浮点数（float32）</span><br><span class="line"><span class="number">64</span> 位浮点数（float64）</span><br></pre></td></tr></table></figure>
+<p>如果用普通的 JavaScript 数字来存储一个 8 位整数（比如，123），那么会浪费整整 56 个比特。<strong>而定型数组的出现，正是为了更有效地利用这些被浪费的比特。</strong></p>
+<h3 id="数组缓冲区"><a href="#数组缓冲区" class="headerlink" title="数组缓冲区"></a>数组缓冲区</h3><p><strong>数组缓冲区是所有定型数组的根基，它是一段可以包含特定数量字节的内存地址。</strong></p>
+<blockquote>
+<p>比特：bit（别称：位）<br>字节：byte<br>千字节：KB（Kilobyte）<br>1 Byte = 8 Bits<br>1 KB = 1024 Bytes</p>
+</blockquote>
+<h4 id="ArrayBuffer-类型"><a href="#ArrayBuffer-类型" class="headerlink" title="ArrayBuffer 类型"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer" target="_blank" rel="noopener">ArrayBuffer</a> 类型</h4><p>通过 <code>new ArrayBuffer(num)</code> 可以创建一段通用的、有固定长度的原始二进制数据缓冲区。</p>
+<p>但是我们不能直接操作数据缓存区（即不能直接对数据缓存区中的数据进行读写操作），而是要通过创建一个视图（比如：定型数组对象 或 DataView 对象）来操作数组缓冲区。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建一个 10 字节长度的数组缓冲区</span></span><br><span class="line"><span class="comment">// 单位：字节。  10字节 = 80比特</span></span><br><span class="line"><span class="keyword">let</span> buffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buffer.byteLength);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过使用 slice() 方法基于已有的数组缓冲区来创建新的数组缓冲区</span></span><br><span class="line"><span class="keyword">let</span> buffer2 = buffer.slice(<span class="number">2</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><p><strong>数组缓冲区是内存中的一段地址，而视图是用来操作内存的接口。视图可以操作数组缓冲区，并按照某种数值型数据类型来读取和写入数据。</strong></p>
+<h4 id="DataView-类型的视图"><a href="#DataView-类型的视图" class="headerlink" title="DataView 类型的视图"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/DataView" target="_blank" rel="noopener">DataView</a> 类型的视图</h4><p>通过 <code>new DataView(buffer)</code> 可以创建一种通用的数组缓冲区视图。该视图支持上面提到的 8 种数值数据类型，并且为每一种数值类型都定义了对应的操作函数。</p>
+<p>比如：对于 <code>有符号的 8 位整数</code> 类型，DataView 类型的视图提供了 <code>DataView.prototype.getInt8(byteOffset)</code> 和 <code>DataView.prototype.setInt8(byteOffset, value)</code> 方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> buffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">let</span> view = <span class="keyword">new</span> <span class="built_in">DataView</span>(buffer);</span><br><span class="line"></span><br><span class="line">view.setInt8(<span class="number">0</span>, <span class="number">100</span>);</span><br><span class="line">view.setInt8(<span class="number">1</span>, <span class="number">127</span>);</span><br><span class="line">view.setInt8(<span class="number">2</span>, <span class="number">128</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(view.getInt8(<span class="number">0</span>)); <span class="comment">// 100</span></span><br><span class="line"><span class="built_in">console</span>.log(view.getInt8(<span class="number">1</span>)); <span class="comment">// 127</span></span><br><span class="line"><span class="built_in">console</span>.log(view.getInt8(<span class="number">2</span>)); <span class="comment">// -128 这里是因为有符号 8 位整数的最大值为 127</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以 16 位整数类型读取两个 8 位整数类型的值</span></span><br><span class="line"><span class="keyword">let</span> buffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">let</span> view = <span class="keyword">new</span> <span class="built_in">DataView</span>(buffer);</span><br><span class="line"></span><br><span class="line">view.setInt8(<span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">view.setInt8(<span class="number">1</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(view.getInt8(<span class="number">0</span>)); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(view.getInt8(<span class="number">1</span>)); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(view.getInt16(<span class="number">0</span>)); <span class="comment">// 1029</span></span><br></pre></td></tr></table></figure>
+<p>当混合使用不同数据类型时，DataView 对象是一个完美的选择。然而，如果你只使用某种特定的数值数据类型，那么有特定数值类型的视图则是更好的选择。</p>
+<h4 id="TypedArray-类型的视图"><a href="#TypedArray-类型的视图" class="headerlink" title="TypedArray 类型的视图"></a>TypedArray 类型的视图</h4><ul>
+<li><p><strong>ES6 定义的定型数组实际上就是用于数据缓冲区的特性类型的视图</strong></p>
+</li>
+<li><p><strong>目前，TypedArray 类型的视图共包括下面的 9 种类型</strong></p>
+</li>
+</ul>
+<div class="custom-reserved-div" style="width:100%;overflow-x:scroll;"><table><tbody><tr><td>类型</td><td>范围</td><td>占用字节数</td><td>描述</td><td>Web IDL type</td><td>Equivalent C type</td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array" target="_blank" rel="noopener"><code>Int8Array</code></a></td><td>-128 至 127</td><td>1</td><td>有符号的 8 位整数</td><td><code>byte</code></td><td><code>int8_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array" target="_blank" rel="noopener"><code>Uint8Array</code></a></td><td>0 至 255</td><td>1</td><td>无符号的 8 位整数</td><td><code>octet</code></td><td><code>uint8_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray" target="_blank" rel="noopener"><code>Uint8ClampedArray</code></a></td><td>0 至 255</td><td>1</td><td>无符号的 8 位整数（自动过滤溢出）</td><td><code>octet</code></td><td><code>uint8_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array" target="_blank" rel="noopener"><code>Int16Array</code></a></td><td>-32768 至 32767</td><td>2</td><td>有符号的 16 位整数</td><td><code>short</code></td><td><code>int16_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array" target="_blank" rel="noopener"><code>Uint16Array</code></a></td><td>0 至 65535</td><td>2</td><td>无符号的 16 位整数</td><td><code>unsigned short</code></td><td><code>uint16_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array" target="_blank" rel="noopener"><code>Int32Array</code></a></td><td>-2147483648 至 2147483647</td><td>4</td><td>有符号的 32 位整数</td><td><code>long</code></td><td><code>int32_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array" target="_blank" rel="noopener"><code>Uint32Array</code></a></td><td>0 至 4294967295</td><td>4</td><td>无符号的 32 位整数</td><td><code>unsigned long</code></td><td><code>uint32_t</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array" target="_blank" rel="noopener"><code>Float32Array</code></a></td><td>1.2x10 <sup>-38</sup> 至 3.4x10 <sup>38</sup></td><td>4</td><td>32 位浮点数</td><td><code>unrestricted float</code></td><td><code>float</code></td></tr><tr><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array" target="_blank" rel="noopener"><code>Float64Array</code></a></td><td>5.0x10 <sup>-324</sup> 至 1.8x10 <sup>308</sup></td><td>8</td><td>64 位浮点数</td><td><code>unrestricted double</code></td><td><code>double</code></td></tr></tbody></table></div>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1. 基于 ArrayBuffer 来创建特定视图</span></span><br><span class="line"><span class="keyword">let</span> buffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">let</span> view = <span class="keyword">new</span> <span class="built_in">Int8Array</span>(buffer);</span><br><span class="line"></span><br><span class="line">view[<span class="number">0</span>] = <span class="number">122</span>;</span><br><span class="line">view[<span class="number">1</span>] = <span class="number">125</span>;</span><br><span class="line">view[<span class="number">2</span>] = <span class="number">129</span>; <span class="comment">// 越界，最大值应该为 127</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(view); <span class="comment">// Int8Array(3) [122, 125, -127]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 2. 直接指定视图元素数量来创建特定视图</span></span><br><span class="line"><span class="keyword">let</span> view = <span class="keyword">new</span> <span class="built_in">Int8Array</span>(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(view); <span class="comment">// Int8Array(4) [0, 0, 0, 0]</span></span><br><span class="line"></span><br><span class="line">view[<span class="number">2</span>] = <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(view); <span class="comment">// Int8Array(4) [0, 0, 66, 0]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 3. 直接给构造函数传入一个定型数组或一个可迭代对象或一个数组或一个类数组对象来创建特定视图</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">33</span>];</span><br><span class="line"><span class="keyword">let</span> view = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(arr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(view); <span class="comment">// Uint8Array(3) [1, 2, 33]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同的视图类型，所能容纳的数值范围是确定的。超出这个范围，就会出现 <code>位溢出现象</code></strong></li>
+</ul>
+<p>TypedArray 处理位溢出的规则很简单，就是<strong>抛弃溢出的位，只取符合当前数值类型的位数上的数据</strong>。</p>
+<ul>
+<li>可以总结为一个简单转换规则，如下：<ul>
+<li><strong>正向溢出（overflow）：</strong> 当输入值大于当前数据类型的最大值，结果等于当前数据类型的最小值加上余值，再减去 1</li>
+<li><strong>负向溢出（underflow）：</strong> 当输入值小于当前数据类型的最小值，结果等于当前数据类型的最大值减去余值，再加上 1</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> uint8 = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 十进制：255</span></span><br><span class="line"><span class="comment">// 二进制：1111 1111</span></span><br><span class="line">uint8[<span class="number">0</span>] = <span class="number">255</span>;</span><br><span class="line"><span class="built_in">console</span>.log(uint8[<span class="number">0</span>]); <span class="comment">// 255</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 十进制：256</span></span><br><span class="line"><span class="comment">// 二进制：1000 0000 0</span></span><br><span class="line">uint8[<span class="number">0</span>] = <span class="number">256</span>;</span><br><span class="line"><span class="built_in">console</span>.log(uint8[<span class="number">0</span>]); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 十进制：-1</span></span><br><span class="line"><span class="comment">// 二进制：1111 1111 1111 1111 1111 1111 1111 1111</span></span><br><span class="line">uint8[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(uint8[<span class="number">0</span>]); <span class="comment">// 255</span></span><br></pre></td></tr></table></figure>
+<p>因为上面使用的是 Uint8 类型，所以对于 <code>256</code> 和 <code>-1</code> 的二进制<strong>只取前 8 位</strong>，所以才有了后面奇怪的输出。</p>
+<ul>
+<li><strong><code>Uint8ClampedArray</code></strong> 类型的视图的溢出规则，与上面的规则不同</li>
+</ul>
+<p>它规定，凡是发生正向溢出，该值一律等于当前数据类型的最大值，即 255；如果发生负向溢出，该值一律等于当前数据类型的最小值，即 0。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> uint8c = <span class="keyword">new</span> <span class="built_in">Uint8ClampedArray</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">uint8c[<span class="number">0</span>] = <span class="number">255</span>;</span><br><span class="line"><span class="built_in">console</span>.log(uint8c[<span class="number">0</span>]); <span class="comment">// 255</span></span><br><span class="line"></span><br><span class="line">uint8c[<span class="number">0</span>] = <span class="number">256</span>;</span><br><span class="line"><span class="built_in">console</span>.log(uint8c[<span class="number">0</span>]); <span class="comment">// 255</span></span><br><span class="line"></span><br><span class="line">uint8c[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(uint8c[<span class="number">0</span>]); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>复合视图</strong></li>
+</ul>
+<p><strong>由于视图的构造函数可以指定起始位置和长度，所以在同一段内存之中，可以依次存放不同数值类型的数据，这叫做 复合视图。</strong></p>
+<p>这里的复合视图和上面的 DataView 视图 倒是有点类似，都可以存放多种数值类型的数据。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义一个有 24 个字节的 buffer</span></span><br><span class="line"><span class="keyword">const</span> buffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">24</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个 32 位无符号整数，占用 4 个字节</span></span><br><span class="line"><span class="keyword">const</span> unit32 = <span class="keyword">new</span> <span class="built_in">Uint32Array</span>(buffer, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义十六个 8 位无符号整数，占用 16 个字节</span></span><br><span class="line"><span class="keyword">const</span> unit8 = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(buffer, <span class="number">4</span>, <span class="number">16</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个 32 位浮点数，占用 4 个字节</span></span><br><span class="line"><span class="keyword">const</span> float32 = <span class="keyword">new</span> <span class="built_in">Float32Array</span>(buffer, <span class="number">20</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="定型数组-vs-普通数组"><a href="#定型数组-vs-普通数组" class="headerlink" title="定型数组 vs 普通数组"></a>定型数组 vs 普通数组</h3><ul>
+<li><strong>定型数组不是普通数组，因为它不继承自 <code>Array</code> 对象，它只是一种用于处理数值类型数据的类数组对象</strong></li>
+</ul>
+<p>定型数组（即 TypedArray）只是对所有特定视图类型的统称，目前并不存在实际的 TypedArray 构造函数，或者 TypedArray 类型。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> typedArr = <span class="keyword">new</span> <span class="built_in">Int8Array</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typedArr <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(typedArr)); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typedArr <span class="keyword">instanceof</span> TypedArray); <span class="comment">// Uncaught ReferenceError: TypedArray is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 Chrome 上，出现了下面奇怪的现象</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(typedArr));</span><br><span class="line"><span class="comment">// 打印 TypedArray &#123;constructor: ƒ, BYTES_PER_ELEMENT: 1&#125;</span></span><br><span class="line"><span class="comment">// 个人感觉是 JavaScript 内建的对象并没有实现 TypedArray 类型，但是 Chrome 内部实现了，并且没直接暴露给开发者</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>普通数组的大小可以随时动态调整，而定型数组不能</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> typedArr = <span class="keyword">new</span> <span class="built_in">Int8Array</span>(arr);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2]</span></span><br><span class="line"><span class="built_in">console</span>.log(typedArr); <span class="comment">// Int8Array(2) [1, 2]</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">4</span>] = <span class="number">66</span>;</span><br><span class="line">typedArr[<span class="number">4</span>] = <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, undefined, undefined, 66]</span></span><br><span class="line"><span class="built_in">console</span>.log(typedArr); <span class="comment">// Int8Array(2) [1, 2]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>与普通数组相比，定型数组没有以下的方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 由于定型数组的尺寸不可更改，所以没有下面的方法</span></span><br><span class="line">concat();</span><br><span class="line">shift();</span><br><span class="line">pop();</span><br><span class="line">splice();</span><br><span class="line">push();</span><br><span class="line">unshift();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>与普通数组相比，定型数组有下面两个额外的方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// set() 将传入的普通数组或定型数组按指定的偏移量插入定型数组中</span></span><br><span class="line"><span class="keyword">let</span> typedArr = <span class="keyword">new</span> <span class="built_in">Int8Array</span>(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">typedArr.set([<span class="number">25</span>, <span class="number">50</span>]);</span><br><span class="line">typedArr.set([<span class="number">11</span>, <span class="number">22</span>], <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typedArr);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// subarray()</span></span><br><span class="line"><span class="comment">// returns a new TypedArray on the same ArrayBuffer store and</span></span><br><span class="line"><span class="comment">// with the same element types as for this TypedArray object</span></span><br><span class="line"><span class="keyword">let</span> typedArr = <span class="keyword">new</span> <span class="built_in">Int8Array</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">33</span>, <span class="number">44</span>]);</span><br><span class="line"><span class="keyword">let</span> subArr = typedArr.subarray(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(subArr); <span class="comment">// Int8Array(2) [33, 44]</span></span><br><span class="line"><span class="built_in">console</span>.log(typedArr.buffer === subArr.buffer); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">typedArr[<span class="number">2</span>] = <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typedArr); <span class="comment">// Int8Array(4) [1, 2, 66, 44]</span></span><br><span class="line"><span class="built_in">console</span>.log(subArr); <span class="comment">// Int8Array(2) [66, 44]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 区别 slice() 与 subarray()</span></span><br><span class="line"><span class="keyword">let</span> typedArr = <span class="keyword">new</span> <span class="built_in">Int8Array</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">33</span>, <span class="number">44</span>]);</span><br><span class="line"><span class="keyword">let</span> sliceArr = typedArr.slice(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sliceArr); <span class="comment">// Int8Array(2) [33, 44]</span></span><br><span class="line"><span class="built_in">console</span>.log(typedArr.buffer === sliceArr.buffer); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">typedArr[<span class="number">2</span>] = <span class="number">66</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(typedArr); <span class="comment">// Int8Array(4) [1, 2, 66, 44]</span></span><br><span class="line"><span class="built_in">console</span>.log(sliceArr); <span class="comment">// Int8Array(2) [33, 44]</span></span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/electron-note/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Electron 学习笔记
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/es6-module/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              ES6 module
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

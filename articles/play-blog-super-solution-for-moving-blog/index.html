@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            迁移 Hexo 博客的终极解决方法 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-play-blog-super-solution-for-moving-blog" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-07-08T04:12:00.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      迁移 Hexo 博客的终极解决方法
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <blockquote>
+<p><strong>声明：</strong> 本文的方法只针对了 <code>Windows 10（64位）</code> 和 <code>Macbook Pro(2017)（64位）</code> 进行了测试，并不能保证其他系统也能起作用。</p>
+</blockquote>
+<p>在 Windows 系统间、Mac 系统间、以及 Windows 与 Mac 之间迁移 hexo 博客时，会发生迁移后又重新生成的博客的文章与原来的博客的文章的时间不匹配，这是因为在将博客文件移动或复制的过程中，原文章文件的创建时间会统一变为一个新的时间，而 hexo 生成的博客文章的最初发表时间正是基于该文件的创建时间，所以博客迁移前后会出现文章时间前后不匹配的现象。</p>
+<blockquote>
+<p>我的解决办法的总体思路如下:</p>
+</blockquote>
+<ul>
+<li><strong>步骤一：</strong> 提取各个文章的数据，并存于文件中<ul>
+<li><strong>方法一：</strong> 通过 nodejs，从未迁移前的博客的 <code>./source/_post</code> 目录下提取出各个文章的文章名、创建日期以及最后修改日期</li>
+<li><strong>方法二：</strong> 直接在 GitHub 上面查看你博客仓库的 sitemap.xml 文件，并利用 nodejs 提取出各个文章的文章名、创建日期以及最后修改日期（这种方法尤其针对由于重装系统造成的博客文章时间丢失）</li>
+</ul>
+</li>
+<li><strong>步骤二：</strong> 对博客文件进行迁移（即将博客文章放到新的博客的目录下）</li>
+<li><strong>步骤三：</strong> 利用步骤一提取的数据，恢复新目录下博客文章的创建日期与最后修改日期<ul>
+<li><strong>针对 Windows：</strong> 使用 Python 进行恢复（参考我之前的文章：<a href="http://blog.percymong.com/2017/06/08/hexo-post-create-time-back/">换电脑之 hexo 博客重生记</a>）</li>
+<li><strong>针对 Mac：</strong> 使用 nodejs 的 exec()，循环执行 touch 命令进行恢复</li>
+</ul>
+</li>
+<li><strong>步骤四：</strong> over，正常编译博客文件即可（<code>hexo g</code>）</li>
+</ul>
+<hr>
+<ul>
+<li><strong>使用 nodejs 获取各个文章的信息</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// getBlogArticlesInfo.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原始文章所在目录的路径</span></span><br><span class="line"><span class="keyword">let</span> path = <span class="string">"C:\\blog\\source\\_posts\\"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用来存储原始文章的信息（文件名，创建日期，最后一次修改日期）</span></span><br><span class="line"><span class="keyword">let</span> articlesInfoArr = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取原始文章所在的目录</span></span><br><span class="line"><span class="keyword">let</span> fileArr = fs.readdirSync(path);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历返回的数组，过滤掉文件夹</span></span><br><span class="line">fileArr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">fileItem</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> stats = fs.statSync(path + fileItem);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (stats.isFile()) &#123;</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    obj.title = fileItem;</span><br><span class="line">    obj.birthTime = touchTimeStyle(<span class="keyword">new</span> <span class="built_in">Date</span>(stats.birthtime));</span><br><span class="line">    obj.lastModifiedTime = touchTimeStyle(<span class="keyword">new</span> <span class="built_in">Date</span>(stats.mtime));</span><br><span class="line"></span><br><span class="line">    articlesInfoArr.push(obj);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于 touch 命令的 -t 定义的时间格式是 YYYYMMDDhhmm</span></span><br><span class="line"><span class="comment">// 所以下面这个函数利用传入的 Date 实例来生成这种格式的时间字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">touchTimeStyle</span>(<span class="params">date</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> year = date.getFullYear();</span><br><span class="line">  <span class="keyword">let</span> month = date.getMonth() + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> day = date.getDate();</span><br><span class="line">  <span class="keyword">let</span> hour = date.getHours();</span><br><span class="line">  <span class="keyword">let</span> minute = date.getMinutes();</span><br><span class="line"></span><br><span class="line">  month = month &lt; <span class="number">10</span> ? <span class="string">"0"</span> + month : month;</span><br><span class="line">  day = day &lt; <span class="number">10</span> ? <span class="string">"0"</span> + day : day;</span><br><span class="line">  hour = hour &lt; <span class="number">10</span> ? <span class="string">"0"</span> + hour : hour;</span><br><span class="line">  minute = minute &lt; <span class="number">10</span> ? <span class="string">"0"</span> + minute : minute;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span> + year + month + day + hour + minute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// [..., &#123; title: 'webpack-test.md',</span></span><br><span class="line"><span class="comment">//         birthTime: '201703130800',</span></span><br><span class="line"><span class="comment">//         lastModifiedTime: '201703130331' &#125;,...]</span></span><br><span class="line"><span class="built_in">console</span>.log(articlesInfoArr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将数据存入文件，方便转移和存储</span></span><br><span class="line"><span class="keyword">let</span> targetPath = <span class="string">"./articlesInfo.json"</span>;</span><br><span class="line">fs.writeFileSync(targetPath, <span class="built_in">JSON</span>.stringify(articlesInfoArr));</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>使用 nodejs 进行恢复</strong><ul>
+<li><strong>注意：</strong> 以下代码在 Windows 上无法直接运行，因为 Windows 上没有 <code>touch</code> 命令</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; exec &#125; = <span class="built_in">require</span>(<span class="string">"child_process"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取 articlesInfo.json 文件，获取迁移前的文件的时间信息</span></span><br><span class="line"><span class="keyword">let</span> targetPath = <span class="string">"./articlesInfo.json"</span>;</span><br><span class="line"><span class="keyword">let</span> fileArr = <span class="built_in">JSON</span>.parse(fs.readFileSync(targetPath));</span><br><span class="line"></span><br><span class="line"><span class="comment">// path 是迁移后博客文章所在的目录</span></span><br><span class="line"><span class="keyword">let</span> path = <span class="string">"./blog/source/_post/"</span>;</span><br><span class="line"></span><br><span class="line">fileArr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> rebackCreateTime = <span class="string">`touch -t <span class="subst">$&#123;file.birthTime&#125;</span> '<span class="subst">$&#123;file.title&#125;</span>'`</span>;</span><br><span class="line">  <span class="keyword">let</span> rebackModifiedTime = <span class="string">`touch -mt <span class="subst">$&#123;file.lastModifiedTime&#125;</span> '<span class="subst">$&#123;file.title&#125;</span>'`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 通过 exec 函数执行 touch 命令</span></span><br><span class="line">  exec(</span><br><span class="line">    rebackCreateTime,</span><br><span class="line">    &#123;</span><br><span class="line">      cwd: path</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">err, stdout, stderr</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(stdout);</span><br><span class="line">      <span class="built_in">console</span>.log(stderr);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">  exec(</span><br><span class="line">    rebackModifiedTime,</span><br><span class="line">    &#123;</span><br><span class="line">      cwd: path</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">err, stdout, stderr</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">console</span>.log(stdout);</span><br><span class="line">      <span class="built_in">console</span>.log(stderr);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>以上代码中涉及到的路径均为我自己定义的路径，实际使用时还请结合你自己的路径进行设置。</strong></p>
+</blockquote>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/solution-js-copy-to-clipboard/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            纯 JavaScript 实现将内容复制到剪切板
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/reship-web-route/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              理解 Web 路由
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

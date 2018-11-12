@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            HTML5 Web Storage 和 Cookie |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-html5-web-storage-and-cookie" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-02-28T04:12:00.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 Web Storage 和 Cookie
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-API/">Web API</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>开门见山，先来总结一下 <strong>Cookie</strong>, <strong>LocalStorage</strong> 与 <strong>SessionStorage</strong> 的异同，精华都在这儿呢！</p>
+<h3 id="总结异同"><a href="#总结异同" class="headerlink" title="总结异同"></a>总结异同</h3><ul>
+<li><p><strong>相同点</strong></p>
+<ul>
+<li>三者都是键值对的集合</li>
+<li>三者都会在浏览器端保存，数据存储有大小限制，同源策略限制</li>
+</ul>
+</li>
+<li><p><strong>不同点</strong></p>
+<ul>
+<li><strong>主要用途不同：</strong> cookie 主要用于标识用户身份，而 Web Storage 主要用于浏览器端存储数据</li>
+<li><strong>操作频率不同：</strong> 一般情况下浏览器端不会修改 cookie，但会频繁操作 Web Storage</li>
+<li><strong>存储容量不同：</strong> cookie 最大允许存储 4KB，而 Web Storage 每一个源支持 5MB（这个视浏览器而定，最小保守是 5MB，并且各浏览器支持的 localStorage 和 sessionStorage 容量上限不同。）</li>
+<li><strong>是否添加到 HTTP 请求：</strong> cookie 每次都会包含在 http 请求中，而 Web Storage 由脚本控制选择性提交</li>
+<li><strong>有效期不同：</strong> cookie 在设置的有效期内都有效，sessionStorage 在当前页面关闭前有效，localStorage 长期有效，直到 用户删除它或通过脚本删除它</li>
+<li><strong>不同页面是否允许共享：</strong> sessionStorage 不能共享，localStorage 在同源文档之间共享， cookie 在同源且符合 path 规则的文档之间共享</li>
+<li><strong>是否拥有专用 API：</strong> Web API 中没有专门操作 cookie 的 API，localStorage 和 sessionStorage 共用一套 API（Storage 对象的 API）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Document-cookie"><a href="#Document-cookie" class="headerlink" title="Document.cookie"></a>Document.cookie</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
+<li><strong>Cookie 是一种存储在用户电脑上的用来记录一些有状态性的信息的小数据。</strong><ul>
+<li>记录购物车中添加的商品 ID</li>
+<li>记录用户上网习惯，比如最近浏览了哪些页面</li>
+<li>记录用户的身份验证信息（比如账号密码）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>An <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="noopener"><strong>HTTP cookie wiki</strong></a> (also called <strong>web cookie</strong>, <strong>Internet cookie</strong>, <strong>browser cookie</strong> or <strong>simply cookie</strong>) is a small piece of data sent from a website and stored on the user’s computer by the user’s web browser while the user is browsing.</p>
+</blockquote>
+<ul>
+<li><strong>cookie 的缺陷</strong><ul>
+<li>Cookie 会被附加在每个 HTTP 请求中，所以无形中增加了流量。</li>
+<li>由于在 HTTP 请求中的 Cookie 是明文传递的，所以安全性成问题。（除非用 HTTPS）</li>
+<li>Cookie 的大小限制在 4KB 左右。对于复杂的存储需求来说是不够用的。</li>
+</ul>
+</li>
+</ul>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><ul>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie" target="_blank" rel="noopener"><strong>document.cookie：</strong></a>获取或设置与当前文档相关联的 cookie。</p>
+</li>
+<li><p><strong>使用 navigator.cookieEnabled 检测当前页面是否启用了 cookie</strong></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!navigator.cookieEnabled) &#123;</span><br><span class="line">  alert(<span class="string">"Please enable cookie~"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>一个 cookie 是一个键值对形式的字符串（name=value）</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 添加一个 cookie</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"author=percy"</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>cookie 的值的字符串不允许包含任何逗号、分号或空格，所以可以用 encodeURIComponent() 来保证它不包含任何逗号、分号或空格。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> value = <span class="string">"hello;w,orld;"</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"greet="</span> + <span class="built_in">encodeURIComponent</span>(value);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>还可以为 cookie 添加一些以下的可选属性</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 设置 cookie 所在的路径</span></span><br><span class="line"><span class="keyword">var</span> path = <span class="string">'/'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 cookie 所在的域名</span></span><br><span class="line"><span class="keyword">var</span> domain = <span class="string">'blog.percymong.com'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置有效期，单位为秒，60*30 就是半小时有效，60*60*24*365 就是一年有效</span></span><br><span class="line"><span class="comment">// 将 max-age 的值设为 0 或负数时，会立即删除 cookie</span></span><br><span class="line"><span class="comment">// 参看： https://tools.ietf.org/html/rfc6265#section-5.2.2</span></span><br><span class="line"><span class="keyword">var</span> max-age = <span class="number">60</span>*<span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 cookie 的过期时间，这个值得格式是一个 UTC-time 字符串</span></span><br><span class="line"><span class="keyword">var</span> expires = (<span class="keyword">new</span> <span class="built_in">Date</span>()).toUTCString();</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'author=percy'</span> +</span><br><span class="line">                  <span class="string">';path='</span> + path +         <span class="comment">// 设置路径</span></span><br><span class="line">                  <span class="string">';domain='</span> + domain +     <span class="comment">// 设置域名</span></span><br><span class="line">                  <span class="string">';max-age='</span> + max-age +   <span class="comment">// 设置过期时间（语法更简洁）</span></span><br><span class="line">                  <span class="string">';expires='</span> + expires +   <span class="comment">// 设置过期时间（兼容老式浏览器很好）</span></span><br><span class="line">                  <span class="string">';secure'</span>;                <span class="comment">// cookie只通过 https 协议传输</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果为一个 cookie 同时设置了 max-age 和 expires ，max-age 有更高的优先权来控制 cookie。 参看：<a href="https://tools.ietf.org/html/rfc6265#section-4.1.2" target="_blank" rel="noopener">https://tools.ietf.org/html/rfc6265#section-4.1.2</a></p>
+</blockquote>
+<ul>
+<li><strong>使用 document.cookie 一次只能写入或更新或删除一个 cookie</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 假设现在 document.cookie 是一个空字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 写入</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"name=p"</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"age=21"</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie; <span class="comment">// "name=p; age=21"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"name=percy"</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie; <span class="comment">// "age=21; name=percy"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除（删除的原理就是给当前 cookie 设置一个过期时间）</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"age=;max-age=-1"</span>;</span><br><span class="line"><span class="built_in">document</span>.cookie; <span class="comment">// "name=percy"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>推荐使用 max-age 来设置 cookie 的过期时间，因为 max-age 比 expires 更简洁</strong></p>
+</blockquote>
+<h4 id="cookie-的作用域"><a href="#cookie-的作用域" class="headerlink" title="cookie 的作用域"></a>cookie 的作用域</h4><p><strong>cookie 的作用域是通过文档源和文档路径来确定的，也可通过 cookie 的 path 和 domain 属性来配置不同的作用域。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">当前页面： http:<span class="comment">//blog.percymong.com/2016/12/23/npm-summary/index.html</span></span><br><span class="line"></span><br><span class="line">当前页面下，cookie 默认的 domain 和 path 如下：</span><br><span class="line">domain: <span class="string">'blog.percymong.com'</span></span><br><span class="line">path: <span class="string">'/2016/12/23/npm-summary/'</span></span><br></pre></td></tr></table></figure>
+<p>通过修改 domain，可以满足一些特殊的业务需要：<strong>比如我现在需要在 blog.percymong.com 页面访问 <a href="http://www.percymong.com" target="_blank" rel="noopener">www.percymong.com</a> 页面下的 cookie</strong>。</p>
+<p><a href="http://stackoverflow.com/questions/1062963/how-do-browser-cookie-domains-work" target="_blank" rel="noopener"><strong>StackOverflow : How do browser cookie domains work?</strong></a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">注意，这里的 domain 是 <span class="string">'.percymong.com'</span>。</span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'author=percy;domain=.percymong.com'</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>cookie 有 path 概念，子路径可以访问父路径 cookie，父路径不能访问子路径 cookie。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">当前页面： http://www.example.com/tag/index.html</span><br><span class="line"></span><br><span class="line">假设在当前页面下设置了一个 cookie</span><br><span class="line"></span><br><span class="line">该 cookie 对下面的页面是可见的：</span><br><span class="line">http://www.example.com/tag/demo.html</span><br><span class="line">http://www.example.com/tag/javascript/index.html</span><br><span class="line">http://www.example.com/tag/css/test/demo.html</span><br><span class="line"></span><br><span class="line">该 cookie 对下面的页面是不可见的：</span><br><span class="line">http://www.example.com</span><br><span class="line">http://www.example.com/index.html</span><br><span class="line">http://www.example.com/test/demo.html</span><br></pre></td></tr></table></figure>
+<h4 id="为什么我的-cookie-删不掉"><a href="#为什么我的-cookie-删不掉" class="headerlink" title="为什么我的 cookie 删不掉"></a>为什么我的 cookie 删不掉</h4><p>（2017/7/8）这几天做项目时，由于要清除本地 cookie，但发现半天都清理不掉，不科学啊，过期时间我都设置成过去的时间了啊。半天时间后，在 Stack Overflow 上看到了相同的问题，经高手这么一指点，瞬间通了。<strong>原来我忘记了 cookie 也是有作用域的，只有设置了相同的 domain 和 path 的 cookie 才可以被删除。</strong></p>
+<blockquote>
+<p><strong>清除 cookie 时一定要注意 cookie 的作用域哦</strong></p>
+</blockquote>
+<p>有时候，cookie 直接由后端进行删除，前端都省得删了。</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">点击退出登录  </span><br><span class="line">-&gt; ajax 发送用户登出数据  </span><br><span class="line">-&gt; 后台返回过期 cookie  </span><br><span class="line">-&gt; 过期 cookie 覆盖之前的 cookie  </span><br><span class="line">-&gt; cookie 失效，登出完成</span><br></pre></td></tr></table></figure>
+<h4 id="使用封装好的-cookie-API"><a href="#使用封装好的-cookie-API" class="headerlink" title="使用封装好的 cookie API"></a>使用封装好的 cookie API</h4><p>不同于 localStorage 和 sessionStorage，Web API 中没有专门用于操作 cookie 的 API，所以网上找到了别人写的一个库，专门操作 cookie。</p>
+<p><strong>库名：</strong><a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="noopener"><strong>js.cookie.js</strong></a>，a simple, lightweight JavaScript API for handling browser cookies.</p>
+<h3 id="Web-存储（Web-Storage）"><a href="#Web-存储（Web-Storage）" class="headerlink" title="Web 存储（Web Storage）"></a>Web 存储（Web Storage）</h3><p>Web Storage 包含两种机制：<strong>localStorage</strong> 和 <strong>sessionStorage</strong>。</p>
+<ul>
+<li><p><strong>window.localStorage：</strong>返回一个 Storage 对象</p>
+<ul>
+<li>存储在 localStorage 里面的数据没有过期时间，长期有效，直到用户主动删除它或通过脚本删除它</li>
+<li>localStorage 的作用域仅限定在同源。</li>
+</ul>
+</li>
+<li><p><strong>window.sessionStorage：</strong>也返回一个 Storage 对象</p>
+<ul>
+<li>存储在 sessionStorage 里面的数据在页面会话结束时（关闭当前页面或关闭浏览器）会被清除。<strong>页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。</strong></li>
+<li><strong>复制后的标签页不会保持原来的会话，但是会复制原页面的 sessionStorage 数据。</strong>（Chrome 亲测）</li>
+<li>sessionStorage 的作用域不仅限定在同源，还限定在相同会话窗口中。</li>
+</ul>
+</li>
+</ul>
+<p>localStorage 和 sessionStorage 共用一套操作 API：<strong>Storage 对象 API</strong>。</p>
+<ul>
+<li><p><strong>Storage 对象 API</strong></p>
+<ul>
+<li>Storage.length：返回存储的数据项数量</li>
+<li>Storage.key(keyIndex)：取得对应索引的键名</li>
+<li>Storage.getItem(keyName)：取得对应键名的值</li>
+<li>Storage.setItem(keyName,keyValue)：增加或更新一个数据项</li>
+<li>Storage.removeItem(keyName)：删除对应键名的数据项</li>
+<li>Storage.clear()：清空所有存储的数据项</li>
+</ul>
+</li>
+<li><p><strong>storage 事件</strong></p>
+</li>
+</ul>
+<p>对 Storage 对象进行任何修改，都会触发 storage 事件。</p>
+<p>自己可以做个测试，打开同源的两个页面，一个页面修改 localStorage 数据，一个页面监听 storage 事件。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onstorage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'key : '</span> + e.key); <span class="comment">// 发生变化的键名</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'oldValue : '</span> + e.oldValue);   <span class="comment">// 旧值</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'newValue :　'</span> ＋ e.newValue); <span class="comment">// 新值</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>测试 sessionStorage 时，会有点小麻烦，看下面解释。</p>
+<blockquote>
+<p><strong>The sessionStorage is isolated for each tab, so they can not communicate. Events for sessionStorage are triggered only in between frames on the same tab.</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/10260108/how-do-i-bind-event-to-sessionstorage" target="_blank" rel="noopener"><strong>How do I bind event to sessionStorage?</strong></a></li>
+</ul>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【文章】<a href="https://segmentfault.com/a/1190000008491572" target="_blank" rel="noopener">浏览器存储</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/communication-deep-in-jsonp/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            深入了解 JSONP
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/html-table-tag/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              HTML - 你不知道的 table 用法
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

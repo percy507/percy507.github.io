@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            JavaScript 中的遍历 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-traversal" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-14T04:12:00.000Z" itemprop="datePublished">2017-03-14</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 中的遍历
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>编程这么多年，要是每次写遍历代码时都用 for 循环，真心感觉对不起 JavaScript 语言~</p>
+<h3 id="对象遍历"><a href="#对象遍历" class="headerlink" title="对象遍历"></a>对象遍历</h3><p>为了便于对象遍历的测试，我在下面定义了一个测试对象 <code>obj</code>。</p>
+<ul>
+<li><strong>测试对象</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 为 Object 设置三个自定义属性（可枚举）</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.userProp = <span class="string">"userProp"</span>;</span><br><span class="line"><span class="built_in">Object</span>.prototype.getUserProp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.userProp;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个对象，隐式地继承自 Object.prototype</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">21</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">"symbol 属性"</span>)]: <span class="string">"symbolProp"</span>,</span><br><span class="line">  unEnumerable: <span class="string">"我是一个不可枚举属性"</span>,</span><br><span class="line">  skills: [<span class="string">"html"</span>, <span class="string">"css"</span>, <span class="string">"js"</span>],</span><br><span class="line">  getSkills: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.skills;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置 unEnumerable 属性为不可枚举属性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">"unEnumerable"</span>, &#123;</span><br><span class="line">  enumerable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>ES6 之后，共有以下 5 种方法可以遍历对象的属性。</strong></p>
+<ul>
+<li><strong>for…in：</strong> 遍历对象自身的和继承的可枚举属性（不含 Symbol 类型的属性）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key);</span><br><span class="line">  <span class="built_in">console</span>.log(obj.key); <span class="comment">// wrong style</span></span><br><span class="line">  <span class="built_in">console</span>.log(obj[key]); <span class="comment">// right style</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>不要使用 for…in 来遍历数组</strong>，虽然可以遍历，但是如果为 Object.prototype 设置了可枚举属性后，也会把这些属性遍历到，因为数组也是一种对象。</p>
+</blockquote>
+<ul>
+<li><strong>Object.keys(obj)：</strong>返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 类型的属性）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(obj);</span><br><span class="line"><span class="comment">// ["name", "age", "skills", "getSkills"]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Object.getOwnPropertyNames(obj)：</strong>返回一个数组，包含对象自身的所有属性（不含 Symbol 类型的属性，不包含继承属性，但是包括不可枚举属性）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(obj);</span><br><span class="line"><span class="comment">// ["name", "age", "unEnumerable", "skills", "getSkills"]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Object.getOwnPropertySymbols(obj)：</strong>返回一个数组，包含对象自身的所有 Symbol 类型的属性（不包括继承的属性）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertySymbols(obj);</span><br><span class="line"><span class="comment">// [Symbol(symbol 属性)]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.ownKeys(obj)：</strong>返回一个数组，包含对象自身的所有属性（包含 Symbol 类型的属性，还有不可枚举的属性，但是不包括继承的属性）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Reflect</span>.ownKeys(obj);</span><br><span class="line"><span class="comment">// ["name", "age", "unEnumerable", "skills", "getSkills", Symbol(symbol 属性)]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上的 5 种方法遍历对象的属性，都遵守同样的属性遍历的次序规则</p>
+<ul>
+<li>首先遍历所有属性名为数值的属性，按照数字排序</li>
+<li>其次遍历所有属性名为字符串的属性，按照生成时间排序</li>
+<li>最后遍历所有属性名为 Symbol 值的属性，按照生成时间排序</li>
+</ul>
+</blockquote>
+<p><strong>如何判断某个属性是不是某个对象自身的属性呢？</strong></p>
+<ul>
+<li>用 in 操作符（不严谨，它其实判定的是这个属性在不在该对象的原型链上）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">"age"</span> <span class="keyword">in</span> obj; <span class="comment">// true</span></span><br><span class="line"><span class="string">"userProp"</span> <span class="keyword">in</span> obj; <span class="comment">// true （userProp 是 obj 原型链上的属性）</span></span><br><span class="line"><span class="string">"name"</span> <span class="keyword">in</span> <span class="built_in">Object</span>; <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 上面这个也是 true 的原因是，Object 是一个构造函数，而函数恰巧也有一个 name 属性</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.name; <span class="comment">// 'Object'</span></span><br><span class="line"><span class="built_in">Array</span>.name; <span class="comment">// 'Array'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>用 hasOwnProperty()，这个方法只会检测某个对象上的属性，而不是原型链上的属性。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">obj.hasOwnProperty(<span class="string">"age"</span>); <span class="comment">// true</span></span><br><span class="line">obj.hasOwnProperty(<span class="string">"skills"</span>); <span class="comment">// true</span></span><br><span class="line">obj.hasOwnProperty(<span class="string">"userProp"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>但是它还是有不足之处的。举例~</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 利用 Object.create() 新建一个对象，并且这个对象没有任何原型链</span></span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="built_in">Object</span>.create(<span class="literal">null</span>, &#123;</span><br><span class="line">  name: &#123; <span class="attr">value</span>: <span class="string">"percy"</span> &#125;,</span><br><span class="line">  age: &#123; <span class="attr">value</span>: <span class="number">21</span> &#125;,</span><br><span class="line">  skills: &#123; <span class="attr">value</span>: [<span class="string">"html"</span>, <span class="string">"css"</span>, <span class="string">"js"</span>] &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">obj2.hasOwnProperty(<span class="string">"name"</span>); <span class="comment">// 报错</span></span><br><span class="line">obj2.hasOwnProperty(<span class="string">"skills"</span>); <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>针对上面的情况，我们用一个更完善的解决方案来解决。</strong></p>
+<ul>
+<li><strong>使用 Object.prototype.hasOwnProperty.call(obj,’prop’…)</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.hasOwnProperty.call(obj2, <span class="string">"name"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.hasOwnProperty.call(obj2, <span class="string">"skills"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.hasOwnProperty.call(obj2, <span class="string">"userProp"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h3><p>数组实际上也是一种对象，所以也可以使用上面对象遍历的任意一个方法（但要<strong>注意尺度</strong>），另外，数组还拥有其他遍历的方法。</p>
+<ul>
+<li>最基本的 for 循环、while 循环遍历（缺陷是多添加了一个计数变量）</li>
+<li>ES6 引入：<strong>for…of</strong> ，这下就没有这个计数变量了，但是也不够简洁（这里不做详细介绍，以后写）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> value <span class="keyword">of</span> arr) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>下面说几种数组内置的一些遍历方法</p>
+<ul>
+<li><strong>Array.prototype.forEach()：</strong> 对数组的每个元素执行一次提供的函数</li>
+<li><p><strong>forEach 函数有个缺陷：不能正确处理 continue（跳过本次循环）、break（中断循环）、return（返回到外层函数） 语句的逻辑</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.forEach(callback(currentValue, index, array)&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;[,thisArg]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果数组在迭代时被修改了，则按照索引继续遍历修改后的数组</span></span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span>];</span><br><span class="line">words.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">word</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(word);</span><br><span class="line">  <span class="keyword">if</span> (word === <span class="string">"two"</span>) &#123;</span><br><span class="line">    words.shift();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// one</span></span><br><span class="line"><span class="comment">// two</span></span><br><span class="line"><span class="comment">// four</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Array.prototype.map()：</strong> 返回一个新数组，每个元素都是回调函数返回的值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.map(callback(currentValue, index, array)&#123;</span><br><span class="line">      <span class="comment">// do something</span></span><br><span class="line">&#125;[,thisArg]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// map 的一个坑</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="built_in">parseInt</span>); <span class="comment">// [1, NaN, NaN]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 提示   map(currentValue,index,array)</span></span><br><span class="line"><span class="comment">//        parseInt(value,base)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>一些有用的数组内置方法（类似 map，回调函数的参数都是那 3 个）</p>
+<ul>
+<li><strong>Array.prototype.every(callback[,thisArg])：</strong> 测试数组的各个元素是否通过了回调函数的测试，若都通过，返回 true，否则返回 false（说地本质点儿，就是如果回调函数每次返回的值都是 true 的话，则 every() 返回 true，否则为 false）</li>
+<li><strong>Array.prototype.filter(callback[,thisArg])：</strong> 返回一个新数组，数组的元素是原数组中通过测试的元素（就是回调函数返回 true 的话，对应的元素会进入新数组）</li>
+<li><strong>Array.prototype.find(callback[,thisArg])：</strong> 返回第一个通过测试的元素</li>
+<li><strong>Array.prototype.findIndex(callback[,thisArg])：</strong> 与上面函数类似，只不过这个是返回索引</li>
+<li><strong>Array.prototype.some(callback[,thisArg])：</strong> 类似 find() ，只不过它不返回元素，只返回一个布尔值。只要找到一个通过测试的，就返回 true</li>
+</ul>
+</li>
+<li><p><strong>Array.prototype.reduce(callback,[initialValue])：</strong> 习惯性称之为<strong>累加器函数</strong>，对数组的每个元素执行回调函数，最后返回一个值（这个值是最后一次调用回调函数时返回的值）</p>
+<ul>
+<li>这个函数的回调函数有 4 个参数<ul>
+<li><strong>accumulator：</strong> 上一次调用回调函数返回的值</li>
+<li><strong>currentValue：</strong> 当前在处理的值</li>
+<li><strong>currentIndex</strong></li>
+<li><strong>array</strong></li>
+</ul>
+</li>
+<li><strong>initialValue：</strong> 可选项，其值用于第一次调用 callback 的第一个参数</li>
+</ul>
+</li>
+<li><p><strong>Array.prototype.reduceRight(callback[, initialValue])：</strong> 用法和上面的函数一样，只不过遍历方向正好相反</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 一些相关的案例</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对数组进行累加、累乘等运算</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">8</span>].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">accumulator, currentValue</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> accumulator * currentValue;</span><br><span class="line">&#125;); <span class="comment">// 1200</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组扁平化</span></span><br><span class="line">[[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>]].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.concat(b);</span><br><span class="line">&#125;); <span class="comment">// [0, 1, 2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>]].reduceRight(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.concat(b);</span><br><span class="line">&#125;); <span class="comment">// [4, 5, 2, 3, 0, 1]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>总结一下上面这些函数的共性</strong></p>
+<ul>
+<li>都是通过每次的回调函数的返回值进行逻辑操作或判断的</li>
+<li>回调函数都可以写成更简洁的箭头函数（推荐）</li>
+<li>都可以通过形如 <strong>Array.prototype.map.call(str,callback)</strong> 的方式来操作字符串</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"123,hello"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 反转字符串</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.reduceRight.call(str, <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;); <span class="comment">// olleh,321</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 过滤字符串，只保留小写字母</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.filter</span><br><span class="line">  .call(<span class="string">"123,hello"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="regexp">/[a-z]/</span>.test(a);</span><br><span class="line">  &#125;)</span><br><span class="line">  .join(<span class="string">""</span>); <span class="comment">// hello</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 利用 map 遍历字符串（这个例子明显举得不太好 *_*）</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.map.call(str, <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a.toUpperCase();</span><br><span class="line">&#125;); <span class="comment">// ["1", "2", "3", ",", "H", "E", "L", "L", "O"]</span></span><br></pre></td></tr></table></figure>
+<p>最下面的文章想说的就是让我们用更简洁的语法（比如内置函数）遍历数组，从而消除循环结构。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【文章】<a href="https://zhuanlan.zhihu.com/p/25370825" target="_blank" rel="noopener">无循环 JavaScript</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/javascript-code-style/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            《编写可维护的 JavaScript》 读书笔记（编程风格）
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/tool-webpack/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              初试 Webpack
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            ES6 Proxy 对象与 Reflect 对象 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-es6-proxy&amp;reflect" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-05-10T04:12:00.000Z" itemprop="datePublished">2017-05-10</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      ES6 Proxy 对象与 Reflect 对象
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-03-02T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-03-02
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="Reflect-对象"><a href="#Reflect-对象" class="headerlink" title="Reflect 对象"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect" target="_blank" rel="noopener">Reflect 对象</a></h3><p><strong>Reflect 是一个 JavaScript 的内建对象</strong>，它为 JavaScript 的劫持操作提供了一些静态方法，这些方法的名字与 Proxy 对象定义的代理方法的名称一一对应。所以 Reflect 对象常与 Proxy 对象一起使用。</p>
+<ul>
+<li>Reflect 不是一个函数对象，因此它是不可构造的</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Reflect</span>); <span class="comment">// [object Object]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Math</span>); <span class="comment">// [object Math]</span></span><br></pre></td></tr></table></figure>
+<h4 id="13-种静态方法"><a href="#13-种静态方法" class="headerlink" title="13 种静态方法"></a>13 种静态方法</h4><blockquote>
+<p>下面定义的静态方法与 JavaScript 一些很基础的操作具有相同的效果</p>
+</blockquote>
+<ul>
+<li><strong>Reflect.get(target, property[, receiver])：</strong> 相当于通过索引或点操作符从对象中获取某个属性的值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">name</span>: <span class="string">"percy"</span>, <span class="attr">age</span>: <span class="number">22</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">// percy</span></span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="string">"name"</span>]); <span class="comment">// percy</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.get(obj, <span class="string">"name"</span>)); <span class="comment">// percy</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.set(target, property, value[, receiver])：</strong> 相当于在一个对象上设置一个属性</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">"percy"</span>;</span><br><span class="line"><span class="built_in">Reflect</span>.set(obj, <span class="string">"age"</span>, <span class="number">33</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: "percy", age: 33&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.has(target, property)：</strong> 该方法用于检查一个对象是否拥有某个属性，相当于 <code>in</code> 操作符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">name</span>: <span class="string">"percy"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"name"</span> <span class="keyword">in</span> obj); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.has(obj, <span class="string">"name"</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.has(obj, <span class="string">"age"</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.deleteProperty(target, property)：</strong> 用于删除属性，相当于 <code>delete</code> 操作符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = <span class="built_in">Reflect</span>.deleteProperty(obj, <span class="string">"name"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;age: 23&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.defineProperty(target, property, attributes)：</strong> 基本等同于 <code>Object.defineProperty()</code> 方法，唯一不同是该方法的返回值是 Boolean 值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = <span class="built_in">Reflect</span>.defineProperty(obj, <span class="string">"name"</span>, &#123;</span><br><span class="line">  value: <span class="string">"percy"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: "percy"&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.getOwnPropertyDescriptor(target, property)：</strong> 与 <code>Object.getOwnPropertyDescriptor()</code> 方法相似，返回给定的属性的属性描述符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> result = <span class="built_in">Reflect</span>.getOwnPropertyDescriptor(arr, <span class="string">"length"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"><span class="comment">// &#123;value: 3, writable: true, enumerable: false, configurable: false&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.getPrototypeOf(target)：</strong> 同 <code>Object.getPrototypeOf()</code> 方法，都是返回指定对象的原型对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.getPrototypeOf(obj) === Person.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.setPrototypeOf(target, prototype)：</strong> 同 Object.setPrototypeOf() 方法，都是将指定对象的原型对象 （即，内部的[[Prototype]] 属性）设置为另一个对象或为 null</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(arr) === <span class="built_in">Array</span>.prototype); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(arr, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(arr) === <span class="built_in">Array</span>.prototype); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">arr.push(<span class="number">1</span>); <span class="comment">// Uncaught TypeError: arr.push is not a function</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.isExtensible(target)：</strong> 同 Object.isExtensible() 方法相似，都可以判断一个对象是否可扩展 （即是否能够添加新的属性）<ul>
+<li>区别：如果该方法的第一个参数不是一个对象（原始值），那么将造成一个 TypeError 异常。对于 Object.isExtensible()，非对象的第一个参数会被强制转换为一个对象</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.isExtensible(obj1)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.isExtensible(obj2)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.seal(obj1);</span><br><span class="line"><span class="built_in">Object</span>.freeze(obj2);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.isExtensible(obj1)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.isExtensible(obj2)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.preventExtensions(target)：</strong> 同 Object.preventExtensions() 相似，都是让一个对象变的不可扩展，也就是永远不能再添加新的属性<ul>
+<li>区别：如果该方法的第一个参数不是一个对象（原始值），那么将造成一个 TypeError 异常。 对于 Object.preventExtensions() 方法， 非对象的第一个参数将被强制转换为对象</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.isExtensible(obj)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.preventExtensions(obj);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.isExtensible(obj)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.ownKeys(target)：</strong> 返回一个由目标对象自身的属性键组成的数组<ul>
+<li>它的返回值等同于 <code>Object.getOwnPropertyNames(target).concat(Object.getOwnPropertySymbols(target))</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="string">"23"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(obj)); <span class="comment">// ["name", "age"]</span></span><br><span class="line"></span><br><span class="line">obj[<span class="built_in">Symbol</span>(<span class="string">"phone"</span>)] = <span class="number">17790901122</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(obj)); <span class="comment">// ["name", "age", Symbol(phone)]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.apply(target, thisArg, argumentsList)：</strong> 该方法通过指定的参数列表发起对目标(target)函数的调用，与函数的 <code>apply()</code> 方法类似</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> sumFunc = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> args.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">sumFunc.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">Reflect</span>.apply(sumFunc, <span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">44</span>]); <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Reflect.construct(target, argumentsList[, newTarget])：</strong> 相当于 <code>new target(...args)</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> date = <span class="built_in">Reflect</span>.construct(<span class="built_in">Date</span>, [<span class="number">2018</span>, <span class="number">03</span>, <span class="number">01</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(date <span class="keyword">instanceof</span> <span class="built_in">Date</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(date.toString()); <span class="comment">// Sun Apr 01 2018 00:00:00 GMT+0800 (CST)</span></span><br></pre></td></tr></table></figure>
+<h3 id="Proxy-对象"><a href="#Proxy-对象" class="headerlink" title="Proxy 对象"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener">Proxy 对象</a></h3><p><strong>Proxy，中文是代理的意思，它为目标对象提供了一种拦截机制，即在目标对象之前架设一层 <code>拦截</code>，外界对该对象的访问，都必须先通过这层拦截。</strong></p>
+<p><strong>拦截的本质是：Proxy 重载（overload）了点运算符，即用自己的定义覆盖了语言的原始定义。</strong></p>
+<ul>
+<li>使用 <strong>Proxy 构造函数</strong>来实现对目标对象的代理<ul>
+<li><strong>new Proxy(target, handler)：</strong> 一个代理对象实例<ul>
+<li><strong>target：</strong> 目标对象，可以是任意类型的对象，比如数组，函数，甚至可以是代理对象</li>
+<li><strong>handler：</strong> 处理器对象，包含了一组代理方法，分别控制所生成代理对象的各种行为</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Proxy</span>); <span class="comment">// [object Function]</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;, &#123;&#125;)); <span class="comment">// [object Object]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>深坑：</strong> 通过 <code>new Proxy()</code> 生成的代理对象才是 handler 对象里定义的行为作用的目标，而不是原对象？？？对不对</p>
+</blockquote>
+<h4 id="13-种代理方法"><a href="#13-种代理方法" class="headerlink" title="13 种代理方法"></a>13 种代理方法</h4><blockquote>
+<p><strong>在代理中，除了专门为某些操作定义的陷阱外，其余操作均使用默认特性。</strong></p>
+<p><strong>在下面所有的代理方法中，只有 apply 和 construct 的代理目标是一个函数</strong></p>
+</blockquote>
+<ul>
+<li><strong>get：</strong> 用于拦截读取对象属性值的操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> targetObj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">21</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  get(target, property, receiver) &#123;</span><br><span class="line">    <span class="comment">// target    目标对象</span></span><br><span class="line">    <span class="comment">// property  被获取的属性名</span></span><br><span class="line">    <span class="comment">// receiver  一个 Proxy 对象或者继承 Proxy 的对象</span></span><br><span class="line">    <span class="comment">// return    任意值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (property === <span class="string">"name"</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"percy666666"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, property, receiver);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(targetObj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.name); <span class="comment">// percy666666</span></span><br><span class="line"><span class="built_in">console</span>.log(p.age); <span class="comment">// 21</span></span><br><span class="line"><span class="built_in">console</span>.log(p); <span class="comment">// Proxy &#123;name: "percy", age: 21&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(targetObj); <span class="comment">// &#123;name: "percy", age: 21&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>set：</strong> 用于拦截写入属性的操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> targetObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  set(target, property, value, receiver) &#123;</span><br><span class="line">    <span class="comment">// target    目标对象</span></span><br><span class="line">    <span class="comment">// property  被设置的属性名</span></span><br><span class="line">    <span class="comment">// value     被设置的新值</span></span><br><span class="line">    <span class="comment">// receiver  最初被调用的对象。通常是 Proxy 本身</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (property === <span class="string">"name"</span>) &#123;</span><br><span class="line">      value = <span class="string">"Custom Name"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, property, value, receiver);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(targetObj, handler);</span><br><span class="line"></span><br><span class="line">p.name = <span class="string">"percy"</span>;</span><br><span class="line">p.age = <span class="number">23</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p); <span class="comment">// Proxy &#123;name: "Custom Name", age: 23&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(targetObj); <span class="comment">// &#123; name: 'Custom Name', age: 23 &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>has：</strong> 用于拦截 in 操作符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> targetObj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  has(target, property) &#123;</span><br><span class="line">    <span class="comment">// target    目标对象</span></span><br><span class="line">    <span class="comment">// property  需要检查是否存在的属性</span></span><br><span class="line">    <span class="comment">// return    一个布尔值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (property === <span class="string">"name"</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, property);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(targetObj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"name"</span> <span class="keyword">in</span> p); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"age"</span> <span class="keyword">in</span> p); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>deleteProperty：</strong> 用于拦截 delete 操作符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> targetObj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">22</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  deleteProperty: <span class="function"><span class="keyword">function</span>(<span class="params">target, property</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// target:   目标对象</span></span><br><span class="line">    <span class="comment">// property: 即将被删除的属性名</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 必须 return 一个布尔值来暗示属性是否删除成功</span></span><br><span class="line">    <span class="keyword">if</span> (property === <span class="string">"name"</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.deleteProperty(target, property);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(targetObj, handler);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> p.name;</span><br><span class="line"><span class="keyword">delete</span> p.age;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p); <span class="comment">// Proxy &#123;name: "percy"&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(targetObj); <span class="comment">// &#123;name: "percy"&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>defineProperty：</strong> 拦截对象的 Object.defineProperty() 操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> targetObj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  defineProperty(target, property, descriptor) &#123;</span><br><span class="line">    <span class="comment">// target     目标对象</span></span><br><span class="line">    <span class="comment">// property   属性名</span></span><br><span class="line">    <span class="comment">// descriptor 待定义或修改的属性描述符的对象</span></span><br><span class="line">    <span class="comment">// return     一个布尔值</span></span><br><span class="line"></span><br><span class="line">    descriptor = <span class="built_in">Object</span>.assign(&#123; <span class="attr">value</span>: <span class="string">"percy66666"</span> &#125;, descriptor);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.defineProperty(target, property, descriptor);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(targetObj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(p, <span class="string">"name"</span>));</span><br><span class="line"><span class="comment">// &#123;value: "percy", writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(p, <span class="string">"name"</span>, &#123; <span class="attr">writable</span>: <span class="literal">false</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(p, <span class="string">"name"</span>));</span><br><span class="line"><span class="comment">// &#123;value: "percy66666", writable: false, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>getOwnPropertyDescriptor：</strong> 拦截 Object.getOwnPropertyDescriptor() 操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> targetObj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  getOwnPropertyDescriptor(target, property) &#123;</span><br><span class="line">    <span class="comment">// target     目标对象</span></span><br><span class="line">    <span class="comment">// property   属性名</span></span><br><span class="line">    <span class="comment">// return     一个对象或 undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (property === <span class="string">"name"</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">value</span>: <span class="string">"fuck"</span>, <span class="attr">configurable</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.getOwnPropertyDescriptor(target, property);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(targetObj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(p, <span class="string">"name"</span>));</span><br><span class="line"><span class="comment">// &#123;value: "fuck", writable: false, enumerable: false, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(p, <span class="string">"age"</span>));</span><br><span class="line"><span class="comment">// &#123;value: 23, writable: true, enumerable: true, configurable: true&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>getPrototypeOf：</strong> 拦截对象的 <code>Object.getPrototypeOf()</code> 操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> proto = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  getPrototypeOf(target) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(target === obj); <span class="comment">// true</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> === handler); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> proto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(p) === proto); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>setPrototypeOf：</strong> 拦截对象的 <code>Object.setPrototypeOf()</code> 操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> proto = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  setPrototypeOf(target, prototype) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(target === obj); <span class="comment">// true</span></span><br><span class="line">    <span class="built_in">console</span>.log(prototype === proto);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> === handler); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(p, proto);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(p) === proto); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>isExtensible：</strong> 拦截对象的 Object.isExtensible() 操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  isExtensible(target) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(target === obj); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.isExtensible(p);</span><br><span class="line"><span class="comment">// Uncaught TypeError: 'isExtensible' on proxy: trap result does not reflect extensibility of proxy target (which is 'true')</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>preventExtensions：</strong> 拦截对象的 Object.preventExtensions() 操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  preventExtensions(target) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(target === obj); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(p);</span><br><span class="line"><span class="comment">// Uncaught TypeError: 'preventExtensions' on proxy: trap returned falsish</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>ownKeys：</strong> 拦截对象自身属性的读取操作</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  ownKeys(target) &#123;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj)); <span class="comment">// ["name", "age"]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(p)); <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>apply：</strong> 用于拦截函数的调用</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> sumFunc = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> args.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  apply(target, thisArg, argumentsList) &#123;</span><br><span class="line">    <span class="comment">// target        目标对象</span></span><br><span class="line">    <span class="comment">// thisArg       函数被调用时的上下文对象</span></span><br><span class="line">    <span class="comment">// argumentsList 函数被调用时的参数数组</span></span><br><span class="line">    <span class="comment">// return        任意值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (argumentsList.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"参数至少为3个"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.apply(target, thisArg, argumentsList);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(sumFunc, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p(<span class="number">11</span>, <span class="number">22</span>)); <span class="comment">// 参数至少为3个</span></span><br><span class="line"><span class="built_in">console</span>.log(p(<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>)); <span class="comment">// 66</span></span><br><span class="line"><span class="built_in">console</span>.log(p.apply(<span class="literal">null</span>, [<span class="number">11</span>, <span class="number">22</span>])); <span class="comment">// 参数至少为3个</span></span><br><span class="line"><span class="built_in">console</span>.log(p.apply(<span class="literal">null</span>, [<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>])); <span class="comment">// 66</span></span><br><span class="line"><span class="built_in">console</span>.log(p.call(<span class="literal">null</span>, <span class="number">11</span>, <span class="number">22</span>)); <span class="comment">// 参数至少为3个</span></span><br><span class="line"><span class="built_in">console</span>.log(p.call(<span class="literal">null</span>, <span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>)); <span class="comment">// 66</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sumFunc(<span class="number">11</span>, <span class="number">22</span>)); <span class="comment">// 33</span></span><br><span class="line"><span class="built_in">console</span>.log(sumFunc.apply(<span class="literal">null</span>, [<span class="number">11</span>, <span class="number">22</span>])); <span class="comment">// 33</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>construct：</strong> 用于拦截 new 操作符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  construct: <span class="function"><span class="keyword">function</span>(<span class="params">target, argumentsList, newTarget</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// target         目标对象</span></span><br><span class="line">    <span class="comment">// argumentsList  构造函数的参数列表</span></span><br><span class="line">    <span class="comment">// newTarget      ...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 必须 return 一个对象，否则会报错</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      name: <span class="string">"percy"</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(func, handler);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> p();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p1); <span class="comment">// &#123;name: "percy"&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="可撤销代理"><a href="#可撤销代理" class="headerlink" title="可撤销代理"></a>可撤销代理</h4><p>通常，在创建代理后，代理不能脱离其目标对象，即这些代理为不可撤销代理。但是如果我们出于某种目的需要撤销对目标对象的代理，这时我们就可以使用 <code>Proxy.revocable()</code> 方法来创建一个可撤销代理。</p>
+<ul>
+<li>Proxy.revocable() 方法在被调用后会返回一个对象，这个对象有两个属性<ul>
+<li><strong><code>proxy</code>：</strong> 可被撤销的代理对象</li>
+<li><strong><code>revoke</code>：</strong> 撤销代理要调用的函数</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"percy"</span>,</span><br><span class="line">  age: <span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  ownKeys(target) &#123;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> revocableProxy = <span class="built_in">Proxy</span>.revocable(obj, handler);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(revocableProxy.proxy));</span><br><span class="line"><span class="comment">// []</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 撤销代理</span></span><br><span class="line">revocableProxy.revoke();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(revocableProxy.proxy));</span><br><span class="line"><span class="comment">// Uncaught TypeError: Cannot perform 'ownKeys' on a proxy that has been revoked</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【文章】<a href="http://www.infoq.com/cn/articles/es6-in-depth-proxies-and-reflect/" target="_blank" rel="noopener">深入浅出 ES6（十二）：代理 Proxies</a>（推荐）</li>
+<li>【文章】<a href="http://pinggod.com/2016/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90-ES6-Proxy-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" target="_blank" rel="noopener">实例解析 ES6 Proxy 使用场景</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/es6-promise/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            ES6 Promise 对象
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/readnote-high-performance-js/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              《高性能 JavaScript》读书笔记
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            HTML5 服务器发送事件（SSE） |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-html5-server-sent-events" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-06T04:12:00.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 服务器发送事件（SSE）
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-API/">Web API</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p><a href="https://zh.wikipedia.org/wiki/%E6%8E%A8%E9%80%81%E6%8A%80%E6%9C%AF" target="_blank" rel="noopener"><strong>推送技术（Push technology）</strong></a>，又名<strong>反向 AJAX</strong>，指的是一种基于 Internet，将由中心或发布者发出消息传输给用户的技术。</p>
+<ul>
+<li><strong>常见用途：</strong> 订阅消息定时推送，体育比赛分数实时更新，股票报价实时更新等。</li>
+</ul>
+<h3 id="实现推送技术的常见方法"><a href="#实现推送技术的常见方法" class="headerlink" title="实现推送技术的常见方法"></a>实现推送技术的常见方法</h3><ul>
+<li><strong>短轮询：</strong> 即浏览器定时向服务器发送请求，看看有没有需要更新的数据</li>
+<li><strong>长轮询：</strong> 浏览器向服务器发送一个请求，然后服务器一直保持连接打开，直到有数据可发送。服务器发送完数据后，浏览器关闭连接。接着浏览器立马又发起一个到服务器的新请求。如此重复</li>
+<li><strong>HTTP 流：</strong> 浏览器向服务器发送一个请求，然后服务器一直保持连接打开，然后周期性地向浏览器发送数据</li>
+</ul>
+<h3 id="服务器发送事件"><a href="#服务器发送事件" class="headerlink" title="服务器发送事件"></a>服务器发送事件</h3><p><strong>服务器发送事件（Server-Sent Events，简称 SSE）</strong> 用于创建到服务器的单向连接，服务器通过这个连接可以发送任意数量的数据。<strong>SSE 的出现是为了简化上面推送方法的实现方式。</strong></p>
+<p><strong>简单说，SSE 就是浏览器向服务器发送一个 HTTP 请求，建立连接后，服务器不断单向地向浏览器推送信息（message）。</strong></p>
+<h4 id="Event-Source-接口"><a href="#Event-Source-接口" class="headerlink" title="Event Source 接口"></a>Event Source 接口</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Server-sent_events/EventSource" target="_blank" rel="noopener"><strong>EventSource</strong></a> 接口用来接收<strong>服务器发送事件</strong>。它通过 HTTP 连接到一个服务器，并且在不关闭连接的情况下以 <strong>text/event-stream</strong> 格式接收事件</p>
+<ul>
+<li><strong>new EventSource(url [,configuration])</strong><ul>
+<li>url：代表远程资源的位置（资源 URL 必须遵守同源策略）</li>
+<li>configuration：为配置新连接提供选项，可选项是 <strong>withCredentials</strong>，默认为 false</li>
+</ul>
+</li>
+<li><strong>readyState 属性：</strong> 表示当前连接状态（0 — connecting，1 — open，2 — closed）</li>
+<li><strong>url 属性：</strong> 表示请求的 URL</li>
+<li><strong>open 事件：</strong> 在建立连接时触发</li>
+<li><strong>message 事件：</strong> 在从服务器收到新事件时触发</li>
+<li><strong>error 事件：</strong> 在无法建立连接时触发</li>
+<li><strong>close() 方法：</strong> 强制立即断开连接并且不再自动重新连接</li>
+</ul>
+<p>默认情况下，EventSource 对象会保持与服务器的活动连接。如果连接断开，还会重新连接。这就意味着，SSE 适合实现<strong>长轮询</strong>和 <strong>HTTP 流</strong>。</p>
+<h4 id="服务器发送数据的数据格式"><a href="#服务器发送数据的数据格式" class="headerlink" title="服务器发送数据的数据格式"></a>服务器发送数据的数据格式</h4><p>与使用 XMLHttpRequest 不同，<strong>服务器发送事件不允许服务器随意发送数据，而是必须遵守一个简单明确的数据格式。</strong></p>
+<p><strong>服务器发送的每条消息是由单个或多个字段组成的，每个字段由字段名，一个冒号，以及字段值组成。</strong></p>
+<ul>
+<li><strong>四个字段名</strong><ul>
+<li><strong>data：</strong> 消息的数据字段</li>
+<li><strong>id：</strong> 事件 ID，会成为当前 EventSource 对象的内部属性<strong>最后一个事件 ID</strong>（<code>event.lastEventId</code>）的属性值</li>
+<li><strong>event：</strong> 指定客户端在接收到该消息后应该触发的事件的事件名称（可以是自定义事件）。若没有消息中没有该字段，默认触发 message 事件</li>
+<li><strong>retry：</strong> 一个整数，指定了重新连接的时间（单位为毫秒）</li>
+</ul>
+</li>
+</ul>
+<p><strong>除了上面规定的字段名，其他所有的字段名都会被忽略。如果一行文本中不包含冒号，则整行文本会被解析成为字段名，其字段值为空。</strong></p>
+<blockquote>
+<p>两种情况会导致浏览器重新发起连接：<strong>一种是浏览器开始正常接收完服务器发来的信息</strong>，<strong>二是由于网络错误等原因，导致连接出错</strong>。</p>
+<ul>
+<li>在第一种情况下，浏览器会立即重新连接</li>
+<li>在第二种情况下，浏览器自动重新连接的默认等待时间是 3 秒</li>
+<li><strong>retry 字段只会影响第二种情况，不会影响第一种情况</strong>（下面有测试）</li>
+</ul>
+</blockquote>
+<p><strong>由于服务器每次向客户端发送的数据之间需要有一个空行，所以需要在每次发送的数据末尾加上 <code>\n\n</code>，从而让每次发送的消息之间都有空行。（否则不能正常显示消息）</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 一些服务器发送的数据的例子 (php举例)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送单行数据</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"data: A message from server\n\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送多行数据，比如 json 数据</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"data: &#123;\n"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"data: "</span>name<span class="string">": "</span>percy<span class="string">"\n"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"data: "</span>age: <span class="number">21</span><span class="string">"\n"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"data: &#125;\n\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送带有事件 ID 的信息</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"data: I has ID number\n"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"id: 222\n\n"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>为了方便，我使用了本地服务器（Wamp）进行了测试。</p>
+<ul>
+<li>客户端部署 SSE</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下面代码在浏览器控制端运行</span></span><br><span class="line"><span class="comment">// 当前路径：http://localhost/sse/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sseTest</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sse = <span class="keyword">new</span> EventSource(url);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 建立连接时触发</span></span><br><span class="line">  sse.onopen = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"连接已建立~"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理从服务器收到的数据</span></span><br><span class="line">  sse.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"从服务器接收到的数据："</span> + event.data);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 连接中断时触发</span></span><br><span class="line">  sse.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"连接已中断，请稍后，我可能会重连哦~"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sseTest(<span class="string">"./sse.php"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>服务器部署 SSE</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// sse.php</span></span><br><span class="line"><span class="comment">// 我的路径：http://localhost/sse/sse.php</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="comment">// 设置 MIME 类型</span></span><br><span class="line">  header(<span class="string">'Content-Type: text/event-stream'</span>);</span><br><span class="line">  <span class="comment">// 关闭 Web 缓存，否则消息可能不按先后次序到达</span></span><br><span class="line">  header(<span class="string">'Cache-Control: no-cache'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// $n 用来在循环中每次选择发送不同的消息</span></span><br><span class="line">  $n = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 关闭 php 内置的缓冲机制，这样 php 返回的数据会立即传给浏览器</span></span><br><span class="line">  ob_end_clean();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 大循环，按 $n 的值依次发送消息</span></span><br><span class="line">  <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">    <span class="keyword">switch</span>($n)&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我是一条单行信息~\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我是一段多行信息~\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: &#123;\ndata: \"name\": \"percy\"\ndata: \"age: 21\"\ndata: &#125;\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我是带有 ID 的信息（ID：250）~\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"id: 250\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我设置了自定义事件，但没有设置 ID ~\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"event: sseEvent\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我设置了自定义事件和 ID （ID：521）~\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"event: sseEvent\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我是另一条单行信息~\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我定义了 retry 属性（10秒）~\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 当前时间："</span>.date(<span class="string">"h:m:s"</span>).<span class="string">"\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"retry: 10000\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 我为了验证 retry 属性~\n"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"data: 当前时间："</span>.date(<span class="string">"h:m:s"</span>).<span class="string">"\n\n"</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用 flush() 的用意是立即发送数据，而不是先缓存起来，等 php 代码执行完毕后再发送</span></span><br><span class="line">    flush();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 程序暂停 5 秒，达到定时发送的效果</span></span><br><span class="line">    sleep(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 若发送的数据时最后一条消息，则重置 $n，重新开始循环</span></span><br><span class="line">    <span class="keyword">if</span>($n == <span class="number">8</span>)&#123;</span><br><span class="line">      $n = <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      $n++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="SSE-与-Web-Sockets-的区别"><a href="#SSE-与-Web-Sockets-的区别" class="headerlink" title="SSE 与 Web Sockets 的区别"></a>SSE 与 Web Sockets 的区别</h3><ul>
+<li>SSE 是单向连接，只能服务器向客户端发送数据，而 Web Sockets 是双向的</li>
+<li>SSE 是部署在 HTTP 协议上的，而 Web Sockets 是一种新的协议，需要服务器支持。</li>
+<li>SSE 默认支持断线重连，而 Web Sockets 不会重连</li>
+</ul>
+<p>面对某个具体的用例，需要用 SSE 还是 Web Sockets？请按照上面两者之间的区别具体进行分析。比如：需要在页面上实时更新体育比赛数据时，用 SSE，而如果是一个聊天室，则用 Web Sockets。</p>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/css-stylus/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Stylus 常用语法
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/html5-web-workers/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              HTML5 Web Workers
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

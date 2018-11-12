@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            JavaScript 表单脚本 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-form" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2016-09-30T04:12:00.000Z" itemprop="datePublished">2016-09-30</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 表单脚本
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DOM/">DOM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <ul>
+<li>通过 <code>document.forms</code> 可以获得一个包含当前页面中所有表单的集合</li>
+</ul>
+<h3 id="HTMLFormElement-接口"><a href="#HTMLFormElement-接口" class="headerlink" title="HTMLFormElement 接口"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLFormElement" target="_blank" rel="noopener">HTMLFormElement 接口</a></h3><p>下面是这个接口常用的属性和方法：</p>
+<ul>
+<li><strong>action：</strong>接受请求的 URL，等价于 HTML 中的 action 特性。</li>
+<li><strong>elements：</strong>返回表单中所有控件（或表单字段）的集合（HTMLFormControlsCollection）。需要注意的是，<strong>其中不包括 type 等于 image 的 input 元素</strong>。可通过 <code>form[0]</code> 或 <code>form[&#39;name&#39;]</code> 的方式来访问其控件。</li>
+<li><strong>enctype：</strong>请求的编码类型，HTML 提供了 3 种编码类型<ul>
+<li><strong>application/x-www-form-urlencoded：</strong>默认的编码类型</li>
+<li><strong>multipart/form-data：</strong>在上传文件时使用（<code>&lt;input type=”file” /&gt;</code>）</li>
+<li><strong>text/plain：</strong>在 HTML5 中引进，但是不建议使用</li>
+<li>【参考】：<a href="http://stackoverflow.com/questions/4526273/what-does-enctype-multipart-form-data-mean/28380690#28380690" target="_blank" rel="noopener">What does enctype=’multipart/form-data’ mean?</a></li>
+</ul>
+</li>
+<li><strong>length：</strong>表单中控件的数量</li>
+<li><strong>method：</strong>要发送的 HTTP 请求类型（get 或 post），等价于 HTML 中的 method 特性</li>
+<li><strong>name：</strong>表单的名称，等价于 HTML 中的 name 特性</li>
+<li><strong>noValidate：</strong>是否验证表单，若它的值为 true，则表示禁止验证表单</li>
+<li><strong>reset()：</strong>将该表单下的所有表单域重置为默认值</li>
+<li><strong>submit()：</strong>提交表单</li>
+</ul>
+<h3 id="重置或提交表单"><a href="#重置或提交表单" class="headerlink" title="重置或提交表单"></a>重置或提交表单</h3><p><strong>在 HTML 中</strong>，重置表单的方式有以下 2 种：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 通用重置按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"重置表单"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 自定义重置按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span>重置表单<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>用户点击重置按钮重置表单时，会在重置表单之前触发 reset 事件。利用这个事件，我们可以取消不必要的重置操作。</strong></p>
+<p>当然，也可以通过 JavaScript 调用 <strong>reset()</strong> 方法来重置表单，这个方法也会像单击重置按钮一样触发 <strong>reset 事件</strong>。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> form1 = <span class="built_in">document</span>.getElementById(<span class="string">"form1"</span>);</span><br><span class="line"></span><br><span class="line">form1.reset();</span><br></pre></td></tr></table></figure>
+<p><strong>在 HTML 中</strong>，提交表单的方式有以下 3 种：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 通用提交按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 自定义提交按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 图像提交按钮 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"1.png"</span> <span class="attr">alt</span>=<span class="string">"图片提交按钮"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上面这 3 种方式提交表单时，<strong>浏览器会在将请求发送给服务器之前触发 submit 事件，这样，我们就可以利用这个事件对表单进行验证，并据以决定是否提交表单。</strong></p>
+<p><strong>注意：submit 事件只能在 form 元素上触发，不能在提交按钮上触发！</strong></p>
+<blockquote>
+<p>Note that submit is fired only on the form element, not the button or submit input.</p>
+</blockquote>
+<p>我们也可以通过 JavaScript 的 <strong>submit()</strong> 方法来提交表单，但是不会触发 submit 事件。因此注意在使用此方法之前先验证表单。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> form1 = <span class="built_in">document</span>.getElementById(<span class="string">"form1"</span>);</span><br><span class="line"></span><br><span class="line">form1.submit();</span><br></pre></td></tr></table></figure>
+<div class="custom-reserved-div"><p data-height="344" data-theme-id="0" data-slug-hash="dpvAPR" data-default-tab="js,result" data-user="percy507" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/percy507/pen/dpvAPR/" target="_blank" rel="noopener">submit or reset event for form</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<ul>
+<li><strong>防止重复提交表单</strong></li>
+</ul>
+<p>在有提交按钮的表单中，我们防止表单重复提交的方法有 2 种：<strong>1. 利用 submit 事件来禁用表单提交按钮</strong>，<strong>2. 利用 onsubmit 事件处理程序取消后续的表单提交操作</strong></p>
+<h3 id="表单控件共有的属性和方法"><a href="#表单控件共有的属性和方法" class="headerlink" title="表单控件共有的属性和方法"></a>表单控件共有的属性和方法</h3><p>除了 <code>&lt;fieldset&gt;</code> 元素之外，所有表单控件都拥有相同的一组属性：</p>
+<ul>
+<li><strong>disabled：</strong>布尔值，表示当前控件是否被禁用</li>
+<li><strong>form：</strong>只读，指向当前控件所属的表单</li>
+<li><strong>name：</strong>当前控件的名称</li>
+<li><strong>readOnly：</strong>布尔值，表示当前控件的值是否只读，若为 true，则控件的 value 是不能被修改的</li>
+<li><strong>type：</strong>当前控件的类型</li>
+<li><strong>value：</strong>当前控件将被提交给服务器的值</li>
+</ul>
+<p>共有的方法：<strong>focus()</strong> 和 <strong>blur()</strong>。</p>
+<p>HTML5 中新添加了一个 <strong>autofocus 属性</strong>。设置这个属性的表单控件会自动获取焦点。</p>
+<h3 id="HTMLInputElement-接口"><a href="#HTMLInputElement-接口" class="headerlink" title="HTMLInputElement 接口"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLInputElement" target="_blank" rel="noopener">HTMLInputElement 接口</a></h3><ul>
+<li><p><strong>通用属性</strong></p>
+<ul>
+<li><strong>formAction：</strong>重写 form 元素的 action 属性</li>
+<li><strong>formEncType：</strong>重写 form 元素的 enctype 属性</li>
+<li><strong>formMethod：</strong>重写 form 元素的 method 属性</li>
+<li><strong>labels：</strong> A list of elements that are labels for this element</li>
+</ul>
+</li>
+<li><p><strong>type=”text”</strong></p>
+<ul>
+<li><strong>maxLength：</strong>设置文本框可接受的最大字符数</li>
+<li><strong>size：</strong>设置文本框中可以显示的字符数</li>
+<li><strong>value：</strong>设置文本框的初始值</li>
+<li><strong>placeholder：</strong>设置文本框的提示内容</li>
+</ul>
+</li>
+<li><p><strong>type=”radio” 或 type=”checkbox”</strong></p>
+<ul>
+<li><strong>checked：</strong>检测 type 为 radio 或 checkbox 的表单控件是否被选中</li>
+</ul>
+</li>
+</ul>
+<p>除了 type=”text” 的文本框，还有一种文本框 <strong><code>&lt;textarea&gt;</code></strong>。<strong>这两种文本框都支持 select() 方法，用于选择文本框中的所有文本</strong>。这种技术能够大幅度地提升表单的易用性。</p>
+<ul>
+<li>文本框获得焦点时，选中其中所有的文本</li>
+</ul>
+<p><strong>思路：</strong>利用焦点事件（focus 事件），在文本框获得焦点时，利用其 select() 方法选中所有文本。</p>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="mAmWxb" data-default-tab="html" data-user="percy507" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/percy507/pen/mAmWxb/" target="_blank" rel="noopener">select event</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<ul>
+<li>自动切换焦点</li>
+</ul>
+<p><strong>思路：</strong>利用 keyup 事件检测用户输入新字符后，文本框内的字符串是否已经达到最大长度，若达到最大长度，则将焦点切换至下一个文本框。</p>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="JRNLvN" data-default-tab="html,result" data-user="percy507" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/percy507/pen/JRNLvN/" target="_blank" rel="noopener">auto change focus</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<h3 id="HTML5-约束验证-API"><a href="#HTML5-约束验证-API" class="headerlink" title="HTML5 约束验证 API"></a>HTML5 约束验证 API</h3><ul>
+<li>必填字段：使用 required 属性</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">placeholder</span>=<span class="string">"用户名"</span> <span class="attr">required</span> /&gt;</span>（必填）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输入模式：使用 pattern 属性，这个属性的值是一个正则表达式，用于匹配文本框中的值</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">name</span>=<span class="string">"password"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">placeholder</span>=<span class="string">"6位纯数字密码"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">maxlength</span>=<span class="string">"6"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">pattern</span>=<span class="string">"[0-9]&#123;6&#125;"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">required</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>禁用验证：通过为表单设置 novalidate 属性，可以告诉表单不进行验证</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"#"</span> <span class="attr">novalidate</span>&gt;</span>....<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>自定义验证</li>
+</ul>
+<p>HTML5 也规定了一组 JavaScript 属性方法，用来增强自定义表单验证机制。最常用的就是 <strong>setCustomValidity()</strong> 方法，基于这个方法可以针对特定字段编写自定义的验证逻辑，并强制利用 HTML5 的验证机制。</p>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="rrwvVx" data-default-tab="js,result" data-user="percy507" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/percy507/pen/rrwvVx/" target="_blank" rel="noopener">using setCustomValidity()</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<blockquote>
+<p><strong>参考：</strong><a href="http://www.w3cplus.com/html5/html5-form-validation-with-the-pattern-attribute.html" target="_blank" rel="noopener">pattern–HTML5 的表单验证属性（推荐）</a></p>
+</blockquote>
+<h3 id="HTMLSelectElement-接口"><a href="#HTMLSelectElement-接口" class="headerlink" title="HTMLSelectElement 接口"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement" target="_blank" rel="noopener">HTMLSelectElement 接口</a></h3><p>选择框通常是通过 <code>&lt;select&gt;</code> 和 <code>&lt;option&gt;</code> 元素创建的。</p>
+<ul>
+<li>常用属性<ul>
+<li><strong>multiple：</strong>布尔值，表示是否允许多项选择</li>
+<li><strong>options：</strong>获取控件下所有的 option 元素（HTMLCollection）</li>
+<li><strong>size：</strong>选择框中可见的行数</li>
+<li><strong>selectedIndex：</strong>基于 0 的选中项的索引</li>
+</ul>
+</li>
+<li>常用方法<ul>
+<li><strong>add(newOption, relOption)：</strong>在 relOption 前插入新的 option 元素</li>
+<li><strong>remove(index)：</strong>移除给定位置的 option 元素</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 添加选项</span></span><br><span class="line"><span class="keyword">var</span> newOption = <span class="keyword">new</span> Option(<span class="string">"Option text"</span>, <span class="string">"Option value"</span>);</span><br><span class="line"></span><br><span class="line">selectBox.add(newOption, <span class="literal">undefined</span>); <span class="comment">// 添加新选项到末尾</span></span><br></pre></td></tr></table></figure>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="xEdjGp" data-default-tab="js,result" data-user="percy507" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/percy507/pen/xEdjGp/" target="_blank" rel="noopener">HTMLSelectElement test</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<ul>
+<li>在 DOM 中，每一个 option 元素都由一个 <strong>HTMLOptionElement 对象</strong>表示。它有一些属性：<ul>
+<li><strong>selected：</strong>布尔值，检测当前选项是否被选中</li>
+<li><strong>text：</strong>选项的文本</li>
+<li><strong>value：</strong>选项的值</li>
+<li><strong>构造函数：</strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option" target="_blank" rel="noopener">HTMLOptionElement.Option()</a></li>
+</ul>
+</li>
+</ul>
+<p>最后，附一个制作一个很酷的表单的教程：<a href="http://www.w3cplus.com/html/form-validation-ux-html-css.html" target="_blank" rel="noopener">使用 HTML 和 CSS 提高表单验证用户体验</a>。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【书】《JavaScript 高级程序设计（第三版）》</li>
+<li>【文章】<a href="https://www.renfei.org/blog/html5-introduction-4-form-types-and-validation.html" target="_blank" rel="noopener">HTML5 简介（四）：新的表单类型、表单验证等特性介绍</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/html-form-tag/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            HTML 表单详解
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/javascript-event-optimization/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              JavaScript 事件对内存和性能的影响
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

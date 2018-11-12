@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            TypeScript 学习笔记 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-typescript" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-10-17T04:12:00.000Z" itemprop="datePublished">2017-10-17</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      TypeScript 学习笔记
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <blockquote>
+<p>以下仅为部分 TypeScript 的特性。以后会适当进行补充。</p>
+<p><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/index.html" target="_blank" rel="noopener"><strong>TypeScript Handbook（中文版）</strong></a></p>
+</blockquote>
+<h3 id="变量类型约束"><a href="#变量类型约束" class="headerlink" title="变量类型约束"></a>变量类型约束</h3><ul>
+<li><strong>在给一个变量加了类型约束后，该变量之后就只能被赋值为该类型的值。</strong></li>
+</ul>
+<h4 id="js-基本类型"><a href="#js-基本类型" class="headerlink" title="js 基本类型"></a>js 基本类型</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Boolean</span></span><br><span class="line"><span class="keyword">let</span> isHide: boolean = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Number</span></span><br><span class="line"><span class="keyword">let</span> count: number = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// String</span></span><br><span class="line"><span class="keyword">let</span> str: string = <span class="string">"hello ts~"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Undefined</span></span><br><span class="line"><span class="keyword">let</span> u: <span class="literal">undefined</span> = <span class="literal">undefined</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Null</span></span><br><span class="line"><span class="keyword">let</span> n: <span class="literal">null</span> = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="任意类型"><a href="#任意类型" class="headerlink" title="任意类型"></a>任意类型</h4><ul>
+<li><strong>任意类型表示该变量可以被赋值为任意类型的值</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// any 标记任意类型</span></span><br><span class="line"><span class="keyword">let</span> anyValue: any = <span class="string">"any thing"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h4><ul>
+<li><strong>在 TypeScirpt 中，可以用 void 标记没有任何返回值的函数</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">value</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>输入多余的（或者少于要求的）参数，是不被允许的</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x: number, y: number</span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>?:</code> 标记可选参数</strong><ul>
+<li><strong>可选参数必须接在必需参数后面</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x: number, y?: number</span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>可以给函数的参数添加默认值，TypeScript 会将添加了默认值的参数识别为可选参数</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x: number, y: number = <span class="number">5</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sum(<span class="number">1</span>); <span class="comment">// 6</span></span><br><span class="line">sum(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>剩余参数</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pushArr</span>(<span class="params">array: any[], ...items: number[]</span>) </span>&#123;</span><br><span class="line">  items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">    array.push(item);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = [];</span><br><span class="line">pushArr(a, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h4><ul>
+<li><strong>TypeScript 通过定义接口来约束对象类型，它可以约束对象属性的数量、名称、类型、特性（是否只读）。</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line">interface Person &#123;</span><br><span class="line">    name: string;           <span class="comment">// 必选属性</span></span><br><span class="line">    readonly id: number;    <span class="comment">// 必选只读属性</span></span><br><span class="line">    age: number;            <span class="comment">// 必选属性</span></span><br><span class="line">    github?: string;        <span class="comment">// 可选属性</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> percy: Person = &#123;</span><br><span class="line">    name: <span class="string">'William'</span>,</span><br><span class="line">    id: <span class="number">334455</span>, <span class="comment">// 只读</span></span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>为对象添加任意属性</strong><ul>
+<li>任意属性允许你为对象添加任意数量的属性，但是属性和属性值的类型还是要受到类型的约束</li>
+<li>一旦定义了任意属性，那么确定属性和可选属性都必须是它的子属性（即属性值的类型必须符合任意属性的规定）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义支持任意属性的接口</span></span><br><span class="line">interface Person &#123;</span><br><span class="line">  name: string; <span class="comment">// 必选属性</span></span><br><span class="line">  [propName: string]: any; <span class="comment">// 任意属性</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h4><ul>
+<li><strong>「类型 + 方括号」表示法</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> numArr: number[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line">numArr.push(<span class="string">"a"</span>); <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 为数组使用联合类型</span></span><br><span class="line"><span class="keyword">let</span> numArr: (number | string)[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"></span><br><span class="line">numArr.push(<span class="string">"a"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>数组泛型表示法</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> numArr: <span class="built_in">Array</span>&lt;number&gt; = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>接口表示法</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">interface NumberArray &#123;</span><br><span class="line">  [index: number]: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numArr: NumberArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+<h4 id="类数组类型"><a href="#类数组类型" class="headerlink" title="类数组类型"></a>类数组类型</h4><p><strong>事实上常见的类数组都有自己的接口定义，如 IArguments, NodeList, HTMLCollection 等。</strong></p>
+<h3 id="其它类型相关的特性"><a href="#其它类型相关的特性" class="headerlink" title="其它类型相关的特性"></a>其它类型相关的特性</h3><h4 id="类型推论（Type-Inference）"><a href="#类型推论（Type-Inference）" class="headerlink" title="类型推论（Type Inference）"></a>类型推论（Type Inference）</h4><ul>
+<li><strong>在没有明确指定变量类型的时候，TypeScript 会自动推断出变量类型</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">9</span>;</span><br><span class="line"><span class="comment">// 等价于 let num: number = 9;</span></span><br></pre></td></tr></table></figure>
+<h4 id="联合类型（Union-Types）"><a href="#联合类型（Union-Types）" class="headerlink" title="联合类型（Union Types）"></a>联合类型（Union Types）</h4><ul>
+<li><strong>联合类型表示变量的值可以为多种类型中的一种。</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr: number | string;</span><br><span class="line">numStr = <span class="number">7</span>;</span><br><span class="line">numStr = <span class="string">"seven"</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>如果一个值的类型是联合类型，那么我们只能访问此联合类型的所有类型里共有的属性或方法。</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> numStr: number | string = <span class="string">"sss"</span>;</span><br><span class="line"></span><br><span class="line">numStr.length; <span class="comment">// 报错，因为 number 类型没有 length 属性</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用内置对象标记变量类型"><a href="#使用内置对象标记变量类型" class="headerlink" title="使用内置对象标记变量类型"></a>使用内置对象标记变量类型</h4><ul>
+<li>部分 js 内置对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// RegExp</span></span><br><span class="line"><span class="keyword">let</span> reg: <span class="built_in">RegExp</span> = <span class="regexp">/\d&#123;4&#125;/g</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Date</span></span><br><span class="line"><span class="keyword">let</span> date: <span class="built_in">Date</span> = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="keyword">let</span> err: <span class="built_in">Error</span> = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"something wrong"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>部分 DOM 和 BOM 的内置对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// HTMLElement</span></span><br><span class="line"><span class="keyword">let</span> firstDiv: HTMLElement = <span class="built_in">document</span>.querySelector(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// NodeList</span></span><br><span class="line"><span class="keyword">let</span> allDiv: NodeList = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h4><p><strong>类型别名用来给一个类型起个新名字（使用关键字 <code>type</code>），通常用于缩写联合类型。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> a: number | string;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line">type numberString = number | string;</span><br><span class="line"><span class="keyword">let</span> b: numberString;</span><br></pre></td></tr></table></figure>
+<h4 id="字符串变量的取值约束"><a href="#字符串变量的取值约束" class="headerlink" title="字符串变量的取值约束"></a>字符串变量的取值约束</h4><ul>
+<li><strong>字符串字面量类型可以用来约束变量的取值只能是某几个字符串中的一个。</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">type messageType = <span class="string">"text"</span> | <span class="string">"image"</span> | <span class="string">"voice"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> msg: messageType;</span><br><span class="line"></span><br><span class="line">msg = <span class="string">"text"</span>;</span><br><span class="line">msg = <span class="string">"xxx"</span>; <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h4 id="利用元组限制数组元素的类型"><a href="#利用元组限制数组元素的类型" class="headerlink" title="利用元组限制数组元素的类型"></a>利用元组限制数组元素的类型</h4><ul>
+<li><p><strong>利用元组可以精确定位数组指定索引元素的类型</strong></p>
+</li>
+<li><p><strong>越界的数组元素的类型必须是元组中的类型中的一个</strong></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr: [number, string];</span><br><span class="line"></span><br><span class="line">arr = [<span class="number">3</span>, <span class="string">"aaa"</span>];</span><br><span class="line">arr = [<span class="number">3</span>, <span class="number">3</span>]; <span class="comment">// 报错</span></span><br><span class="line">arr = [<span class="number">3</span>]; <span class="comment">// 报错</span></span><br><span class="line">arr = [<span class="number">3</span>, <span class="string">"bb"</span>, <span class="string">"3"</span>];</span><br><span class="line">arr = [<span class="number">3</span>, <span class="string">"s"</span>, <span class="literal">true</span>]; <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">3444</span>;</span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"sss"</span>; <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【教程】<a href="https://ts.xcatliu.com/" target="_blank" rel="noopener">TypeScript 入门教程</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/vue-style/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Vue 学习心得
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/vue-vuex-note/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Vuex 学习笔记
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

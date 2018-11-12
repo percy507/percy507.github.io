@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            记录一些自己不熟悉的 CSS 属性 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-css-some-unfamiliar-property" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-29T04:12:00.000Z" itemprop="datePublished">2017-03-29</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      记录一些自己不熟悉的 CSS 属性
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="CSS-Text"><a href="#CSS-Text" class="headerlink" title="CSS Text"></a>CSS Text</h3><blockquote>
+<p><strong><a href="https://www.w3.org/TR/css-text-4/" target="_blank" rel="noopener">CSS Text Module Level 4</a></strong></p>
+</blockquote>
+<p><strong>CSS Text 是一个管理文字表现的 CSS 模块，例如换行、对齐、空格处理、大小写。</strong></p>
+<ul>
+<li><strong>letter-spacing：</strong> 定义字符间的间距</li>
+<li><strong>text-align-last：</strong> 定义所在块元素最后一行的内容的对齐方式</li>
+<li><strong>text-indent：</strong> 定义块元素的首行文本内容之前应该有多少水平空格<ul>
+<li>这个属性经常这样使用：<code>text-indent: 2em;</code> ，意思是首行缩进 2 个中文字符（或 4 个英文字符）</li>
+</ul>
+</li>
+<li><strong>text-transform：</strong> 定义英文内容以什么样的方式在页面显示<ul>
+<li><strong>capitalize：</strong> 每个单词的首字母都变为大写，其他字母大小写不变</li>
+<li><strong>uppercase：</strong> 所有字母都变为大写字母</li>
+<li><strong>lowercase：</strong> 所有字母都变为小写字母</li>
+</ul>
+</li>
+<li><strong>white-space：</strong> 设置处理元素中空白的方式<ul>
+<li><strong>normal：</strong> 默认值，连续的空白符会被合并，换行符会被当作空白符来处理。填充 line 盒子时会自动换行。</li>
+<li><strong>nowrap：</strong> 类似 normal，但是它在填充 line 盒子时不会自动换行</li>
+<li><strong>pre：</strong> 连续的空白符会被保留，遇到换行符时会换行，但是在填充 line 盒子时不会自动换行</li>
+<li><strong>pre-wrap：</strong> 连续的空白符会被保留。在遇到换行符，或者需要为了填充 line 盒子时会自动换行</li>
+<li><strong>pre-line：</strong> 连续的空白符会被合并。在遇到换行符，或者需要为了填充 line 盒子时会自动换行</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/white-space.png" alt="white-space.png"></p>
+<ul>
+<li><p><strong>word-break：</strong> 指定了怎样在 <strong>单词内断行</strong></p>
+<ul>
+<li><strong>normal：</strong> 默认值</li>
+<li><strong>break-all：</strong> 对于 non-CJK (中文/日文/韩文) 文本，可在任意字符间断行</li>
+<li><strong>keep-all：</strong> CJK 文本不断行。 Non-CJK 文本表现同 normal。</li>
+</ul>
+</li>
+<li><p><strong>overflow-wrap：</strong> 是否允许溢出容器的文本内容进行断行</p>
+<ul>
+<li><strong>normal：</strong> 默认值，溢出内容不断行</li>
+<li><strong>break-word：</strong> 溢出的内容将被切割后移到下一行，从而达到换行效果</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意区分 word-break 与 overflow-wrap 换行行为的区别</strong></p>
+</blockquote>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="JWmKzb" data-default-tab="html,result" data-user="percy507" data-embed-version="2" data-pen-title="how to break word" class="codepen">See the Pen <a href="http://codepen.io/percy507/pen/JWmKzb/" target="_blank" rel="noopener">how to break word</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<ul>
+<li><p><strong>word-spacing：</strong> 定义单词间的间距</p>
+</li>
+<li><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow" target="_blank" rel="noopener">text-overflow：</a></strong> 定义如何向用户发出未显示的溢出内容的信号（该属性只能作用于块级元素的溢出，并且要求该块级元素是左右溢出，上下溢出无效）</p>
+<ul>
+<li><strong>ellipsis：</strong> 溢出内容标识为省略号</li>
+<li>也可以自定义溢出内容标识字符</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="http://stackoverflow.com/questions/17779293/css-text-overflow-ellipsis-not-working" target="_blank" rel="noopener">CSS text-overflow: ellipsis; not working?</a></p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 通常下面 3 个属性一块儿使用，force div contents to stay in one line */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 但是上面的代码只能作用于单行，对于多行，请参看下面给出的链接 */</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/" target="_blank" rel="noopener"><strong>Pure CSS for multiline truncation with ellipsis</strong></a></p>
+</blockquote>
+<h3 id="内容多栏布局"><a href="#内容多栏布局" class="headerlink" title="内容多栏布局"></a>内容多栏布局</h3><blockquote>
+<p><a href="https://www.w3.org/TR/css3-multicol/" target="_blank" rel="noopener"><strong>CSS Multi-column Layout Module</strong></a></p>
+</blockquote>
+<p><strong>CSS Columns 是一种定义了多栏布局的模块，它能够表现出将内容在列之间怎么流动的以及间隙和分割线怎么使用。</strong></p>
+<ul>
+<li><strong>column-count：</strong> 定义内容应该被划分的列数</li>
+<li><strong>column-gap：</strong> 设置元素列之间的间隔大小</li>
+<li><strong>column-width：</strong> 设置每列显示的宽度</li>
+</ul>
+<h3 id="CSS-媒体查询-media"><a href="#CSS-媒体查询-media" class="headerlink" title="CSS 媒体查询 @media"></a>CSS 媒体查询 @media</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- link元素中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(max-width: 800px)"</span> <span class="attr">href</span>=<span class="string">"mobile.css"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-width: 800px)"</span> <span class="attr">href</span>=<span class="string">"pc.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>注意，以上 link 标签中引用的 css 文件总是会被下载，但只有当 media 为 true 时才会被应用。</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 样式表中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  @<span class="keyword">media</span> (max-width: <span class="number">600px</span>) &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.facet_sidebar</span> &#123;</span></span><br><span class="line"><span class="undefined">      display: none;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>以下是一些常用的<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media" target="_blank" rel="noopener">媒体特性</a></strong></p>
+<ul>
+<li><strong>width：</strong> 视口（viewport）的宽度（min-width、max-width）</li>
+<li><strong>height：</strong> 视口（viewport）的高度（min-height、max-height）</li>
+<li><strong>device-width 和 device-height 不再被赞成使用</strong></li>
+<li>0.0 尴尬了，MDN 上显示的好多特性都没用过，以后补</li>
+</ul>
+</li>
+</ul>
+<h3 id="Flex-布局"><a href="#Flex-布局" class="headerlink" title="Flex 布局"></a>Flex 布局</h3><blockquote>
+<p><strong><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="noopener">CSS Flexible Box Layout Module Level 1</a></strong></p>
+</blockquote>
+<p>Flex 是 <strong>Flexible Box</strong> 的缩写，意为<strong>弹性布局</strong>，用来为盒状模型提供最大的灵活性。现在主流浏览器都支持 Flex ，可以放心使用。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 应用在块元素上的 flex */</span></span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 应用在行内元素上的 flex */</span></span><br><span class="line"><span class="selector-class">.inline</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下图是 flex 弹性盒子的示意图。</p>
+<p><img src="https://developer.mozilla.org/files/3739/flex_terms.png" alt="flex"></p>
+<ul>
+<li>应用在 flex 容器上的属性<ul>
+<li><strong>flex-direction：</strong> 定义主轴的方向（即子项目的排列方向）</li>
+<li><strong>flex-wrap：</strong> 指定 flex 元素是单行显示还是多行显示</li>
+<li><strong>flex-flow：</strong> 这个属性是 flex-direction 和 flex-wrap 的简写属性</li>
+<li><strong>justify-content：</strong> 定义子项目在主轴上的对齐方式</li>
+<li><strong>align-items：</strong> 定义子项目在交叉轴上的对齐方式</li>
+<li><strong>align-content：</strong> 定义了多根轴线的对齐方式。如果容器只有一根轴线，该属性不起作用</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 默认值都是第一个值 */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around |</span><br><span class="line">    stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>应用在 flex 容器子项目上的属性</p>
+<ul>
+<li><strong>order：</strong> 定义子项目的排列顺序。数值越小，排列越靠前，默认为 0</li>
+<li><strong>flex-grow：</strong> 定义子项目的拉伸因子，默认为 0（即如果存在剩余空间，也不放大）</li>
+<li><strong>flex-shrink：</strong> 定义子项目的缩小比例，默认为 1（即如果空间不足，就缩小该项目）</li>
+<li><strong>flex-basis：</strong> 指定子项目在主轴方向上的初始大小。如果不使用 box-sizing 来改变盒模型的话，那么这个属性就决定了 flex 元素的内容盒（content-box）的宽或者高（取决于主轴的方向）的尺寸大小。</li>
+<li><strong>flex：</strong> flex 属性是 flex-grow, flex-shrink 和 flex-basis 的简写形式</li>
+<li><strong>align-self：</strong> 定义指定子项目在交叉轴上的对齐方式，可覆盖父元素的 align-items 属性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.flex-item</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: &lt;integer&gt;;</span><br><span class="line">  <span class="attribute">flex-grow</span>: &lt;number&gt;; <span class="comment">/* positive number only */</span></span><br><span class="line">  <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* positive number only */</span></span><br><span class="line">  <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">  <span class="attribute">flex</span>: [ <span class="number">0</span> <span class="number">1</span> none ] | [ &lt; <span class="string">"flex-grow"</span> &gt; &lt; <span class="string">"flex-shrink"</span> &gt;? || &lt; <span class="string">"flex-basis"</span> &gt;</span><br><span class="line">    ];</span><br><span class="line">  <span class="attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS-Transforms"><a href="#CSS-Transforms" class="headerlink" title="CSS Transforms"></a>CSS Transforms</h3><blockquote>
+<p><a href="https://drafts.csswg.org/css-transforms/" target="_blank" rel="noopener"><strong>CSS Transforms Level 1</strong></a></p>
+</blockquote>
+<p>CSS Transforms 模块定义了通过应用对应的 CSS 属性能使元素在二维或三维空间完成哪些转变。</p>
+<ul>
+<li><strong>backface-visibility：</strong> 定义元素的背面是否可见。默认情况下元素背面是可见的，而因为元素的背面总是透明的，所以元素发生翻转时，可以看到正面的镜像。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">backface-visibility: visible | hidden;</span><br></pre></td></tr></table></figure>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="BWvQGo" data-default-tab="css,result" data-user="percy507" data-embed-version="2" data-pen-title="backface-visibility" class="codepen">See the Pen <a href="https://codepen.io/percy507/pen/BWvQGo/" target="_blank" rel="noopener">backface-visibility</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<ul>
+<li><strong>perspective：</strong> 指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。<strong>当值为 0 或负值时，无透视变换。</strong></li>
+<li><strong>perspective-origin：</strong> 指定了观察者的位置（默认为 center，即 50% 50%）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">perspective: none | &lt;length&gt;;</span><br><span class="line"><span class="selector-tag">perspective-origin</span>: <span class="selector-tag">x-position</span> <span class="selector-attr">[y-position]</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>transfom：</strong> 通过 transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew）变换。</li>
+</ul>
+<p>各种变换的具体语法看这里：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-function" target="_blank" rel="noopener">transform-function</a></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 注意：可以一次为元素添加多种变换 */</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(10<span class="selector-tag">px</span>) <span class="selector-tag">rotate</span>(10<span class="selector-tag">deg</span>) <span class="selector-tag">translateY</span>(5<span class="selector-tag">px</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>transform-origin：</strong> 定义元素变形基于的原点</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* x-offset y-offset z-offset */</span></span><br><span class="line"><span class="selector-tag">transform-origin</span>: 50% 50% 0; <span class="comment">/* default value */</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>transform-style：</strong> 指定该元素的子元素是（看起来）位于三维空间内，还是在该元素所在的扁平化平面内（默认为 flat，即在扁平化平面内）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">transform-style: flat | preserve-3d;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS-Animations"><a href="#CSS-Animations" class="headerlink" title="CSS Animations"></a>CSS Animations</h3><blockquote>
+<p><a href="https://drafts.csswg.org/css-animations/" target="_blank" rel="noopener"><strong>CSS Animations Level 1</strong></a></p>
+</blockquote>
+<p>CSS Animations 是 CSS 的动画模块，它定义了如何用关键帧来随时间推移对 CSS 属性的值进行动画处理。关键帧动画的行为可以通过指定它们的持续时间，它们的重复次数以及它们如何重复来控制。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">animation</span>: ...   <span class="comment">/* 下面一系列属性的简写形式 */</span></span><br><span class="line"><span class="selector-tag">animation-name</span>: <span class="selector-tag">none</span></span><br><span class="line"><span class="selector-tag">animation-duration</span>: 0<span class="selector-tag">s</span></span><br><span class="line"><span class="selector-tag">animation-timing-function</span>: <span class="selector-tag">ease</span></span><br><span class="line"><span class="selector-tag">animation-delay</span>: 0<span class="selector-tag">s</span></span><br><span class="line"><span class="selector-tag">animation-iteration-count</span>: 1</span><br><span class="line"><span class="selector-tag">animation-direction</span>: <span class="selector-tag">normal</span></span><br><span class="line"><span class="selector-tag">animation-fill-mode</span>: <span class="selector-tag">none</span></span><br><span class="line"><span class="selector-tag">animation-play-state</span>: <span class="selector-tag">running</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>animation-iteration-count：infinite</strong>，表示无限循环</li>
+<li><strong>animation-direction：normal</strong>，正常<ul>
+<li><strong>alternate：</strong> 动画交替反向运行，反向运行时，动画按步后退，同时，带时间功能的函数也反向</li>
+<li><strong>reverse：</strong> 反向运行动画，每周期结束动画由尾到头运行</li>
+<li><strong>alternate-reverse：</strong> 动画反向开始交替（第一次反向，第二次正向，循环）</li>
+</ul>
+</li>
+<li><strong>animation-fill-mode：forwards</strong> 假设动画只执行一次，则这个属性可以让动画在执行完成后保持最后一帧时的状态</li>
+<li><strong>animation-play-state：running | paused</strong> 定义一个动画是否运行或者暂停</li>
+</ul>
+<p>既然聊到动画了，那就继续聊一聊 <strong>AnimationEvent 接口</strong>吧</p>
+<h4 id="AnimationEvent-接口"><a href="#AnimationEvent-接口" class="headerlink" title="AnimationEvent 接口"></a><a href="https://drafts.csswg.org/css-animations/#events" target="_blank" rel="noopener">AnimationEvent 接口</a></h4><ul>
+<li><strong>AnimationEvent 接口提供了一些与 CSS 动画相关的事件</strong><ul>
+<li><strong>animationstart 事件</strong></li>
+<li><strong>animationend 事件</strong></li>
+<li><strong>animationiteration 事件</strong></li>
+<li><strong>animationcancel 事件</strong></li>
+</ul>
+</li>
+</ul>
+<p>通过这个事件，就可以使用 JavaScript 与 CSS 动画进行交互了，下面做了个小例子。^_^</p>
+<div class="custom-reserved-div"><p data-height="265" data-theme-id="0" data-slug-hash="NRpaJE" data-default-tab="js,result" data-user="percy507" data-embed-version="2" data-pen-title="every click fire css animation once" class="codepen">See the Pen <a href="https://codepen.io/percy507/pen/NRpaJE/" target="_blank" rel="noopener">every click fire css animation once</a> by percy (<a href="http://codepen.io/percy507" target="_blank" rel="noopener">@percy507</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></div>
+
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【可视化工具】<a href="http://yoksel.github.io/flex-cheatsheet/" target="_blank" rel="noopener">Flexbox Cheatsheet</a></li>
+<li>【文章】<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a>（推荐）</li>
+<li>【文章】<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">Flex 布局教程：实例篇</a></li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/translate-why-there-is-no-CSS4/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            为什么没有 CSS4 ？解释一下 CSS 标准
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/es6-set-and-map/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              ES6 Set &amp; Map
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

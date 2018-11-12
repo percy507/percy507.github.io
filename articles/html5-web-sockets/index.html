@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            HTML5 Web Sockets |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-html5-web-sockets" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-04T04:12:00.000Z" itemprop="datePublished">2017-03-04</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 Web Sockets
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-API/">Web API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨源通信/">跨源通信</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-02-22T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-02-22
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p><a href="https://zh.wikipedia.org/wiki/WebSocket" target="_blank" rel="noopener"><strong>WebSocket</strong></a> 是一种在单个 TCP 连接上进行全双工通讯的协议。<strong>它的目标是在一个单独的持久连接上提供双向通信。</strong></p>
+<blockquote>
+<p><strong>通信方式</strong></p>
+<ul>
+<li><strong>单工通信（Simplex Communication）：</strong> 指消息只能单方向传输的工作方式</li>
+<li><strong>半双工通信（Half-duplex Communication）：</strong> 可以实现双向的通信，但不能在两个方向上同时进行，必须轮流交替地进行</li>
+<li><strong>全双工通信（Full duplex Communication）：</strong> 允许数据同时在两个方向上双向传输</li>
+</ul>
+</blockquote>
+<p><strong>由于 Web Sockets 使用了自定义协议，所以与普通的 URL 略有不同。</strong>未加密的连接不是 <strong>http://</strong>，而是 <strong>ws://</strong>；加密的连接也不是 <strong>https://</strong>，而是 <strong>wss://</strong>。</p>
+<p><strong>使用自定义协议而不是 HTTP 协议的好处是：能够在客户端和服务器之间发送非常少量的数据，而不必担心 HTTP 那样字节级的开销。</strong></p>
+<ul>
+<li><strong>Web Sockets 的优势</strong><ul>
+<li><strong>较少的控制开销：</strong> 用于协议控制的数据包头部相对较小</li>
+<li><strong>更强的实时性：</strong> 由于协议是全双工的，所以服务器可以随时主动给客户端下发数据</li>
+<li><strong>保持连接状态：</strong> 一次建立，持久连接</li>
+<li><strong>更好的二进制支持：</strong> Websocket 定义了二进制帧，相对 HTTP，可以更轻松地处理二进制内容</li>
+<li><strong>可以支持扩展：</strong> Websocket 定义了扩展，用户可以扩展协议、实现部分自定义的子协议</li>
+<li><strong>更好的压缩效果：</strong> 相对于 HTTP 压缩，Websocket 在适当的扩展支持下，可以沿用之前内容的上下文，在传递类似的数据时，可以显著地提高压缩率</li>
+</ul>
+</li>
+<li><strong>适用领域：聊天室、多人在线游戏或者端到端的在线协作工具等。</strong></li>
+</ul>
+<h3 id="WebSocket-对象"><a href="#WebSocket-对象" class="headerlink" title="WebSocket 对象"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket" target="_blank" rel="noopener">WebSocket 对象</a></h3><p>WebSocket 对象提供了一组 API, 用于创建和管理 WebSocket 连接, 以及通过连接发送和接收数据。</p>
+<ul>
+<li><p><strong>new WebSocket(url , protocols)</strong></p>
+<ul>
+<li><strong>url：</strong> 表示响应 WebSocket 的地址</li>
+<li><strong>protocols：</strong> 可以是一个单个的协议名字字符串或者包含多个协议名字字符串的数组。这些字符串用来表示子协议，这样做可以让一个服务器实现多种 WebSocket 子协议</li>
+</ul>
+</li>
+<li><p>以下是一些常量，<strong>用来描述 WebSocket 连接的状态</strong></p>
+<ul>
+<li><strong>WebSocket.CONNECTING： 0</strong>，表示正在连接中</li>
+<li><strong>WebSocket.OPEN：1</strong>，表示连接已完成并准备好进行通信</li>
+<li><strong>WebSocket.CLOSING：2</strong>，表示连接正在关闭中</li>
+<li><strong>WebSocket.CLOSED：3</strong>，表示连接已经关闭</li>
+</ul>
+</li>
+<li><p>WebSocket 对象的属性</p>
+<ul>
+<li><strong>binaryType：</strong> 表示被传输二进制的内容的类型。取值应当是 <strong>blob</strong> 或 <strong>arraybuffer</strong></li>
+<li><strong>bufferedAmount：</strong> 表示调用 send() 方法加入到队列中等待传输但是还没有发出的字节数。该值会在所有队列数据被发送后重置为 0</li>
+<li><strong>extensions：</strong> 表示服务器选定的扩展。目前这个属性只是一个空字符串，或者是一个包含所有扩展的列表</li>
+<li><strong>protocol：</strong> 表示服务器选定的子协议名字的字符串。这个属性的取值为构造器传入的 protocols 参数</li>
+<li><strong>readyState：</strong> 表示当前连接的状态</li>
+<li><strong>url：</strong> 表示传入构造器的 URL</li>
+</ul>
+</li>
+<li><p>WebSocket 对象的方法</p>
+<ul>
+<li><strong>void send(data)：</strong> 通过 WebSocket 连接向服务器发送数据</li>
+<li><strong>void close(code , reason)：</strong><ul>
+<li><strong>code：</strong> 一个数字值表示关闭连接的状态号，参看 <a href="https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent#Status_codes" target="_blank" rel="noopener"><strong>CloseEvent.code</strong></a></li>
+<li><strong>reason：</strong> 一个可读的字符串，表示连接被关闭的原因</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>WebSocket 对象中的事件</p>
+<ul>
+<li><strong>open：</strong> 当 readyState 的值变为 OPEN 的时候会触发该事件</li>
+<li><strong>message：</strong> 当有消息到达的时候触发该事件</li>
+<li><strong>close：</strong> 当 WebSocket 对象的 readyState 状态变为 CLOSED 时会触发该事件</li>
+<li><strong>error：</strong> 当有错误发生时触发该事件</li>
+</ul>
+</li>
+</ul>
+<h3 id="实例解析"><a href="#实例解析" class="headerlink" title="实例解析"></a>实例解析</h3><ul>
+<li><strong>注意：同源策略对 Web Sockets 不再适用，因此通过 Web Sockets 可以打开到任何站点的连接，至于是否会与某个域中的页面通信，则完全取决于服务器。</strong></li>
+</ul>
+<p><strong>在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。</strong></p>
+<blockquote>
+<p>为了创建 Websocket 连接，需要通过浏览器发出请求，之后服务器进行回应，这个过程通常称为“握手”（handshaking）。</p>
+</blockquote>
+<p>为了进行 Web Sockets 数据传送测试，我这里使用了别人用 Nodejs 搭建的一个支持 Web Sockets 的服务器：<a href="https://github.com/websockets/ws" target="_blank" rel="noopener"><strong>ws: a Node.js WebSocket library</strong></a>。</p>
+<ul>
+<li>在你测试的地方新建个文件夹：<strong>websocket-test</strong></li>
+<li>假设你已经安装好了 nodejs，然后在 cmd 命令行找到上面文件夹的地址</li>
+<li>安装 ws：<strong>npm install ws</strong></li>
+<li>在这个文件夹下新建文件 <strong>server.js</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// server.js</span></span><br><span class="line"><span class="keyword">const</span> WebSocket = <span class="built_in">require</span>(<span class="string">"ws"</span>);</span><br><span class="line"><span class="keyword">const</span> WebSocketServer = WebSocket.Server;</span><br><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> WebSocketServer(&#123; <span class="attr">port</span>: <span class="number">8075</span> &#125;);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">"connection"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">socket</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 收到客户端消息后，马上回复</span></span><br><span class="line">  socket.on(<span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(message);</span><br><span class="line">    <span class="keyword">if</span> (message === <span class="string">"close connection"</span>) &#123;</span><br><span class="line">      socket.close();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      socket.send(<span class="string">"客户端弟弟，消息收到了~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 关闭连接时，显示下面的消息</span></span><br><span class="line">  socket.on(<span class="string">"close"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"服务器：Connection closed~"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在 nodejs 下运行这个文件：<strong>node server.js</strong></li>
+<li>现在支持 WebSocket 的本地服务器已经启动，准备进行测试</li>
+<li>编写好以下的测试代码，在浏览器控制端运行</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 新建一个 WebSocket 对象，并进行初始化</span></span><br><span class="line"><span class="comment">// 我们在服务器设置的端口为 8075</span></span><br><span class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">"ws://localhost:8075"</span>, <span class="string">"protocol1"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// web socket 连接建立后，立即向服务器发送一条消息</span></span><br><span class="line">socket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  socket.send(<span class="string">"服务器哥哥，收到请回复~"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接受服务器响应的消息</span></span><br><span class="line">socket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.data);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关闭连接时显示下面的消息</span></span><br><span class="line">socket.onclose = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"客户端：Connection closed~"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行之后即可看到互相通信成功</li>
+<li>然后再在浏览器控制端数一下面的某一段代码，即可终止与服务器的连接</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法一，客户端发送表示终止连接的消息给服务器，服务器终止与客户端的连接</span></span><br><span class="line">socket.send(<span class="string">"close connection"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二，客户端直接终止与服务器的连接</span></span><br><span class="line">socket.close();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>终止连接后，即可看到终止的消息</li>
+<li>更改文件 server.js 内容如下</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> WebSocket = <span class="built_in">require</span>(<span class="string">"ws"</span>);</span><br><span class="line"><span class="keyword">const</span> WebSocketServer = WebSocket.Server;</span><br><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> WebSocketServer(&#123; <span class="attr">port</span>: <span class="number">8075</span> &#125;);</span><br><span class="line"></span><br><span class="line">server.on(<span class="string">"connection"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">socket</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 收到客户端消息后，马上回复</span></span><br><span class="line">  socket.on(<span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(message);</span><br><span class="line">    <span class="keyword">if</span> (message === <span class="string">"close connection"</span>) &#123;</span><br><span class="line">      socket.close();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (message === <span class="string">"broadcast"</span>) &#123;</span><br><span class="line">      <span class="comment">// 给当前与服务器有连接的所有客户端发送消息</span></span><br><span class="line">      server.clients.forEach(<span class="function"><span class="keyword">function</span> <span class="title">each</span>(<span class="params">client</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (client !== server &amp;&amp; client.readyState === WebSocket.OPEN) &#123;</span><br><span class="line">          client.send(<span class="string">"这是一条群发消息~"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      socket.send(<span class="string">"客户端弟弟，消息收到了~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 关闭连接时，显示下面的消息</span></span><br><span class="line">  socket.on(<span class="string">"close"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"服务器：Connection closed~"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>接下来<strong>体验下 WebSocket 群发功能</strong></li>
+<li>打开多个页面，分别在浏览器控制端输入并运行上面的测试代码</li>
+<li>然后选一个页面，控制端输入 <strong>socket.send(‘broadcast’);</strong></li>
+<li>运行即可在其他与服务器有连接的页面看到服务器群发的消息</li>
+</ul>
+<p>好了，Web Sockets 就侃这么多了。 *_*</p>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/security-browser-same-origin-policy/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            浏览器同源策略及一些跨源通信方法
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/communication-deep-in-jsonp/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              深入了解 JSONP
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

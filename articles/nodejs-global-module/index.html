@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Nodejs Global 模块 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-nodejs-global-module" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-06-02T04:12:00.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Nodejs Global 模块
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p>浏览器上有自己的全局对象 <code>window</code>，同理， nodejs 下也有自己的全局对象 <code>global</code>，并且在各个模块下 都可以直接访问 global 对象。</p>
+<p><strong>在 nodejs 中，除了可以直接使用 V8 JavaScript 引擎中所支持的原生 JavaScript 的函数和对象外，它还追加了一些其他的函数和对象（比如：Buffer 对象、require 函数等）。</strong></p>
+<ul>
+<li><strong>Buffer 对象：</strong> 用于处理二进制数据</li>
+<li><strong>module 对象：</strong> 用于访问当前模块的信息</li>
+<li><strong>process 对象：</strong> 用于访问进程信息</li>
+<li><strong>console 对象：</strong> 用于向控制端输出某些信息</li>
+<li>6 个计时器相关函数</li>
+</ul>
+<p><strong>需要注意的是，可以在不引入模块的情况下直接使用 nodejs 追加的这些函数和对象。</strong></p>
+<p>下面将对上面的这些对象和函数的使用进行简单的解释。</p>
+<h3 id="Buffer-对象"><a href="#Buffer-对象" class="headerlink" title="Buffer 对象"></a><a href="https://nodejs.org/dist/latest-v8.x/docs/api/buffer.html" target="_blank" rel="noopener">Buffer 对象</a></h3><p>在 ES6 之前，原生的 JavaScript 并没有专门用来处理二进制数据的机制，所以为了方便地处理二进制数据，nodejs 才引入了 Buffer 对象。</p>
+<p>ES6 之后，原生的 JavaScript 引入了 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray" target="_blank" rel="noopener"><strong>TypedArray</strong></a>，用来处理二进制数据。注意 <strong>TypedArray 并不是以一个单一的对象的形式而存在，而是以一系列值的类型为 TypedArray 的对象而存在。</strong>在这一系列对象中，<code>Uint8Array</code> 对象和 Buffer 对象最为相似，但是 Buffer 对象更加适用于 nodejs。</p>
+<p><strong>Buffer 对象的实例很像一个各个元素都是整数的数组，但是与真正的数组的区别在于它的大小固定的（即在实例创建时决定大小），并且为它分配的内存是原生的，并且存在于 V8 的堆内存外。</strong></p>
+<p>在 nodejs 6.0 版本之前，是使用 <code>new Buffer()</code> 语法来创建一个实例，但是因为一些安全问题，以这种形式创建实例的方法被废除了，取而代之的是一些 Buffer 对象的一些静态方法。</p>
+<ul>
+<li><p><strong>nodejs 中可以利用的编码</strong></p>
+<ul>
+<li><strong>ascii：</strong> ASCII 字符串</li>
+<li><strong>utf8：</strong> UTF-8 字符串</li>
+<li><strong>utf16le：</strong> UTF-16LE 字符串</li>
+<li><strong>ucs2：</strong> UCS2 字符串</li>
+<li><strong>base64：</strong> 经过 BASE64 编码后的字符串</li>
+<li><strong>binary：</strong> 二进制数据（不推荐使用）</li>
+<li><strong>hex：</strong> 使用十六进制数值表示的字符串</li>
+</ul>
+</li>
+<li><p><strong>创建 Buffer 实例</strong></p>
+<ul>
+<li><strong>Buffer.alloc(size[, fill[, encoding]])：</strong> 返回一个指定大小的 Buffer 实例，如果没有设置 fill，则默认填满 0</li>
+<li><strong>Buffer.allocUnsafe(size)：</strong> 返回一个指定大小的 Buffer 实例，但是它不会被初始化，所以它可能包含敏感的数据</li>
+<li><strong>Buffer.allocUnsafeSlow(size)</strong></li>
+<li><strong>Buffer.from(array)：</strong> 返回一个被 array 的值初始化的新的 Buffer 实例（传入的 array 的元素只能是数字，不然就会自动被 0 覆盖）</li>
+<li><strong>Buffer.from(arrayBuffer[, byteOffset[, length]])：</strong> This creates a view of the ArrayBuffer without copying the underlying memory</li>
+<li><strong>Buffer.from(buffer)：</strong> 复制传入的 Buffer 实例的数据，并返回一个新的 Buffer 实例</li>
+<li><strong>Buffer.from(string[, encoding])：</strong> 返回一个被 string 的值初始化的新的 Buffer 实例</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf1 = Buffer.alloc(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">const</span> buf2 = Buffer.allocUnsafe(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">const</span> buf3 = Buffer.from([<span class="number">1</span>, <span class="string">"2a"</span>, <span class="number">230</span>]);</span><br><span class="line"><span class="keyword">const</span> buf4 = Buffer.from(<span class="string">"abcdggg"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf1); <span class="comment">// &lt;Buffer 00 00 00 00 00&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(buf2); <span class="comment">// &lt;Buffer b8 ed a3 80 58&gt;  （这只是一种可能的结果）</span></span><br><span class="line"><span class="built_in">console</span>.log(buf3); <span class="comment">// &lt;Buffer 01 00 e6&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(buf4); <span class="comment">// &lt;Buffer 61 62 63 64 67 67 67&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(buf4.toString()); <span class="comment">// abcdggg</span></span><br><span class="line"></span><br><span class="line">buf2.fill(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf2); <span class="comment">// &lt;Buffer 00 00 00 00 00&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面讲的不太清楚（以后再优化），因为我是初学，TypedArray 都没玩过呢！但是放心，大腿在这呢 — <a href="http://zhenhua-lee.github.io/node/buffer.html" target="_blank" rel="noopener"><strong>Node 源码解析 – buffer</strong></a><br>源码链接： <a href="https://github.com/nodejs/node/blob/master/lib/buffer.js" target="_blank" rel="noopener"><strong>buffer.js</strong></a></p>
+</blockquote>
+<ul>
+<li><strong>Buffer.byteLength(string[, encoding])：</strong> 返回 string 的实际的字节长度（注意不是字符长度）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str1 = <span class="string">"a"</span>;</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="string">"小"</span>;</span><br><span class="line"><span class="keyword">let</span> str3 = <span class="string">"aa"</span>;</span><br><span class="line"><span class="keyword">let</span> str4 = <span class="string">"小a"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1.length); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(Buffer.byteLength(str1)); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(str2.length); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(Buffer.byteLength(str2)); <span class="comment">// 3</span></span><br><span class="line"><span class="built_in">console</span>.log(str3.length); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(Buffer.byteLength(str3)); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(str4.length); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(Buffer.byteLength(str4)); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<p>上面的汉字 <code>小</code> 的 UTF-8 码正好占用三个字节（<code>\xE5\xB0\x8F</code>），所以才会有上面的结果。</p>
+<ul>
+<li><strong>Buffer.concat(list[, totalLength])：</strong> 连接多个 Buffer 实例或 Uint8Array 实例，并返回一个新的 Buffer 实例</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf1 = Buffer.alloc(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">const</span> buf2 = Buffer.alloc(<span class="number">14</span>);</span><br><span class="line"><span class="keyword">const</span> totalLength = buf1.length + buf2.length;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(totalLength); <span class="comment">// 24</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> buf = Buffer.concat([buf1, buf2], totalLength);</span><br><span class="line"><span class="built_in">console</span>.log(buf.length); <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Buffer.isBuffer(obj)：</strong> 判断一个对象是不是 Buffer 实例</li>
+<li><strong>Buffer.isEncoding(encoding)：</strong> 判断是否支持指定的编码方式</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Buffer.isEncoding(<span class="string">"utf8"</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Buffer.isEncoding(<span class="string">"utf9"</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>Buffer.poolSize：</strong> 指定预分配的字节数的大小，默认为 8192（即 8 KB）</p>
+</li>
+<li><p><strong>Buffer.prototype.buffer：</strong> 一个指向 ArrayBuffer 的引用</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arrayBuffer = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">16</span>);</span><br><span class="line"><span class="keyword">const</span> buffer = Buffer.from(arrayBuffer);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buffer.buffer === arrayBuffer); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Buffer.prototype.equals(otherBuffer)：</strong> 比较两个 Buffer 实例是否拥有完全相同的 bytes</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf1 = Buffer.from(<span class="string">"hello"</span>);</span><br><span class="line"><span class="keyword">const</span> buf2 = Buffer.from(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf1.equals(buf2)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>用于迭代的方法</p>
+<ul>
+<li><strong>Buffer.prototype.entries()</strong></li>
+<li><strong>Buffer.prototype.keys()</strong></li>
+<li><strong>Buffer.prototype.values()</strong></li>
+</ul>
+</li>
+<li><p><strong>Buffer.prototype.fill(value[, offset[, end]][, encoding])：</strong> 用指定的值填充满 Buffer 实例</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> b = Buffer.allocUnsafe(<span class="number">25</span>).fill(<span class="string">"abc呵呵"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意下面因为不够容纳全部的汉字字节，所以乱码</span></span><br><span class="line"><span class="built_in">console</span>.log(b.toString()); <span class="comment">// abc呵呵abc呵呵abc呵�</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Buffer.prototype.includes(value[, byteOffset][, encoding])</strong></li>
+<li><p><strong>Buffer.prototype.indexOf(value[, byteOffset][, encoding])</strong></p>
+</li>
+<li><p><strong>Buffer.prototype.toJSON()：</strong> 返回一个 JSON 对象</p>
+<ul>
+<li>当 JSON.stringify(buf) 的参数为一个 Buffer 实例时，会隐式地调用上面的方法</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> b = Buffer.from(<span class="string">"hell"</span>);</span><br><span class="line"><span class="keyword">let</span> json = b.toJSON();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(json); <span class="comment">// &#123; type: 'Buffer', data: [ 104, 101, 108, 108 ] &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(b)); <span class="comment">// &#123;"type":"Buffer","data":[104,101,108,108]&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Buffer.prototype.toString([encoding[, start[, end]]])：</strong> 以指定的 encoding 解码 Buffer 实例，返回解码后的字符串</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf = Buffer.from([<span class="number">104</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString()); <span class="comment">// hell</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString(<span class="string">"base64"</span>)); <span class="comment">// aGVsbA==</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString(<span class="string">"hex"</span>)); <span class="comment">// 68656c6c</span></span><br></pre></td></tr></table></figure>
+<p>在 nodejs 中，也可以使用 <a href="https://nodejs.org/dist/latest-v8.x/docs/api/string_decoder.html" target="_blank" rel="noopener"><strong>StringDecoder 对象</strong></a>将 Buffer 对象中的数据转换为字符串，该对象的作用与 Buffer 对象的 toString() 方法的作用相同，但是前者对 utf8 编码格式的字符串提供了更好地支持。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> StringDecoder = <span class="built_in">require</span>(<span class="string">"string_decoder"</span>).StringDecoder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> buf = Buffer.from(<span class="string">"abc啊"</span>);</span><br><span class="line"><span class="keyword">let</span> decoder = <span class="keyword">new</span> StringDecoder(<span class="string">"base64"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf); <span class="comment">// &lt;Buffer 61 62 63 e5 95 8a&gt;</span></span><br><span class="line"><span class="keyword">let</span> str = decoder.write(buf);</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// YWJj5ZWK</span></span><br></pre></td></tr></table></figure>
+<p><strong>字符串不能被修改，但是 Buffer 实例却可以被修改。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf = Buffer.from(<span class="string">"abcd"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString()); <span class="comment">// abcd</span></span><br><span class="line"></span><br><span class="line">buf[<span class="number">1</span>] = <span class="number">122</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString()); <span class="comment">// azcd</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Buffer.prototype.write(string[, offset[, length]][, encoding])：</strong> 将指定字符串写入到 Buffer 中</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf = Buffer.from(<span class="string">"abcdefg"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf); <span class="comment">// &lt;Buffer 61 62 63 64 65 66 67&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString()); <span class="comment">// abcdefg</span></span><br><span class="line"></span><br><span class="line">buf.write(<span class="string">"和"</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf); <span class="comment">// &lt;Buffer 61 e5 92 8c 65 66 67&gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString()); <span class="comment">// a和efg</span></span><br></pre></td></tr></table></figure>
+<p>好了，还有一堆方法就不一一列出来了，Buffer 就到这里了。</p>
+<h3 id="module-对象"><a href="#module-对象" class="headerlink" title="module 对象"></a><a href="https://nodejs.org/dist/latest-v8.x/docs/api/modules.html" target="_blank" rel="noopener">module 对象</a></h3><ul>
+<li><p><strong>在使用 require 函数加载模块文件时，将运行该模块文件中的每一行代码</strong></p>
+</li>
+<li><p><strong>模块在首次加载后将缓存在内存缓存区中，所以对于相同模块的多次引用得到的都是同一个模块对象，即对于相同模块的多次引用不会引起该模块内代码的多次执行。</strong></p>
+</li>
+<li><p><strong>在编译的过程中，Node 会对获取的 JavaScript 文件内容进行头尾包装！</strong></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 包装前  module666.js</span></span><br><span class="line"><span class="keyword">const</span> PI = <span class="number">6666</span>;</span><br><span class="line"><span class="built_in">module</span>.exports = PI;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 包装后，注意下面不是立即执行函数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">exports, require, module, __filename, __dirname</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> PI = <span class="number">6666</span>;</span><br><span class="line">  <span class="built_in">module</span>.exports = PI;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>__filename &amp; __dirname</strong><ul>
+<li><strong>__filename：</strong> 返回当前模块文件的绝对路径（带文件名）</li>
+<li><strong>__dirname：</strong> 返回当前模块文件所在目录的绝对路径</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(__filename); <span class="comment">// c:\Users\percy\Desktop\nodejs\1.js</span></span><br><span class="line"><span class="built_in">console</span>.log(__dirname); <span class="comment">// c:\Users\percy\Desktop\nodejs</span></span><br></pre></td></tr></table></figure>
+<h3 id="Process-对象"><a href="#Process-对象" class="headerlink" title="Process 对象"></a><a href="https://nodejs.org/dist/latest-v8.x/docs/api/process.html" target="_blank" rel="noopener"><strong>Process 对象</strong></a></h3><p><strong>process 对象是 nodejs 的一个全局对象，提供当前 nodejs 进程的信息。</strong></p>
+<ul>
+<li><p><strong>属性</strong></p>
+<ul>
+<li><strong>process.arch：</strong> 返回当前处理器的架构</li>
+<li><strong>process.env：</strong> 返回一个包含用户环境变量的对象</li>
+<li><strong>process.argv：</strong> 返回一个数组，数组的第一个元素总是 node 程序的绝对路径，第二个元素是当前执行脚本的绝对路径</li>
+<li><strong>process.execPath：</strong> 返回 node 程序的绝对路径</li>
+<li><strong>process.argv0：</strong> 返回 node 程序的绝对路径</li>
+<li><strong>process.pid：</strong> 返回当前进程的进程号</li>
+<li><strong>process.platform：</strong> 返回当前的系统平台标识符（比如：’darwin’, ‘freebsd’, ‘linux’, ‘sunos’ or ‘win32’）</li>
+<li><strong>process.version：</strong> 返回当前 node 的版本号</li>
+<li><strong>process.versions：</strong> 返回一个对象，列出了 nodejs 和其相关依赖的版本号</li>
+</ul>
+</li>
+<li><p><strong>三个重要的属性</strong></p>
+<ul>
+<li><strong>process.stdin：</strong> 返回一个指向标准输入流的可读流（Readable Stream）</li>
+<li><strong>process.stdout：</strong> 返回一个指向标准输出流的可写流（Writable Stream）</li>
+<li><strong>process.stderr：</strong> 返回一个指向标准错误流的可写流（Writable Stream）</li>
+</ul>
+</li>
+<li><p><strong>方法</strong></p>
+<ul>
+<li><strong>process.cwd()：</strong> 返回进程当前的工作目录</li>
+<li><strong>process.chdir(path)：</strong> 改变进程当前的工作目录</li>
+<li><strong>process.cpuUsage()：</strong> 返回当前 CPU 的使用情况</li>
+<li><strong>process.memoryUsage()：</strong> 返回当前内存的使用情况</li>
+<li><strong>process.uptime()：</strong> 返回 Node 程序已运行的秒数</li>
+<li><strong>process.nextTick(callback[, …args])：</strong> 指定回调函数在当前执行栈的尾部、下一次 Event Loop 之前执行</li>
+<li><strong>process.emitWarning(warning[, options])：</strong> 触发一个 warning 事件，可以自定义一些警告信息</li>
+<li><strong>process.exit([code])：</strong> 立即结束当前进程，但是会触发 process 的 exit 事件</li>
+<li><strong>process.abort()：</strong> 立即结束当前进程，不会触发 exit 事件</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(process.cwd()); <span class="comment">// c:\Users\percy\Desktop\nodejs</span></span><br><span class="line">process.chdir(<span class="string">"../"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(process.cwd()); <span class="comment">// c:\Users\percy\Desktop</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.emitWarning(<span class="string">"Something happened!"</span>, &#123;</span><br><span class="line">  code: <span class="string">"MY_WARNING"</span>,</span><br><span class="line">  detail: <span class="string">"This is some additional information"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">process.on(<span class="string">"warning"</span>, warning =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(warning);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.on(<span class="string">"exit"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"exit~"</span>, code);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">process.exit(); <span class="comment">// exit~</span></span><br></pre></td></tr></table></figure>
+<p>process 对象还有一些方法没列出来，因为我现在看不懂怎么用，以后补 &gt;_&lt;</p>
+<h3 id="Console-对象"><a href="#Console-对象" class="headerlink" title="Console 对象"></a><a href="https://nodejs.org/dist/latest-v8.x/docs/api/console.html" target="_blank" rel="noopener">Console 对象</a></h3><p>这个对象就是用来在控制台下面打印一些信息而已，挑几个有用但没记牢的方法来玩玩。</p>
+<ul>
+<li><strong>console.dir(value)：</strong> 打印一个对象的详细信息</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> buf = Buffer.from(<span class="string">"abcdefg"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf); <span class="comment">// &lt;Buffer 61 62 63 64 65 66 67&gt;</span></span><br><span class="line"><span class="built_in">console</span>.dir(buf); <span class="comment">// Buffer [ 97, 98, 99, 100, 101, 102, 103 ]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>console.time(label) &amp; console.timeEnd(label)：</strong> 用来统计代码执行时间</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> label = <span class="string">"time"</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(label);</span><br><span class="line"><span class="keyword">while</span> (str.length &lt; <span class="number">999999</span>) &#123;</span><br><span class="line">  str += <span class="string">"a"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(label); <span class="comment">// time: 133.724ms</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-个计时器函数"><a href="#6-个计时器函数" class="headerlink" title="6 个计时器函数"></a>6 个计时器函数</h3><p>在浏览器上，就有相应的 4 个计时器函数（<code>setInterval</code>、<code>clearInterval</code>、<code>setTimeout</code>、<code>clearTimeout</code>），只不过它们是 window 全局对象的属性。</p>
+<p>在 nodejs 中，除过上面的 4 个计时器，还增加了两个（<code>setImmediate</code>，<code>clearImmediate</code>）。</p>
+<p><strong>这六个计时器函数被定义在了全局对象 global 下，即可以直接在代码中进行使用。</strong></p>
+<hr>
+<p>至于 Nodejs 的 process.nextTick() 和 setImmediate() 之间的具体区别，我会在下一篇文章中详细说明，下一篇就研究研究 Event Loop 吧 ~</p>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/play-blog-post-create-time-back/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            换电脑之 hexo 博客重生记
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/svg-basic/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              认识一下 SVG
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

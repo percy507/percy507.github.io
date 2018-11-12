@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            《编写高质量 JavaScript 代码的 68 个有效方法》读书笔记 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-readnote-effective-javascript-68-ways" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-05-08T04:12:00.000Z" itemprop="datePublished">2017-05-08</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      《编写高质量 JavaScript 代码的 68 个有效方法》读书笔记
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="数字和字符串"><a href="#数字和字符串" class="headerlink" title="数字和字符串"></a>数字和字符串</h3><ul>
+<li><strong>JavaScript 中所有的数字都是双精度浮点数</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 小心浮点数的精度陷阱</span></span><br><span class="line"></span><br><span class="line"><span class="number">0.1</span> +</span><br><span class="line">  <span class="number">0.2</span>(</span><br><span class="line">    <span class="comment">// 0.30000000000000004</span></span><br><span class="line">    <span class="number">0.1</span> + <span class="number">0.2</span></span><br><span class="line">  ) +</span><br><span class="line">  <span class="number">0.3</span>; <span class="comment">// 0.6000000000000001</span></span><br><span class="line"><span class="number">0.1</span> + (<span class="number">0.2</span> + <span class="number">0.3</span>); <span class="comment">// 0.6</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>一个 JavaScript 字符串的元素是一个 16 位的代码单元</strong></li>
+</ul>
+<p><strong>代码点：</strong> Unicode 编码为世界上所有的文字系统的每个字符单位分配了一个唯一的整数，该整数介于 0 和 1114111 之间，在 Unicode 术语中一个该整数被称为一个代码点（code point）。</p>
+<p><strong>代码单元：</strong> 最初，人们认为 Unicode 最多需要 2 的 16 次方个代码点，所以产生了 UCS-2 编码，其为 16 位编码的原始标准。由于每个代码点可以容纳一个 16 位的数字，所以简单的方法就是将代码点与其编码元素一对一地映射起来，这被称为一个代码单元（code unit）。</p>
+<p>由于错误估算了代码点的容量范围，UCS-2 变得过时，其替代者 <strong>UTF-16</strong> 通过代理对来表示附加的代码点。<strong>一个代理对是一对 16 位的代码单元，这对代码单元共同编码一个等于大于 2 的 16 次方的代码点。</strong></p>
+<p><strong>在 Unicode 扩大规模时，JavaScript 已经采用了 16 位的的字符串元素，字符串属性和方法都是基于代码单元层级，而不是代码点层级，所以一个 JavaScript 字符串的元素是一个 16 位的代码单元。</strong></p>
+<p><strong>类似地，JavaScript 的正则表达式也工作于代码单元层级。</strong></p>
+<p><a href="unicode.png"><img src="/img/wiki-unicode.png" alt="unicode"></a></p>
+<h3 id="toString-VS-valueOf"><a href="#toString-VS-valueOf" class="headerlink" title="toString() VS valueOf()"></a>toString() VS valueOf()</h3><ul>
+<li><strong>对象也可以被强制转换为原始值，优先使用 valueOf() 进行转换，其次使用 toString() 进行转换</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"a"</span>;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">  toString: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"b"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">  valueOf: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"c"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> obj3 = &#123;</span><br><span class="line">  toString: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"b"</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  valueOf: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"c"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a + obj1); <span class="comment">// ab</span></span><br><span class="line"><span class="built_in">console</span>.log(a + obj2); <span class="comment">// ac</span></span><br><span class="line"><span class="built_in">console</span>.log(a + obj3); <span class="comment">// ac</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Object.prototype.toString()：</strong> 返回一个表示该对象的字符串。如果此方法在自定义对象中未被覆盖，toString() 返回 “[object type]”,其中 type 是对象类型。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Math</span>.toString(); <span class="comment">// "[object Math]"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 因为在 String 中覆盖掉了 Object 中的 toString() 方法</span></span><br><span class="line"><span class="built_in">String</span>.toString(); <span class="comment">// "function String() &#123; [native code] &#125;"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">String</span>); <span class="comment">// "[object Function]"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"abcd"</span>;</span><br><span class="line">str.toString(); <span class="comment">// "abcd"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(str); <span class="comment">// "[object String]"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Object.prototype.valueOf()：</strong> 返回指定对象的原始值。</li>
+</ul>
+<p>JavaScript 调用 valueOf() 方法用来<strong>把对象转换成原始类型的值（数值、字符串和布尔值）</strong></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><strong>this 变量的隐式绑定问题</strong></li>
+</ul>
+<p><strong>每个函数都有一个 this 变量的隐式绑定，该 this 变量的绑定值是在调用该函数时确定地。</strong></p>
+<p>this 变量的作用域总是由其最近的封闭函数所确定地。</p>
+<ul>
+<li><strong>在类数组对象上复用通用的数组方法</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在控制端下打印指定的 DOM 节点</span></span><br><span class="line"><span class="keyword">let</span> title = <span class="built_in">document</span>.querySelectorAll(<span class="string">"h3"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.forEach.call(title, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="库和-API-设计"><a href="#库和-API-设计" class="headerlink" title="库和 API 设计"></a>库和 API 设计</h3><ul>
+<li><strong>利用测试 undefined 的方式提供参数默认值</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name === <span class="literal">undefined</span> ? <span class="string">"default_name"</span> : name;</span><br><span class="line">  <span class="keyword">this</span>.age = age === <span class="literal">undefined</span> ? <span class="string">"default_age"</span> : age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p1); <span class="comment">// Person &#123;name: "default_name", age: "default_age"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> Person(<span class="string">"percy"</span>, <span class="number">22</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p2); <span class="comment">// Person &#123;name: "percy", age: 22&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>接收一个选项对象，而不是一堆参数</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad way</span></span><br><span class="line"><span class="keyword">let</span> window1 = <span class="keyword">new</span> Window(<span class="number">300</span>, <span class="number">100</span>, <span class="string">"#666"</span>, <span class="string">"#FFF"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good way</span></span><br><span class="line"><span class="keyword">let</span> window2 = <span class="keyword">new</span> Window(&#123;</span><br><span class="line">  width: <span class="number">300</span>,</span><br><span class="line">  height: <span class="number">100</span>,</span><br><span class="line">  background: <span class="string">"#666"</span>,</span><br><span class="line">  color: <span class="string">"#FFF"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>接收一个选项对象的实现逻辑是：先在内部定义一个全部的有默认值的默认选项对象，然后用 extend() 方法将传入的选项对象对默认选项对象进行相同键名覆盖即可（注意 extend() 方法有 undefined 值检测）</strong></p>
+<p><strong>注意：</strong> 下面实现接收选项对象的代码并不完善，因为没有对传入的选项对象的属性进行类型检测。所以在实际应用中，一定要进行类型检测，防止出错。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Window</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> default_options = &#123;</span><br><span class="line">    width: <span class="number">300</span>,</span><br><span class="line">    height: <span class="number">100</span>,</span><br><span class="line">    background: <span class="string">"#FFF"</span>,</span><br><span class="line">    color: <span class="string">"#000"</span>,</span><br><span class="line">    position: <span class="string">"center"</span>,</span><br><span class="line">    isAnimation: <span class="literal">false</span></span><br><span class="line">  &#125;;</span><br><span class="line">  extend(default_options, options);</span><br><span class="line">  <span class="built_in">console</span>.log(options);</span><br><span class="line">  <span class="built_in">console</span>.log(default_options);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 其他操作。。。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> window3 = <span class="keyword">new</span> Window(&#123;</span><br><span class="line">  height: <span class="number">200</span>,</span><br><span class="line">  color: <span class="string">"#FFF"</span>,</span><br><span class="line">  isAnimation: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">target, source</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (source) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> source) &#123;</span><br><span class="line">      <span class="keyword">let</span> val = source[key];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> val !== <span class="string">"undefined"</span>) &#123;</span><br><span class="line">        target[key] = val;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/readnote-high-performance-js/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            《高性能 JavaScript》读书笔记
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/php-mysqli-extention/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              用 PHP 扩展 mysqli 连接数据库
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

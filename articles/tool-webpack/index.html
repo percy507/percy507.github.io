@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            初试 Webpack |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-tool-webpack" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-13T04:12:00.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      初试 Webpack
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p><a href="https://webpack.js.org/" target="_blank" rel="noopener"><strong>Webpack</strong></a> 是一个模块打包器（对于 webpack 来说，一切资源都是模块~）。它的主要目的是把 JavaScript 文件捆绑到浏览器环境中使用，也能够支持转换、绑定、或者打包任何形式的资源。它会根据模块的依赖关系进行静态分析，然后将这些模块按指定的规则生成对应的静态资源。</p>
+<ul>
+<li>在你项目的根目录下使用 npm 创建 <code>package.json</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<ul>
+<li>本地安装 webpack，就是安装到你的项目目录的 <code>node_modules</code> 下</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 本地安装Webpack</span></span><br><span class="line">npm install --save-dev webpack</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用 webpack 有两种方式<ul>
+<li>一是在终端下直接输入执行命令以及相关的配置命令（<code>node_modules/.bin/webpack src/main.js build/bundle.js</code>）</li>
+<li>二是先在本地设置好配置文件 <code>webpack.config.js</code>，然后在终端下输入执行命令 <code>node_modules/.bin/webpack</code>（这个因为是在本地安装的，所以这么输，如果是全局安装的，直接 <code>webpack</code>）</li>
+</ul>
+</li>
+</ul>
+<p>一般开发时都使用第二种方法。</p>
+<ul>
+<li>瞧瞧 <code>webpack.config.js</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 最简单的 webpack.config.js 文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./src/main.js"</span>, <span class="comment">// 唯一入口文件</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    path: <span class="string">"./build"</span>, <span class="comment">// 打包后的文件存放的地方</span></span><br><span class="line">    filename: <span class="string">"bundle.js"</span> <span class="comment">// 打包后输出文件的文件名</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-webpack-dev-server"><a href="#使用-webpack-dev-server" class="headerlink" title="使用 webpack-dev-server"></a>使用 <a href="https://webpack.js.org/configuration/dev-server/" target="_blank" rel="noopener">webpack-dev-server</a></h3><p><code>webpack-dev-server</code> 是 webpack 自己的本地服务器，安装上它后，可以帮助你更快地进行开发，<strong>它可以监控本地文件的改动，并在浏览器上实时刷新，方便查看效果。</strong></p>
+<blockquote>
+<p>webpack-dev-server provides you with a server and live reloading.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 进行本地安装</span></span><br><span class="line"></span><br><span class="line">npm install --save-dev webpack-dev-server</span><br></pre></td></tr></table></figure>
+<p>安装完以后，需要在 webpack 的配置文件里进行配置一下。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./src/main.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: <span class="string">"./build"</span>,</span><br><span class="line">    filename: <span class="string">"bundle.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 在下面进行配置 webpack-dev-server</span></span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: <span class="string">"./build"</span>,</span><br><span class="line">    historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">    inline: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>常见配置参数</strong><ul>
+<li><strong>contentBase：</strong> 设置服务器的根目录（通常设置为 build 目录）</li>
+<li><strong>inline：</strong> 布尔值，设置为 true 后，服务器会在源文件发生改动时自动刷新页面（源文件指的是在 src 目录下的，不是 build 目录下的）</li>
+<li><strong>watchContentBase：</strong> 布尔值，默认 false，设置为 true 后，会监听 build 目录下的文件变动</li>
+<li><strong>compress：</strong> 是否开启 gzip 压缩</li>
+<li><strong>headers：</strong> 一个对象，为每次的 HTTP 请求设置某些头字段</li>
+<li><strong>https：</strong> 设置为 true，可以使用 https，默认使用 http</li>
+<li><strong>port：</strong> 设置服务器监听的端口，默认为 8080</li>
+<li><strong>historyApiFallback：</strong> 设置为 true 后，所有的跳转将指向 index.html</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用加载器-Loader"><a href="#使用加载器-Loader" class="headerlink" title="使用加载器 Loader"></a><a href="https://webpack.js.org/loaders/" target="_blank" rel="noopener">使用加载器 Loader</a></h3><blockquote>
+<p>webpack enables use of loaders to preprocess files. This allows you to bundle any static resource way beyond JavaScript.</p>
+</blockquote>
+<p>Loaders 是 webpack 中最让人激动人心的功能之一了。通过使用不同的 loader，webpack 可以通过调用外部的脚本或工具可以对各种各样的格式的文件进行预处理。</p>
+<blockquote>
+<p>Loader 是一个函数（Node.js 中运行），接受资源文件作为参数，并返回转换的结果。这样，Webpack 就可以通过 require 加载任何类型的模块或文件，如：Stylus、 JSX、图片等。</p>
+</blockquote>
+<ul>
+<li><p>举一些例子</p>
+<ul>
+<li>自动将 JSON 文件转化为 JavaScript 可使用的对象</li>
+<li>动态编译 Stylus、Sass、Less 文件</li>
+<li>把图片转换为 Base64 编码的字符串</li>
+<li>将 ES6 代码转换为 ES5</li>
+<li>将 Markdown 编译为 HTML</li>
+</ul>
+</li>
+<li><p><a href="https://webpack.js.org/loaders/json-loader/" target="_blank" rel="noopener">json-loader</a></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装 json-loader</span></span><br><span class="line">npm install --save-dev json-loader</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在 webpack.config.js 文件里配置 json-loader</span></span><br><span class="line"><span class="comment">// test 的参数对应的是一个正则表达式，注意不要给它加引号</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [&#123;</span><br><span class="line">            test: <span class="regexp">/\.json$/</span>,</span><br><span class="line">            use: <span class="string">'json-loader'</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这样，在其他的 js 文件就可以引用 json 文件了</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> jsonData = reqiure(<span class="string">'./profile.json'</span>);</span><br><span class="line"><span class="comment">// 或者直接使用 ES6 的模块写法</span></span><br><span class="line"><span class="keyword">import</span> jsonData <span class="keyword">from</span> <span class="string">'./profile.json'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://webpack.js.org/loaders/css-loader/" target="_blank" rel="noopener">css-loader：</a>使你能够使用类似 <code>@import</code> 和 <code>url(...)</code> 的方法实现 <code>require()</code> 的功能</li>
+<li><a href="https://webpack.js.org/loaders/style-loader/" target="_blank" rel="noopener">style-loader：</a>将所有的计算后的样式加入页面中</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 可以一次联合多个 loader 针对同一种类型的文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [&#123;</span><br><span class="line">            test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">            use: [<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>以上仅为简单的介绍，仅供参考。各个 loader 详细的使用方法还请自行查阅官方文档，比如一个 loader 可能有很多配置选项，但是这里没列出来。</strong></p>
+</blockquote>
+<h3 id="插件-Plugin"><a href="#插件-Plugin" class="headerlink" title="插件 Plugin"></a><a href="https://webpack.js.org/plugins/" target="_blank" rel="noopener">插件 Plugin</a></h3><blockquote>
+<p>插件（Plugins）是用来拓展 Webpack 功能的，它们会在整个构建过程中生效，执行相关的任务。Loaders 和 Plugins 常常被弄混，但是他们其实是完全不同的东西.可以这么来说，loaders 是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用。</p>
+</blockquote>
+<p>这里拿上面的 css-loader &amp; style-loader 举个例子，通过这两个 loader 可以把指定加载的 css 加载到指定页面的 style 标签之内。但是我们想为这些 css 单独放到一个文件中，并在页面上通过 link 标签加载。</p>
+<ul>
+<li>使用插件 <a href="https://github.com/webpack-contrib/extract-text-webpack-plugin#api" target="_blank" rel="noopener"><strong>extract-text-webpack-plugin</strong></a></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装</span></span><br><span class="line">npm install --save-dev extract-text-webpack-plugin</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 下面这个是我本次学习进行的配置</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./src/main.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname + <span class="string">"/build"</span>,</span><br><span class="line">    filename: <span class="string">"bundle.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.json$/</span>,</span><br><span class="line">        use: <span class="string">"json-loader"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        <span class="comment">//use: ['style-loader', 'css-loader']</span></span><br><span class="line">        use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          use: <span class="string">"css-loader"</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.styl$/</span>,</span><br><span class="line">        use: [<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>, <span class="string">"stylus-loader"</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> ExtractTextPlugin(&#123;</span><br><span class="line">      filename: <span class="string">"bundle.css"</span>,</span><br><span class="line">      disable: <span class="literal">false</span>,</span><br><span class="line">      allChunks: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ],</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: __dirname + <span class="string">"/build"</span>,</span><br><span class="line">    port: <span class="number">2000</span>,</span><br><span class="line">    inline: <span class="literal">true</span>,</span><br><span class="line">    historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">    watchContentBase: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>先到这里吧，以后实际用上时，再分别总结具体需求下的具体配置（Webpack 配置内容真多啊~）</p>
+</blockquote>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>【文章】<a href="https://segmentfault.com/a/1190000006178770#articleHeader0" target="_blank" rel="noopener">入门 Webpack，看这篇就够了</a></li>
+<li>【文章】<a href="https://itbilu.com/nodejs/npm/Vy6BnJkY-.html" target="_blank" rel="noopener">Webpack-前端资源模块化加载打包工具</a>（推荐）</li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/javascript-traversal/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            JavaScript 中的遍历
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/html5-indexeddb/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              HTML5 IndexedDB
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

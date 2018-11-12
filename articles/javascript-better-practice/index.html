@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            《编写可维护的 JavaScript》 读书笔记（编程实践） |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-javascript-better-practice" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2017-03-16T04:12:00.000Z" itemprop="datePublished">2017-03-16</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      《编写可维护的 JavaScript》 读书笔记（编程实践）
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-05T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-05
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <blockquote>
+<p>构建软件设计的方法有两种：一种是把软件做到很简单以至于找不到缺陷；另一种是把软件做到很复杂以至于找不到明显的缺陷。（C.A.R Hoare，1980 图灵奖得主）</p>
+</blockquote>
+<h3 id="UI-层的松耦合"><a href="#UI-层的松耦合" class="headerlink" title="UI 层的松耦合"></a>UI 层的松耦合</h3><ul>
+<li><p>在 Web 开发中，用户界面是由三个彼此隔离又相互作用的层定义的。</p>
+<ul>
+<li>HTML：定义页面数据和语义。现在流行把某些数据从 HTML 中分离出去，比如可以成为页面配置数据（比如页面标题）的数据，当然这些都是通过 HTML 模板中完成的。编译完的代码数据还是在 HTML 中。</li>
+<li>CSS：给页面添加样式</li>
+<li>JavaScript：给页面添加行为</li>
+</ul>
+</li>
+<li><p><strong>将 CSS 从 JavaScript 中抽离</strong>，即不要通过元素的 style 属性来为元素添加或删除 CSS，而是通过动态为元素添加或删除某个 className 来达到同样的效果。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">element.style.color = <span class="string">"green"</span>;</span><br><span class="line">element.style.cssText = <span class="string">"color:red;display:block"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">element.classList.add(<span class="string">"className"</span>);</span><br></pre></td></tr></table></figure>
+<p>当然，上面的规则仅供参考。因为有时候直接操作元素的 style 属性会比添加类名方便很多（比如 JavaScript 利用绝对定位实现瀑布流时）。</p>
+<ul>
+<li><strong>将 JavaScript 从 HTML 中抽离</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad，新手写法</span></span><br><span class="line">&lt;button onclick=<span class="string">"alert('已提交')"</span>&gt;提交&lt;<span class="regexp">/button&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>将 HTML 从 JavaScript 中抽离</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>);</span><br><span class="line">el.innerHTML = <span class="string">'&lt;h3&gt;Error&lt;/h3&gt;&lt;p&gt;无效的邮件名~&lt;/p&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 HTML 模板解决上面的问题</span></span><br><span class="line">获取元素 element</span><br><span class="line">获取模板</span><br><span class="line">更改模板数据</span><br><span class="line">插入页面指定位置</span><br></pre></td></tr></table></figure>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><ul>
+<li><strong>隔离应用逻辑（即将应用逻辑从事件处理程序中取出）</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">  el.style.left = event.clientX + <span class="string">"px"</span>;</span><br><span class="line">  el.style.top = event.clientY + <span class="string">"px"</span>;</span><br><span class="line">  el.classList.add(<span class="string">"show"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">element.addEventListener(<span class="string">"click"</span>, handler);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = &#123;</span><br><span class="line">  <span class="comment">// 事件处理程序</span></span><br><span class="line">  handleClick: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.showPopup(event);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 应用逻辑</span></span><br><span class="line">  showPopup: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">    el.style.left = event.clientX + <span class="string">"px"</span>;</span><br><span class="line">    el.style.top = event.clientY + <span class="string">"px"</span>;</span><br><span class="line">    el.classList.add(<span class="string">"show"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">element.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  handle.handleClick(event);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这样做有什么优势呢？<strong>一个优势就是增强代码的复用性。</strong>比如现在通过某个按键可以触发与点击相同的效果，隔离应用逻辑的代码直接调用即可。而前者还需要重新复制一遍程序，造成资源浪费。</p>
+<ul>
+<li><strong>不要分发事件对象</strong></li>
+</ul>
+<p>上面的代码在剥离出应用逻辑后，还存在一个问题，就是 event 事件对象被无节制分发。简单阐明问题：就是我们实际用到的事件对象的属性就几个，所以不需要把整个 event 对象都传给应用逻辑。</p>
+<p>解决上面的问题的最佳办法就是：<strong>让事件处理程序成为接触到 event 对象的唯一函数，然后拿到所有需要的数据（特指 event 对象的属性）传给应用逻辑。并且事件处理程序应当在进入应用逻辑之前针对 event 对象执行任何必要的操作（比如阻止默认事件、阻止事件冒泡等）。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// better</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = &#123;</span><br><span class="line">  <span class="comment">// 事件处理程序</span></span><br><span class="line">  handleClick: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 做一些事件对象的必要处理</span></span><br><span class="line">    event.preventDefault(); <span class="comment">// 阻止默认事件</span></span><br><span class="line">    event.stopPropagation(); <span class="comment">// 阻止事件冒泡</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将必要数据传入应用逻辑</span></span><br><span class="line">    <span class="keyword">this</span>.showPopup(event.clientX, event.clientY);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 应用逻辑</span></span><br><span class="line">  showPopup: <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</span><br><span class="line">    el.style.left = x + <span class="string">"px"</span>;</span><br><span class="line">    el.style.top = y + <span class="string">"px"</span>;</span><br><span class="line">    el.classList.add(<span class="string">"show"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">element.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  handle.handleClick(event);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><ul>
+<li><p><strong>Object.prototype.toString.call(value)：</strong> 可以用来检测基本类型和内置的引用类型，很有效。但是请不要用它来检测自定义对象类型。</p>
+</li>
+<li><p><strong>Object.prototype.hasOwnProperty(obj,prop..)：</strong> 检测某个属性是不是对象自己的（这不是书中作者给出的，书中给出的 hasOwnProperty() 有漏洞）</p>
+</li>
+</ul>
+<h3 id="将配置数据从代码中分离出来"><a href="#将配置数据从代码中分离出来" class="headerlink" title="将配置数据从代码中分离出来"></a>将配置数据从代码中分离出来</h3><p>配置数据就是指在应用中写死的值，比如 URL、设置（每页的配置项）、需要展现给用户的固定值等。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 配置数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> config = &#123;</span><br><span class="line">    ERROR_MESSAGE: <span class="string">'Ooop, something wrong here~'</span>,</span><br><span class="line">    ERROR_URL; <span class="string">'/errors/error.php'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// some code</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">detect</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意，平常开发时，也可将配置数据单独写成一个文件（比如 JSON 文件），方便模块化开发。</strong></p>
+<h3 id="抛出自定义错误"><a href="#抛出自定义错误" class="headerlink" title="抛出自定义错误"></a>抛出自定义错误</h3><ul>
+<li><strong>try-catch：</strong> 捕获一个错误</li>
+<li><p><strong>throw：</strong> 抛出一个错误</p>
+</li>
+<li><p>如何正确地抛出一个错误呢？</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">throw</span> <span class="string">"error happened~"</span>; <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="string">"error happened~"</span>;</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"error happened~"</span>); <span class="comment">// 正确地抛出错误</span></span><br></pre></td></tr></table></figure>
+<p><strong>有一点需要注意，如果没有通过 try-catch 语句，throw 抛出任何值（除过 Error 对象）都将引发一个错误。</strong></p>
+<h3 id="别动别人的对象"><a href="#别动别人的对象" class="headerlink" title="别动别人的对象"></a>别动别人的对象</h3><ul>
+<li><p><strong>不重写、不新增、不删除 JavaScript 内置的对象的属性方法（包括 DOM API 的属性方法）</strong></p>
+</li>
+<li><p>阻止别人对你的对象的修改</p>
+<ul>
+<li><strong>Object.preventExtensions(obj)：</strong> 将对象变为不可扩展对象，即不能给对象添加新属性方法，但是可以删除原有的属性方法，也可更改属性方法的值</li>
+<li><strong>Object.seal(obj)：</strong> 将对象变为密封对象，不能添加和删除属性方法，但可以该原有属性方法的值</li>
+<li><strong>Object.freeze(obj)：</strong> 将对象冻结，不能添加和删除属性方法，也不能更改原有属性方法的值</li>
+</ul>
+</li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/python-basic-grammar/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Python 基础语法概览
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/javascript-automation/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              《编写可维护的 JavaScript》 读书笔记（自动化）
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

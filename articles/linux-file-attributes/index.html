@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Linux 文件属性 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 14px;">CSS</a> <a href="/tags/DOM/" style="font-size: 14px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 11px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 12px;">PHP</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 14px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 12px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 12px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 11px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 12px;">折腾</a> <a href="/tags/数据库/" style="font-size: 11px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 16px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 15px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 11px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">110</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-linux-file-attributes" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2018-01-11T04:12:00.000Z" itemprop="datePublished">2018-01-11</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 文件属性
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-01-16T04:12:00.000Z" itemprop="dateLastModified">
+                        2018-01-16
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>首先，我们先来了解一下 <code>ls</code> 命令的一些参数！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -l 查看一个文件的详细属性</span></span><br><span class="line">$ ls -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># -h 查看一个文件的详细属性，但是文件大小会以一种更人性化的形式显示</span></span><br><span class="line">$ ls -lh</span><br><span class="line"></span><br><span class="line"><span class="comment"># -i 显示每个文件的 inode 号</span></span><br><span class="line">$ ls -i</span><br></pre></td></tr></table></figure>
+<p>当我们直接使用上面参数的组合时（<code>ls -hil</code>），就可以看到指定目录下文件的较详细的属性了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 ls -ilh 命令后，那一行一行的字段是什么意思呢？</span></span><br><span class="line"><span class="comment"># 关键字：inode、文件类型、权限、硬链接、用户、用户组</span></span><br><span class="line"></span><br><span class="line">  +-inode number</span><br><span class="line">  |</span><br><span class="line">  |     +-permissions that apply to the owner</span><br><span class="line">  |     |</span><br><span class="line">  |     |     +-permissions that apply to all other users</span><br><span class="line">  |     |     |</span><br><span class="line">  |     |     |  +-number of hard links</span><br><span class="line">  |     |     |  |</span><br><span class="line">  |     |     |  |         +-the group that the group permissions applies to</span><br><span class="line">  |     |     |  |         |</span><br><span class="line">  |     |     |  |         |               +-last modification date and time</span><br><span class="line">__|__  _|_   _|_ |       __|__     ________|_______</span><br><span class="line">38729 drwxr-xr-x 2 percy staff 46K 2017-11-04 16:58 test1</span><br><span class="line">      _   ___      _____       ___                  _____</span><br><span class="line">      |    |         |          |                     |</span><br><span class="line">      |    |         |          |                     +-file name</span><br><span class="line">      |    |         |          |</span><br><span class="line">      |    |         |          +-file size</span><br><span class="line">      |    |         |</span><br><span class="line">      |    |         +-file owner</span><br><span class="line">      |    |</span><br><span class="line">      |    +-permissions that apply to users who are members of the group</span><br><span class="line">      |</span><br><span class="line">      +-file <span class="built_in">type</span></span><br></pre></td></tr></table></figure>
+<h3 id="inode"><a href="#inode" class="headerlink" title="inode"></a>inode</h3><p>文件有文件名与数据，这在 Linux 上被分成两个部分：<strong>用户数据（user data）与元数据（metadata）</strong>。用户数据（即文件数据块 - data block），是记录文件真实内容的地方；而元数据则是文件的附加属性，如文件大小、创建时间、文件所有者等信息。</p>
+<p><strong>在 Linux 文件系统中，<code>inode</code> 是一种用来描述文件对象（比如一个文件或一个目录）的数据结构。</strong>每个 inode 都储存着对应文件的元数据和文件在磁盘上的位置信息，但没有储存文件的文件名。<strong>因为元数据中的 inode 号（inode number）才是文件的唯一标识而非文件名。</strong>文件名仅是为了方便人们的记忆和使用，系统或程序实际上是通过 inode 号寻找正确的文件数据块。</p>
+<h3 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ls 命令中的 file type 字段下各字符所代表的文件类型</span></span><br><span class="line">* : regular file</span><br><span class="line">d : directory</span><br><span class="line">c : character device file</span><br><span class="line">b : block device file</span><br><span class="line">s : <span class="built_in">local</span> socket file</span><br><span class="line">p : named pipe</span><br><span class="line">l : symbolic link</span><br></pre></td></tr></table></figure>
+<h3 id="权限、用户与用户组"><a href="#权限、用户与用户组" class="headerlink" title="权限、用户与用户组"></a>权限、用户与用户组</h3><ul>
+<li><p><strong>Linux 通过用户与用户组来实现对文件访问、设备使用的控制。</strong></p>
+</li>
+<li><p><strong>每一个文件对应三种类型的用户，每一种类型的用户对应三种访问权限</strong></p>
+</li>
+<li><p><strong>三种文件权限：</strong></p>
+<ul>
+<li>可读</li>
+<li>可写</li>
+<li>可执行</li>
+</ul>
+</li>
+<li><p><strong>三种类型的用户：</strong></p>
+<ul>
+<li>用户：文件所有者</li>
+<li>用户组：文件所属用户组下的所有用户</li>
+<li>其它用户</li>
+</ul>
+</li>
+</ul>
+<h3 id="硬链接与软链接"><a href="#硬链接与软链接" class="headerlink" title="硬链接与软链接"></a>硬链接与软链接</h3><p><strong>为解决文件的共享使用，Linux 系统引入了两种链接：硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic link）。链接为 Linux 系统解决了文件的共享使用，还带来了隐藏文件路径、增加权限安全及节省存储等好处。</strong></p>
+<h4 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h4><p><strong>硬链接（hard link）</strong>本质上是一个有着与源文件相同的 inode 号、而文件名可能不同的文件。删除了源文件或更改了源文件的文件名并不会影响硬链接文件，但是更改了源文件的内容后，硬链接文件的内容也会随之改变！</p>
+<blockquote>
+<p><strong>在 Linux 中，文件和文件名是不同的东西，<code>rm A</code> 删除的只是 A 这个文件名，而 A 对应的数据块（文件）只有在 inode 节点链接数减少为 0 的时候才会被系统回收。</strong></p>
+</blockquote>
+<ul>
+<li><strong>硬链接存在以下几点特性：</strong><ul>
+<li>与源文件有相同的 inode 及 data block</li>
+<li>只能基于已存在的文件进行硬链接的创建</li>
+<li>不能交叉文件系统进行硬链接的创建</li>
+<li>不能基于目录进行硬链接的创建</li>
+<li>删除一个硬链接文件并不影响其它有相同 inode 号的文件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>不能基于目录进行硬链接的创建是受限于文件系统的设计。</strong>现 Linux 文件系统中的目录均隐藏了两个特殊的目录：<strong>当前目录（<code>.</code>）</strong>与<strong>父目录（<code>..</code>）</strong>。查看这两个特殊目录的 inode 号可知其实这两目录就是两个硬链接。若系统允许对目录创建硬链接，则会产生<strong>目录环</strong>。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建一个文件 test.txt，并写入一些内容</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'12345'</span> &gt; test.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个硬链接文件（使用 ln 或 link 命令）</span></span><br><span class="line">$ ln test.txt hardlink.txt</span><br><span class="line">$ link test.txt hardlink.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看这两个文件的详细信息</span></span><br><span class="line">$ ls -ilh</span><br><span class="line"></span><br><span class="line"><span class="comment"># total 16</span></span><br><span class="line"><span class="comment"># 8594132865 -rw-r--r--  2 percy507  staff     6B Jan 10 13:14 hardlink.txt</span></span><br><span class="line"><span class="comment"># 8594132865 -rw-r--r--  2 percy507  staff     6B Jan 10 13:14 test.txt</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名源文件</span></span><br><span class="line">$ mv test.txt 1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再次查看这两个文件的详细信息</span></span><br><span class="line">$ ls -ilh</span><br><span class="line"></span><br><span class="line"><span class="comment"># total 16</span></span><br><span class="line"><span class="comment"># 8594132865 -rw-r--r--  2 percy507  staff     6B Jan 10 13:14 1.txt</span></span><br><span class="line"><span class="comment"># 8594132865 -rw-r--r--  2 percy507  staff     6B Jan 10 13:14 hardlink.txt</span></span><br></pre></td></tr></table></figure>
+<h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p><strong>软链接，又称符号链接，即 soft link 或 symbolic link。</strong></p>
+<p><strong>软链接是一种特殊的文件，它有着自己的 inode 号以及用户数据块，其数据块中存放的内容是另一文件的路径名的指向。</strong></p>
+<ul>
+<li><strong>软链接存在以下几点特性：</strong><ul>
+<li>软链接有自己的文件属性及权限等</li>
+<li>可对不存在的文件或目录创建软链接</li>
+<li>可交叉文件系统进行软链接的创建</li>
+<li>可对文件或目录进行软链接的创建</li>
+<li>创建软链接时，链接计数不会增加</li>
+<li>删除软链接并不影响被指向的文件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>若软链接指向的原文件被删除或文件绝对路径发生了变化（文件被放到其它目录或文件被重命名），那么软链接就不能正常访问原文件，则相关软链接被称为死链接。</strong></p>
+</blockquote>
+<p><strong>可以基于某个软链接再进行软链接的创建。</strong>访问这个新建的软链接时，其解析过程是递归的。<strong>但需注意：在创建软链接时，源文件的路径指向最好使用绝对路径，因为使用相对路径创建的软链接在被移动后，该软链接文件将成为一个死链接。</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建一个文件 test.txt，并写入一些内容</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'12345'</span> &gt; test.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个软链接文件（使用 ln 命令，不能使用 link 命令）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于源文件的相对路径</span></span><br><span class="line">$ ln -s test.txt softlink1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于源文件的绝对路径（推荐）</span></span><br><span class="line">$ ln -s /Users/percy507/linux/test.txt softlink2.txt</span><br></pre></td></tr></table></figure>
+<h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p><img src="/img/linux-hard-link-and-soft-link.png" alt="linux-hard-link-and-soft-link.png"></p>
+<h3 id="文件的时间属性"><a href="#文件的时间属性" class="headerlink" title="文件的时间属性"></a>文件的时间属性</h3><ul>
+<li><p>Windows 系统上的文件有 3 种与时间相关的属性：创建时间、最后访问时间与最后修改时间</p>
+</li>
+<li><p>Linux 系统上的文件有 3 种与时间相关的属性：最后访问时间、最后修改时间与最后改变时间（没有创建时间）</p>
+<ul>
+<li>最后访问时间（Access Time）：读取一次文件的内容，会改变该时间</li>
+<li>最后修改时间（Modify Time）：修改文件的内容，会改变该时间</li>
+<li>最后改变时间（Change Time）：修改文件的属性或内容，会改变该时间</li>
+</ul>
+</li>
+<li><p>Mac 系统上的文件有 4 种与时间相关的属性：创建时间、最后访问时间、最后修改时间与最后改变时间</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># touch 用来更改文件的访问时间与修改时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -t 一般只更改文件的最后修改时间与访问时间为指定时间，如果指定时间小于文件当前的创建时间，那么也会更改文件的创建时间至指定时间（仅限 Mac）</span></span><br><span class="line"><span class="comment"># 语法：touch -t YYYYMMDDhhmm file</span></span><br><span class="line">$ touch -t 199901122356 file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Mac 上，可以直接使用 SetFile 命令更改文件的创建时间</span></span><br><span class="line">$ SetFile -d <span class="string">'12/31/1999 23:59:59'</span> file.txt</span><br><span class="line">$ SetFile -d <span class="string">"<span class="variable">$(GetFileInfo -m test.txt)</span>"</span> file.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Linux 中，stat 命令可以用来查看某个文件的属性信息（包括上面的 3 个时间）</span></span><br><span class="line">$ <span class="built_in">stat</span> -x file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Mac 中，stat 命令也可以查看除过文件创建时间的那三种时间</span></span><br><span class="line"><span class="comment"># 但是，可以通过 `GetFileInfo` 命令查看文件的创建时间</span></span><br><span class="line">$ GetFileInfo file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Mac 中，还可以通过 stat 命令查看所有的时间</span></span><br><span class="line">$ <span class="built_in">stat</span> -f <span class="string">"Access (atime): %Sa%nModify (mtime): %Sm%nChange (ctime): %Sc%nBirth  (Btime): %SB"</span> file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://www.cnblogs.com/peida/archive/2012/11/23/2783762.html" target="_blank" rel="noopener">每天一个 linux 命令(25)：linux 文件属性详解</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2011/12/inode.html" target="_blank" rel="noopener">理解 inode</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Users_and_groups_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29" target="_blank" rel="noopener">Users and groups</a>（推荐）</li>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/" target="_blank" rel="noopener">理解 Linux 的硬链接与软链接</a>（强烈推荐）</li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+      <a href="/articles/linux-deep-into-file-type/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title">
+          
+            Linux 文件类型
+              
+        </div>
+      </a>
+      
+        
+          <a href="/articles/tool-homebrew/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              使用 Homebrew
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>
