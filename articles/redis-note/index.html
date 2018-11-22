@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+            Redis 学习笔记 |
+        
+        知秋的博客
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+        <link rel="icon" href="/img/avatar.jpeg">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.9.1.min.js"></script>
+
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?396a652192e7acec2ca52f785b6355f3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head></html>
+    <body>
+        <div id="container">
+            <div class="left-col">
+                <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="/img/avatar.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  	<h1 class="header-author"><a href="/">知秋</a></h1>
+		</hgroup>
+
+		
+			<p class="header-subtitle">大道至简 积累等待</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+							<div class="icon-wrap icon-me hide" data-idx="2">
+								<div class="user"></div>
+								<div class="shoulder"></div>
+							</div>
+						
+						
+							<div class="icon-wrap icon-info hide" data-idx="3">
+								<div class="loopback_l"></div>
+								<div class="loopback_r"></div>
+							</div>
+						
+					</div>
+				</div>
+
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+							<li>关于我</li>
+						
+						
+							<li>关于本站</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+		
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/tags/工具">工具</a></li>
+				        
+							<li><a href="/tags/solutions">方案集</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 13.64px;">CSS</a> <a href="/tags/DOM/" style="font-size: 13.64px;">DOM</a> <a href="/tags/ES6/" style="font-size: 17.27px;">ES6</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/HTML/" style="font-size: 13.64px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 18.18px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16.36px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Node-js/" style="font-size: 10.91px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 11.82px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.73px;">Python</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/Vue/" style="font-size: 13.64px;">Vue</a> <a href="/tags/Web-API/" style="font-size: 19.09px;">Web API</a> <a href="/tags/Web-安全/" style="font-size: 10px;">Web 安全</a> <a href="/tags/solutions/" style="font-size: 11.82px;">solutions</a> <a href="/tags/修电脑/" style="font-size: 10px;">修电脑</a> <a href="/tags/工具/" style="font-size: 11.82px;">工具</a> <a href="/tags/思想/" style="font-size: 10px;">思想</a> <a href="/tags/性能优化/" style="font-size: 10.91px;">性能优化</a> <a href="/tags/折腾/" style="font-size: 11.82px;">折腾</a> <a href="/tags/数据库/" style="font-size: 10.91px;">数据库</a> <a href="/tags/网络协议/" style="font-size: 10px;">网络协议</a> <a href="/tags/翻译/" style="font-size: 10px;">翻译</a> <a href="/tags/读书笔记/" style="font-size: 15.45px;">读书笔记</a> <a href="/tags/跨源通信/" style="font-size: 14.55px;">跨源通信</a> <a href="/tags/转载/" style="font-size: 10.91px;">转载</a>
+					</div>
+				</section>
+				
+
+				
+					<section class="switch-part switch-part3">
+						<div id="js-aboutme">
+							<li>技术宅，向全栈进军~</li>
+							<li><a href="/books">知秋读过的书</a></li>
+							<li><a href="/movies">知秋看过的电影</a></li>
+							<li>邮箱：percymong@163.com</li>
+						</div>
+					</section>
+				
+
+				
+					
+						<section class="switch-part switch-part4">
+					
+						<div id="js-aboutsite">
+							<div>
+								共有 <span id="posts-total-number">112</span> 篇文章
+							</div>
+							<div class="js-aboutsite-uv">
+								<span id="busuanzi_container_site_uv">
+									访客数 <span id="busuanzi_value_site_uv"></span> 人次
+								</span>
+							</div>
+							<div class="js-aboutsite-pv">
+								<span id="busuanzi_container_site_pv">
+									总访问量 <span id="busuanzi_value_site_pv"></span> 次
+								</span>
+							</div>
+						</div>
+					</section>
+				
+
+			</div>
+		</div>
+	</header>				
+</div>
+
+            </div>
+
+            <div class="mid-col">
+                <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">知秋</h1>
+  	</div>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					
+						<img lazy-src="img/avatar.jpeg" class="js-avatar">
+					
+				</a>
+			</div>
+
+			<hgroup>
+				<a href="/">
+					<h1 class="header-author">知秋</h1>
+				</a>
+			</hgroup>
+
+			
+				<p class="header-subtitle">大道至简 积累等待</p>
+			
+
+			<nav class="header-menu">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/tags/工具">工具</a></li>
+					
+						<li><a href="/tags/solutions">方案集</a></li>
+					
+						<li><a href="/archives">所有文章</a></li>
+					
+					<div class="clearfix"></div>
+				</ul>
+			</nav>
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/percy507" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/就不告诉你" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/135304178/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+
+                <div class="body-wrap"><article id="post-redis-note" class="article article-type-post" itemscope="" itemprop="blogPost">
+
+    
+        <div class="article-meta">
+            <a href="#" class="article-date">
+  	<time datetime="2018-11-13T05:37:43.471Z" itemprop="datePublished">2018-11-13</time>
+</a>
+        </div>
+    
+
+    <div class="article-inner">
+
+        
+            <header class="article-header">
+                
+  
+    <h1 class="article-title" itemprop="name">
+      Redis 学习笔记
+    </h1>
+  
+
+            </header>
+
+            
+                <div class="article-info article-info-post">
+                    
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+	</div>
+
+                    <div class="clearfix"></div>
+                </div>
+            
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+                <div class="article-moreinfo">
+                    <div class="lastModifiedDate">
+                        <span>最后更新：</span>
+                        <time datetime="2018-11-22T07:36:44.983Z" itemprop="dateLastModified">
+                        2018-11-22
+                        </time>
+                    </div>
+                    <div class="read-count">
+                        <span id="busuanzi_container_page_pv">
+                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
+                        </span>
+                    </div>
+                    <div class="copyright">
+                        <span>许可协议：</span>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
+                    </div>
+                </div>
+
+                <p><strong>Redis</strong> 是一个读取和写入速度超高的非关系型数据库，即是一种 NoSQL 数据库。它可以存储键值对，可以将存储在内存的键值对数据持久化到本地硬盘，可以使用复制特性来扩展读写性能，还可以使用客户端分片来扩展性能，并且它还提供了多种语言的API。此外，它可以作为主数据库使用，又可以作为其他存储系统的辅助数据库。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 redis</span></span><br><span class="line">brew install redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 Redis 安装包信息</span></span><br><span class="line">brew info redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># Redis 配置文件默认路径</span></span><br><span class="line">/usr/<span class="built_in">local</span>/etc/redis.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新 redis</span></span><br><span class="line">brew upgrade redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 redis 服务</span></span><br><span class="line">redis-server               <span class="comment"># 默认端口 6379</span></span><br><span class="line">redis-server --port 6380   <span class="comment"># 指定端口 6380</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 redis 版本</span></span><br><span class="line">redis-server -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入 redis 命令行</span></span><br><span class="line"><span class="comment"># 默认连接本地 Redis 服务，127.0.0.1:6379</span></span><br><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接远程服务器</span></span><br><span class="line"><span class="comment"># redis-cli -h host -p port -a password</span></span><br><span class="line">redis-cli -h 149.28.49.218 -p 6699 -a <span class="string">"mypasswww"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读操作显示原始字符串，避免被转码</span></span><br><span class="line">redis-cli --raw</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除 redis 中所有的数据</span></span><br><span class="line">redis-cli flushall</span><br></pre></td></tr></table></figure>
+<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><ul>
+<li><strong>性能极高：</strong>因为 Redis 以内存作为数据存储介质<ul>
+<li>以设置和获取一个 256 字节字符串为例，它的读取速度可高达 <code>110000次/s</code>，写速度高达 <code>81000次/s</code></li>
+</ul>
+</li>
+<li><strong>支持数据持久化</strong><ul>
+<li>也可以通过配置文件，关闭持久化功能</li>
+</ul>
+</li>
+<li><strong>支持多种数据结构：</strong>字符串、列表、集合、有序集合、哈希表等</li>
+<li><strong>支持多种编程语言：</strong>为大部分编程语言都提供了相应的调用库</li>
+<li><strong>支持主从复制模式：</strong>具有高可用性，可以配置集群，可以支撑起大型的项目</li>
+</ul>
+<h3 id="支持的数据结构"><a href="#支持的数据结构" class="headerlink" title="支持的数据结构"></a>支持的数据结构</h3><h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>String 类型是 Redis 最基本的数据类型，它是<strong>二进制安全</strong>的。意思是 redis 的字符串可以包含任何数据。比如 jpg 图片或者序列化的对象。<strong>String 类型的值最大能存储 512MB。</strong></p>
+<blockquote>
+<p><strong>二进制安全</strong>，一种计算机编程术语，简单点讲就是用于描述字符串能不能安全地存储二进制数据。</p>
+<p>举例：C 语言的字符串就不是二进制安全的，因为 C 语言的字符串中的字符必须符合某种编码（比如ASCII），并且除了字符串的末尾之外，字符串里面不能包含空字符（<code>\0</code>），否则最先被程序读入的空字符将被误认为是字符串结尾，这些限制使得 C 语言的字符串只能保存普通的文本数据，而不能保存图片、音频、视频、压缩文件这样的二进制数据。</p>
+</blockquote>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取指定键的值</span></span><br><span class="line">GET key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置指定键的值</span></span><br><span class="line"><span class="comment"># EX 指定生存时间，单位秒</span></span><br><span class="line"><span class="comment"># PX 指定生存时间，单位毫秒</span></span><br><span class="line"><span class="comment"># NX 表示只有键不存在时，才可进行设置操作，用于添加</span></span><br><span class="line"><span class="comment"># XX 表示只有键存在时，才可进行设置操作，用于更新</span></span><br><span class="line">SET key value [EX seconds] [PX milliseconds] [NX|XX]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取一个或多个指定键的值</span></span><br><span class="line">MGET key1 key2 ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例</span></span><br><span class="line">GET str             <span class="comment"># (nil)</span></span><br><span class="line">SET str 123         <span class="comment"># OK </span></span><br><span class="line">GET str             <span class="comment"># "123"</span></span><br><span class="line"></span><br><span class="line">SET str 123 EX 10   <span class="comment"># 10s 的生存时间</span></span><br><span class="line"></span><br><span class="line">SET a 123           <span class="comment"># OK</span></span><br><span class="line">SET a 666 NX        <span class="comment"># (nil)</span></span><br><span class="line">SET a 444 XX        <span class="comment"># OK</span></span><br></pre></td></tr></table></figure>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>Redis 的列表是简单的字符串列表，即每个元素都是字符串，按照插入顺序排序。列表最多可存储 <code>2^32 - 1</code> 个元素 (4294967295, 每个列表可存储大约40多亿个元素)。</p>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将指定的一个或多个值依次插入列表左端，返回列表的长度</span></span><br><span class="line">LPUSH key value1 value2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将指定的一个或多个值依次插入列表右端，返回列表的长度</span></span><br><span class="line">RPUSH key value1 value2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除列表左端的第一个值，返回这个删除的值</span></span><br><span class="line">LPOP key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除列表右端的第一个值，返回这个删除的值</span></span><br><span class="line">RPOP key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取列表指定位置的值，返回这个值</span></span><br><span class="line">LINDEX key index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定位置范围的值</span></span><br><span class="line"><span class="comment"># 列表索引范围从 0 开始，到 -1 结束</span></span><br><span class="line">LRANGE key start stop</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例</span></span><br><span class="line">LPUSH list 11 22 33 44 55 <span class="comment"># (integer) 5</span></span><br><span class="line">RPUSH list 0              <span class="comment"># (integer) 6</span></span><br><span class="line"></span><br><span class="line">LPOP list                 <span class="comment"># "55"</span></span><br><span class="line">RPOP list                 <span class="comment"># "0"</span></span><br><span class="line"></span><br><span class="line">LINDEX list 0             <span class="comment"># "44"</span></span><br><span class="line"></span><br><span class="line">LRANGE list 0 2           <span class="comment"># ["44", "33", "22"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 取出列表全部的值</span></span><br><span class="line">LRANGE list 0 -1          <span class="comment"># ["44", "33", "22", "11"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>Redis 的集合是每个元素都是唯一的字符串（不重复）的无序集合。因为集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将一个或多个值添加到集合，返回成功添加的值的个数</span></span><br><span class="line">SADD key value1 value2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回指定键的集合的所有值</span></span><br><span class="line">SMEMBERS key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查指定值是否在指定集合中</span></span><br><span class="line">SISMEMBER key value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果指定的一个或多个值存在于指定集合中，则从集合中删除这些值，返回删除的值的个数</span></span><br><span class="line">SREM key value1 value2 ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例</span></span><br><span class="line">SADD <span class="built_in">set</span> 11 22 33 44 55     <span class="comment"># (integer) 5</span></span><br><span class="line">SADD <span class="built_in">set</span> 11 111             <span class="comment"># (integer) 1</span></span><br><span class="line"></span><br><span class="line">SMEMBERS <span class="built_in">set</span>                <span class="comment"># ["11", "22", "33", "44", "55", "111"]</span></span><br><span class="line"></span><br><span class="line">SISMEMBER <span class="built_in">set</span> 11            <span class="comment"># (integer) 1</span></span><br><span class="line">SISMEMBER <span class="built_in">set</span> 66            <span class="comment"># (integer) 0</span></span><br><span class="line"></span><br><span class="line">SREM <span class="built_in">set</span> 11 22 333          <span class="comment"># (integer) 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>哈希表，也叫<a href="https://zh.wikipedia.org/zh-hans/%E5%93%88%E5%B8%8C%E8%A1%A8" target="_blank" rel="noopener">散列表</a>。Redis 的哈希表可以存储多个键值对，键和值都是以字符串的形式进行存储的。一个哈希表最多可以包含 <code>2^32-1</code> 个 key-value 键值对（超过40亿）。</p>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 向哈希表中添加键值对</span></span><br><span class="line">HSET key field value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取哈希表指定字段的值</span></span><br><span class="line">HGET key field</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取整个哈希表</span></span><br><span class="line">HGETALL key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果指定的一个或多个字段存在于指定哈希表，则从哈希表中删除这些字段，返回删除的字段的个数</span></span><br><span class="line">HDEL key field1 field2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断某个字段是否存在于指定哈希表</span></span><br><span class="line">HEXISTS key field</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定哈希表的所有字段</span></span><br><span class="line">HKEYS key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定哈希表的所有值</span></span><br><span class="line">HVALS key</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例</span></span><br><span class="line">HSET <span class="built_in">hash</span> name percy    <span class="comment"># (integer) 1</span></span><br><span class="line">HSET <span class="built_in">hash</span> age 22        <span class="comment"># (integer) 1</span></span><br><span class="line">HSET <span class="built_in">hash</span> a 123         <span class="comment"># (integer) 1</span></span><br><span class="line">HSET <span class="built_in">hash</span> b 111         <span class="comment"># (integer) 1</span></span><br><span class="line">HSET <span class="built_in">hash</span> c 222         <span class="comment"># (integer) 1</span></span><br><span class="line"></span><br><span class="line">HGET <span class="built_in">hash</span> age           <span class="comment"># "22"</span></span><br><span class="line"></span><br><span class="line">HGETALL <span class="built_in">hash</span>            <span class="comment"># &#123;"name":"percy", "age":"22", "a":"123", "b":"111", "c":"222"&#125;</span></span><br><span class="line"></span><br><span class="line">HDEL <span class="built_in">hash</span> a b aaa       <span class="comment"># (integer) 2</span></span><br><span class="line"></span><br><span class="line">HEXISTS <span class="built_in">hash</span> c          <span class="comment"># (integer) 1</span></span><br><span class="line">HEXISTS <span class="built_in">hash</span> a          <span class="comment"># (integer) 0</span></span><br><span class="line"></span><br><span class="line">HKEYS <span class="built_in">hash</span>              <span class="comment"># ["name", "age", "c"]</span></span><br><span class="line">HVALS <span class="built_in">hash</span>              <span class="comment"># ["percy", "22", "222"]</span></span><br></pre></td></tr></table></figure>
+<h4 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>Redis 的有序集合和无序集合类似，也是每个元素都是唯一字符串的集合。不同的是，有序集合的每个元素都会关联一个浮点数类型的分数，并且 Redis 会通过这个分数来为集合中的成员进行从小到大的排序。</p>
+<p><strong>有序集合的每个元素是唯一的，但分数却可以重复。</strong></p>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将一个或多个绑定分数的值添加到有序集合，返回成功添加的个数</span></span><br><span class="line">ZADD key [NX|XX] [CH] [INCR] score1 value1 score2 value2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定值在有序集合中关联的分数</span></span><br><span class="line">ZSCORE key value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定位置范围的值</span></span><br><span class="line"><span class="comment"># 列表索引范围从 0 开始，到 -1 结束</span></span><br><span class="line">ZRANGE key start stop [WITHSCORES]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定分值范围内的所有值的个数</span></span><br><span class="line">ZCOUNT key min max</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定分值范围内的所有值</span></span><br><span class="line">ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果指定的一个或多个值存在于指定有序集合中，则从有序集合中删除这些值，返回删除的值的个数</span></span><br><span class="line">ZREM key value1 value2 ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例</span></span><br><span class="line">ZADD zset 9 aaa 4 bbb 6 ccc     <span class="comment"># (integer) 3</span></span><br><span class="line"></span><br><span class="line">ZSCORE zset aaa                 <span class="comment"># "9"</span></span><br><span class="line"></span><br><span class="line">ZRANGE zset 0 1                 <span class="comment"># ["aaa", "bbb"]</span></span><br><span class="line">ZRANGE zset 0 -1                <span class="comment"># ["aaa", "bbb", "ccc"]</span></span><br><span class="line"></span><br><span class="line">ZCOUNT zset 1 7                 <span class="comment"># (integer) 2</span></span><br><span class="line">ZRANGEBYSCORE zset 1 7          <span class="comment"># ["bbb", "ccc"]</span></span><br><span class="line"></span><br><span class="line">ZREM zset aaa 123 bbb           <span class="comment"># (integer) 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>位图（Bitmap，或 Bit Array）不是特殊的数据结构，它的内容其实就是普通的字符串，也就是字节数组。我们可以使用普通的 GET/SET 命令直接获取和设置整个位图的内容，也可以使用位图操作 GETBIT/SETBIT 等将 <strong>字节数组</strong> 看成 <strong>位数组</strong> 来处理。（1字节 = 8位，即 <code>1 byte = 8 bit</code>，每个 bit 上只能存储 0 或 1）</p>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设置指定位置上位的值</span></span><br><span class="line">SETBIT key offset value</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定位置上位的值</span></span><br><span class="line">GETBIT key offset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定范围内 bit 位为一的个数</span></span><br><span class="line"><span class="comment"># start 和 end 都是字节索引，也就是说指定的位范围必须是 8 的倍数，不能任意指定</span></span><br><span class="line">BITCOUNT key [start end]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对两个或多个值进行位运算，并将结果存到 destkey 中</span></span><br><span class="line"><span class="comment"># operation：AND, OR, XOR, NOT</span></span><br><span class="line"><span class="comment"># NOT 取反运算只需要一个 key</span></span><br><span class="line">BITOP operation destkey key1 key2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回第一个符合指定位的值的位置</span></span><br><span class="line"><span class="comment"># start，end 也均为字节索引</span></span><br><span class="line">BITPOS key bit [start] [end]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作位域，即一条指令操作多个位，参考：https://cloud.tencent.com/developer/section/1374165</span></span><br><span class="line"><span class="comment"># 可以一次执行多个子指令</span></span><br><span class="line"><span class="comment"># GET 以指定的数据格式获取指定位域的值</span></span><br><span class="line"><span class="comment"># SET 设置指定的位域的值并返回其旧值</span></span><br><span class="line"><span class="comment"># INCRBY 递增或递减（如果给定负递增）指定的位域并返回新值</span></span><br><span class="line"><span class="comment"># type： i8 表示有符号8位整数，u16 表示无符号16位整数</span></span><br><span class="line">BITFIELD key [GET <span class="built_in">type</span> offset] [SET <span class="built_in">type</span> offset value] [INCRBY <span class="built_in">type</span> offset increment] [OVERFLOW WRAP|SAT|FAIL]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 示例</span></span><br><span class="line"><span class="comment"># 字符串 `ab` 的二进制为： 0110 0001 0110 0010</span></span><br><span class="line">SET bit ab</span><br><span class="line"></span><br><span class="line">GETBIT bit 0            <span class="comment"># 0</span></span><br><span class="line">BITCOUNT bit            <span class="comment"># 6</span></span><br><span class="line">BITCOUNT bit 0 0        <span class="comment"># 3</span></span><br><span class="line"></span><br><span class="line">SETBIT bit 0 1          <span class="comment"># 0</span></span><br><span class="line"></span><br><span class="line">GETBIT bit 0            <span class="comment"># 1</span></span><br><span class="line">BITCOUNT bit            <span class="comment"># 7</span></span><br><span class="line">BITCOUNT bit 0 0        <span class="comment"># 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 此时 bit 的二进制为： 1110 0001 0110 0010</span></span><br><span class="line">BITOP NOT bit2 bit      <span class="comment"># 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 取反后，bit2 二进制为：0001 1110 1001 1101</span></span><br><span class="line">BITCOUNT bit2           <span class="comment"># 9</span></span><br><span class="line">BITCOUNT bit            <span class="comment"># 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取位置</span></span><br><span class="line">BITPOS bit 0            <span class="comment"># 3</span></span><br><span class="line">BITPOS bit 1 1          <span class="comment"># 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 98 的二进制： 0110 0010</span></span><br><span class="line">BITFIELD bit GET i8 8   <span class="comment"># 98</span></span><br><span class="line">BITFIELD bit get i8 8 get i4 8  <span class="comment"># 98 6</span></span><br></pre></td></tr></table></figure>
+<h4 id="HyperLogLog"><a href="#HyperLogLog" class="headerlink" title="HyperLogLog"></a>HyperLogLog</h4><ul>
+<li><strong>简介</strong></li>
+</ul>
+<p>Redis 的 HyperLogLog 是一种用于估算一个集合中元素数量的概率性的高级数据结构。目的是做基数统计，不是集合，不会保存元数据，只记录数量而不是数值。其核心是基数估算算法，即 <code>HyperLogLog 算法</code>，Redis 的 HyperLogLog 数据结构只是对 HyperLogLog 算法的一种实现。</p>
+<p>HyperLogLog 算法是一种用于估算基数的概率性算法，最终数值存在一定误差。其特点是在输入元素的数量非常非常大时，计算基数所需的空间总是固定的、并且是很小的。该特性对于大数据的统计而言，其误差是可以容忍的。</p>
+<p>Redis 中每个 HyperLogLog 结构占用了 <code>12K</code> 的内存用于标记基数，最大可以统计 <code>2^64</code>（约 1800 千兆） 个数，并且最终结果是一个带有 <code>0.81%</code> 标准错误（standard error）的近似值。值得注意的是，Redis 对 HyperLogLog 的存储进行了优化，在计数比较小时，它的存储空间采用稀疏矩阵存储，空间占用很小（小于 12K），仅仅在计数慢慢变大，稀疏矩阵占用空间渐渐超过了阈值时才会一次性转变成稠密矩阵，才会占用 12k 的空间。</p>
+<p>Redis 中 HyperLogLog 结构的内存占用为什么是 12K 呢？是因为在 Redis 的 HyperLogLog 实现中用到的是 16384 个桶，也就是 <code>2^14</code>，每个桶的 maxbits 需要 6 个 bits 来存储，最大可以表示 maxbits=63，于是总共占用内存就是2^14 * 6 / 8 = 12k字节。（具体请看算法实现）</p>
+<ul>
+<li><strong>常用命令</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加一个或多个元素到指定的 HyperLogLog 结构中</span></span><br><span class="line">PFADD key value1 value2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定 HyperLogLog 结构的近似基数</span></span><br><span class="line"><span class="comment"># 当有多个key时，返回这多个 HyperLogLog 结构并集的近似基数</span></span><br><span class="line"><span class="comment"># 副作用：PFCOUNT 命令可能会导致 HyperLogLog 结构内部被更改</span></span><br><span class="line">PFCOUNT key1 key2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并多个 HyperLogLog 结构为一个 HyperLogLog 结构，并存储到 destkey</span></span><br><span class="line">PFMERGE destkey key1 key2 ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例</span></span><br><span class="line">PFADD uv 5                                      <span class="comment"># 1</span></span><br><span class="line">PFADD uv 1 2 3 4 5 4 3 6                        <span class="comment"># 1</span></span><br><span class="line">PFCOUNT uv                                      <span class="comment"># 6</span></span><br><span class="line"></span><br><span class="line">PFADD 2018_01_UV 1 2 3 4 5                      <span class="comment"># 1</span></span><br><span class="line">PFADD 2018_02_UV 7 6 3 4 5 4 8                  <span class="comment"># 1</span></span><br><span class="line">PFCOUNT 2018_01_UV 2018_02_UV                   <span class="comment"># 8</span></span><br><span class="line"></span><br><span class="line">PFMERGE 2018_01-02_UV 2018_01_UV 2018_02_UV     <span class="comment"># OK</span></span><br><span class="line">PFCOUNT 2018_01-02_UV                           <span class="comment"># 8</span></span><br></pre></td></tr></table></figure>
+<h4 id="一个思考"><a href="#一个思考" class="headerlink" title="一个思考"></a>一个思考</h4><ul>
+<li>Redis 虽然支持一系列如字符串、列表、哈希表等数据结构，但是却不支持数值类型。虽然字符串结构可以存储数值类型的数据，但 <strong>Redis 却不会记忆数据原始的数据类型</strong>。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Redis 记录了数值类型，却返回了字符串类型</span></span><br><span class="line">SET <span class="built_in">test</span> 123    <span class="comment"># OK</span></span><br><span class="line">GET <span class="built_in">test</span>        <span class="comment"># "123"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>针对上面的问题，有两种解决方案：<ol>
+<li><strong>使用 JSON 字符串：</strong>原始数据在存储前，先转为 JSON 字符串，然后再进行存储</li>
+<li><strong>对键使用阶层式的命名：</strong>比如要存储一个数值类型的数据，可以命名键为 <code>age.int</code>，然后执行命令 <code>SET age.int 22</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li><p><strong>缓存：</strong>因为 Redis 以内存为存储介质，读写速度快</p>
+</li>
+<li><p><strong>消息队列系统：</strong>一般可以使用列表数据结构来实现，如果是带有权重的消息队列系统，则可以考虑使用有序集合来实现。</p>
+</li>
+<li><p><strong>微博时间轴：</strong>可以使用列表来实现，然后可以使用 <code>LRANGE</code> 命令来获取最新的某一段微博</p>
+</li>
+<li><p><strong>排行榜：</strong>使用有序集合来实现</p>
+</li>
+<li><p><strong>获取共同好友：</strong>则可以利用 Redis 为集合提供的求交集、并集、差集等操作来实现</p>
+</li>
+<li><p><strong>分布式锁</strong></p>
+</li>
+<li><p><strong>记录各种状态：</strong>比如记录用户签到状态，在线状态等，可以使用 Redis 的位图来实现。此外，还可以利用 Redis 位位图提供的 AND、OR、NOT 等位操作来实现统计的功能，比如使用 AND 操作可以过滤出三个月内的活跃签到用户等。</p>
+</li>
+<li><p><strong>大数据统计：</strong>比如统计注册 IP 数，统计每日访问 IP 数，统计页面实时 UV 数，统计在线用户数，统计用户每天搜索不同词条的个数等。Redis 的 HyperLogLog 结构非常适用于需要统计的数据量较大的应用场景，因为仅占用很小的空间就可统计出可容忍误差的近似值。</p>
+</li>
+</ul>
+<h3 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h3><p>Redis 提供了很多用来操作数据库的命令，对于不同的数据结构，有一部分命令是通用的，如 <code>DEL</code>、<code>TYPE</code>、<code>RENAME</code> 等,但也有一部分命令只能对特定的一种或者两种结构使用。</p>
+<p>在使用命令操作数据库时，适当地使用批量操作命令（比如 <code>MGET</code>，<code>HMGET</code> 等）可以减少网络请求次数，提供更高的性能。</p>
+<h4 id="系统命令"><a href="#系统命令" class="headerlink" title="系统命令"></a>系统命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打印字符串</span></span><br><span class="line">ECHO message</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查服务是否还在运行</span></span><br><span class="line">PING                <span class="comment"># PONG</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定数据库，默认使用索引为 0 的数据库</span></span><br><span class="line">SELECT index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务器配置信息及资源使用情况</span></span><br><span class="line">INFO</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出当前连接</span></span><br><span class="line">QUIT</span><br></pre></td></tr></table></figure>
+<h4 id="操作键"><a href="#操作键" class="headerlink" title="操作键"></a>操作键</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查指定的一个或多个键是否存在，返回存在键的个数</span></span><br><span class="line">EXISTS key1 key2 ...</span><br><span class="line"></span><br><span class="line">EXISTS a b list     <span class="comment"># (integer) 2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名键，如果新键的名称已存在，则新键原来的值会被覆盖</span></span><br><span class="line">RENAME key newKey</span><br><span class="line"></span><br><span class="line">SET a 123</span><br><span class="line">SET b 111</span><br><span class="line"></span><br><span class="line">GET b       <span class="comment"># "111"</span></span><br><span class="line">RENAME a b</span><br><span class="line">GET b       <span class="comment"># "123"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名键，仅当 newkey 不存在时，才将 key 改名为 newkey</span></span><br><span class="line">RENAMENX key newKey</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除一个或多个键值对，命令在执行成功后会返回被成功删除的键值对的数量</span></span><br><span class="line">DEL key1 key2 ...</span><br><span class="line"></span><br><span class="line">DEL a b       <span class="comment"># (integer) 2</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>键的生存时间相关命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 为指定键设置生存时间，单位秒，当键过期时(生存时间为0时)，它会被自动删除</span></span><br><span class="line">EXPIRE key seconds</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回指定键剩余的生存时间，单位秒</span></span><br><span class="line"><span class="comment"># TTL = Time To Live</span></span><br><span class="line">TTL key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置指定键的生存时间，单位毫秒</span></span><br><span class="line">PEXPIRE key milliseconds</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回指定键剩余的生存时间，单位毫秒</span></span><br><span class="line">PTTL key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除指定键的生存时间</span></span><br><span class="line">PERSIST key</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SET a 123           <span class="comment"># OK</span></span><br><span class="line">EXPIRE a 60         <span class="comment"># (integer) 1</span></span><br><span class="line">TTL a               <span class="comment"># (integer) 54  剩余54秒过期</span></span><br><span class="line">PERSIST a           <span class="comment"># (integer) 1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>其它命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找所有匹配正则表达式的键</span></span><br><span class="line">KEYS pattern</span><br><span class="line"></span><br><span class="line">KEYS <span class="string">"*i*"</span>      <span class="comment"># ["list"]</span></span><br><span class="line">KEYS <span class="string">"*"</span>        <span class="comment"># ["a", "list", "set", "zset", "hash"]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从数据库中随机返回一个键</span></span><br><span class="line">RANDOMKEY</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回指定键存储的数据的数据结构类型</span></span><br><span class="line">TYPE key</span><br><span class="line"></span><br><span class="line">TYPE a      <span class="comment"># string</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将当前数据库的 key 移动到给定的数据库 db 当中</span></span><br><span class="line">MOVE key db</span><br></pre></td></tr></table></figure>
+<h3 id="发布与订阅"><a href="#发布与订阅" class="headerlink" title="发布与订阅"></a>发布与订阅</h3><p>Redis 发布订阅(pub/sub)是一种消息通信模式：发送者(pub)发送消息，订阅者(sub)接收消息。Redis 客户端可以订阅任意数量的频道(channel)。</p>
+<ul>
+<li>相关命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 订阅一个或多个指定频道</span></span><br><span class="line">SUBSCRIBE channel1 channel2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 订阅所有匹配指定正则表达式的频道</span></span><br><span class="line">PSUBSCRIBE pattern1 pattern2 ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退订一个或多个指定频道</span></span><br><span class="line"><span class="comment"># 如果一个频道也没有指定，则默认退订当前客户端订阅的所有频道</span></span><br><span class="line">UNSUBSCRIBE channel1 channel2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退订所有匹配指定正则表达式的频道</span></span><br><span class="line"><span class="comment"># 如果一个 pattern 也没有指定，则默认退订当前客户端订阅的所有频道</span></span><br><span class="line">PUNSUBSCRIBE pattern1 pattern2 ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 向指定频道发布消息</span></span><br><span class="line">PUBLISH channel message</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看订阅与发布系统状态</span></span><br><span class="line"><span class="comment"># https://redis.io/commands/pubsub</span></span><br><span class="line">PUBSUB subcommand [argument [argument ...]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例，返回当前活跃的频道列表</span></span><br><span class="line">PUBSUB CHANNELS</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 终端 1，订阅频道</span></span><br><span class="line">SUBSCRIBE testChannel</span><br><span class="line">Reading messages... (press Ctrl-C to quit)</span><br><span class="line">1) <span class="string">"subscribe"</span></span><br><span class="line">2) <span class="string">"testChannel"</span></span><br><span class="line">3) (<span class="built_in">integer</span>) 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 终端 2，发布消息</span></span><br><span class="line">PUBLISH testChannel <span class="string">"Redis is great~"</span>   <span class="comment"># (integer) 1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 终端 1，接收到消息</span></span><br><span class="line">SUBSCRIBE testChannel</span><br><span class="line">Reading messages... (press Ctrl-C to quit)</span><br><span class="line">1) <span class="string">"subscribe"</span></span><br><span class="line">2) <span class="string">"testChannel"</span></span><br><span class="line">3) (<span class="built_in">integer</span>) 1</span><br><span class="line">1) <span class="string">"message"</span></span><br><span class="line">2) <span class="string">"testChannel"</span></span><br><span class="line">3) <span class="string">"Redis is great~"</span></span><br></pre></td></tr></table></figure>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是一个单独的隔离操作，可以一次执行多个命令，事务中的所有命令都会按顺序执行。</p>
+<p>事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。并且事务是一个原子操作，即事务中的命令要么全部执行，要么全不执行。</p>
+<p>一个完整的事务从开始到执行会经历以下三个阶段：开始事务，命令入队，执行事务。</p>
+<ul>
+<li>相关命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 标记一个事务块的开始</span></span><br><span class="line">MULTI</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行所有事务块内的命令</span></span><br><span class="line">EXEC</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消当前的事务</span></span><br><span class="line">DISCARD</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 示例一</span></span><br><span class="line">127.0.0.1:6379&gt; MULTI</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; SET test1 <span class="string">"This is test"</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379&gt; GET test1</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379&gt; EXEC</span><br><span class="line">1) OK</span><br><span class="line">2) <span class="string">"This is test"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 监视一个或多个键，如果事务执行之前，这些键被其它命令所改动，那么事务将被打断</span></span><br><span class="line"><span class="comment"># WATCH 命令不能出现在事务之中</span></span><br><span class="line">WATCH key1 key2 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消 WATCH 命令对所有键的监视</span></span><br><span class="line">UNWATCH</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 示例二</span></span><br><span class="line">127.0.0.1:6379&gt; WATCH test1</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; MULTI</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; SET test1 <span class="string">"change value"</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379&gt; GET test1</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379&gt; EXEC</span><br><span class="line">1) OK</span><br><span class="line">2) <span class="string">"change value"</span></span><br></pre></td></tr></table></figure>
+<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><p>Redis 支持数据持久化，即把内存中的数据以一定的方式存储到传统数据库中，或存储在磁盘文件中。Redis 提供了两种持久化方法，分别是 <code>RDB（Redis DataBase）持久化</code> 和<code>AOF（Append Only File）持久化</code>。</p>
+<h4 id="RDB-持久化"><a href="#RDB-持久化" class="headerlink" title="RDB 持久化"></a>RDB 持久化</h4><p>RDB 持久化，又称快照持久化，是指以设定好的时间间隔，周期性地将某一时刻的所有数据（快照）都写入硬盘里面的一种操作。</p>
+<p>一般，Redis 会按照配置文件中设定的周期定时进行一次 RDB 持久化。但是，我们也可以通过 <code>SAVE</code> 和 <code>BGSAVE</code> 命令来手动进行 RDB 持久化。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 同步进行 RDB 持久化</span></span><br><span class="line"><span class="comment"># 注意：执行 SAVE 命令，会阻塞其它命令的执行</span></span><br><span class="line">SAVE</span><br><span class="line"></span><br><span class="line"><span class="comment"># 异步进行 RDB 持久化</span></span><br><span class="line">BGSAVE</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># RDB 持久化在 Redis 配置文件中的选项</span></span><br><span class="line">save 60 1000                    <span class="comment"># 60秒内有1000次写入操作的时候执行快照的创建</span></span><br><span class="line">stop-writes-on-bgsave-error no  <span class="comment"># 创建快照失败的时候是否仍然继续执行写命令</span></span><br><span class="line">rdbcompression yes              <span class="comment"># 是否对快照文件进行压缩</span></span><br><span class="line">dbfilename dump.rdb             <span class="comment"># 如何命名硬盘上的快照文件</span></span><br><span class="line">dir ./                          <span class="comment"># 快照所保存的位置</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>优点</strong><ul>
+<li>存储的数据非常紧凑，占用硬盘资源小</li>
+<li>适合大规模的数据恢复</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li>数据的完整性和一致性不高 </li>
+</ul>
+</li>
+</ul>
+<h4 id="AOF-持久化"><a href="#AOF-持久化" class="headerlink" title="AOF 持久化"></a>AOF 持久化</h4><p>AOF 持久化，是指通过追加到文件的末尾的方式记录服务器执行的所有写操作命令，并在服务器启动时，重新执行这些命令来还原数据集的一种操作。</p>
+<p>AOF 文件中的命令全部以 Redis 协议的格式来保存，新命令会被追加到文件的末尾。 随着数据量的增大，AOF 文件可能会变的很大，Redis 就会自动在后台对 AOF 文件进行重写（rewrite），删除掉冗余的命令，大大减小 AOF 文件的体积。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># AOF 持久化在 Redis 配置文件中的选项</span></span><br><span class="line">appendonly no                   <span class="comment"># 是否使用AOF持久化</span></span><br><span class="line">appendfsync everysec            <span class="comment"># 多久才将写入的内容同步到硬盘</span></span><br><span class="line">no-appendfsync-on-rewrite no    <span class="comment"># 在对AOF进行压缩(compaction)的时候能否执行同步操作</span></span><br><span class="line">auto-aof-rewrite-percentage 100 <span class="comment"># 多久执行一次AOF压缩</span></span><br><span class="line">auto-aof-rewrite-min-size 64mb  <span class="comment"># 多久执行一次AOF压缩</span></span><br><span class="line">dir ./                          <span class="comment"># AOF所保存的位置</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong><code>appendfsync</code></strong> 选项定义同步频率，有三个值</p>
+<ul>
+<li><code>always:</code> 每个 Redis 写命令都要同步写入硬盘。这样做会严重降低Redis的速度。不推荐</li>
+<li><code>everysec :</code> 每秒执行一次同步，将多个写命令一次同步到硬盘</li>
+<li><code>no:</code> 让操作系统来决定应该何时进行同步，不推荐</li>
+</ul>
+</li>
+<li><p><strong>优点</strong></p>
+<ul>
+<li>数据的完整性和一致性更高</li>
+</ul>
+</li>
+<li><strong>缺点</strong> <ul>
+<li>AOF 文件记录的内容多，文件会越来越大，数据恢复也会越来越慢</li>
+</ul>
+</li>
+</ul>
+<h4 id="持久化总结"><a href="#持久化总结" class="headerlink" title="持久化总结"></a>持久化总结</h4><ul>
+<li>Redis 默认开启 RDB 持久化方式，在指定的时间间隔内，执行指定次数的写操作，则将内存中的数据写入到磁盘中。Redis 需要手动开启 AOF 持久化方式，默认是每秒将写操作日志追加到 AOF 文件中。</li>
+<li>若只打算用 Redis 做缓存，可以关闭持久化。</li>
+<li>若打算使用 Redis 的持久化。建议 RDB 和 AOF 都开启。其实 RDB 更适合做数据的备份，留一后手。AOF 出问题了，还有 RDB。</li>
+</ul>
+<h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><p><strong>主从复制，是指将一台 Redis 服务器作为主服务器，再将其数据单向地复制或同步到其它服务器（从服务器）的一种模式。</strong></p>
+<p>主服务器也叫主节点，从服务器也叫从节点。默认情况下，每台 Redis 服务器都是主节点；且一个主节点可以有多个从节点，但一个从节点只能有一个主节点。</p>
+<p>主从复制的复制又分为<strong><code>全量复制</code></strong>和<strong><code>部分复制</code></strong>，部分复制是通过设置一个复制偏移量来实现的。</p>
+<ul>
+<li><strong>主从复制的作用主要包括：</strong><ul>
+<li><strong>数据备份：</strong>主从复制实现了数据的热备份，是除持久化之外的另一种数据备份方式，均可用于故障恢复</li>
+<li><strong>负载均衡：</strong>在主从复制的基础上，配合读写分离，可以由主节点提供写服务，由从节点提供读服务（即写 Redis 数据时应用连接主节点，读 Redis 数据时应用连接从节点），分担服务器负载；尤其是在写少读多的场景下，通过多个从节点分担读负载，可以大大提高Redis服务器的并发量</li>
+<li><strong>高可用基石：</strong>除了上述作用以外，主从复制还是哨兵和集群能够实施的基础</li>
+</ul>
+</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://www.teaisaweso.me/2012/04/16/some-thoughts-about-redis/" target="_blank" rel="noopener">Some thoughts about redis</a></li>
+<li><a href="https://blog.csdn.net/Stubborn_Cow/article/details/50442950" target="_blank" rel="noopener">Redis 主从复制 原理与用法</a></li>
+<li><a href="https://www.cnblogs.com/mushroom/p/4752962.html" target="_blank" rel="noopener">Redis高可用分布式内部交流(九)</a></li>
+<li><a href="http://redis.cn/documentation.html" target="_blank" rel="noopener">Redis 中文文档</a></li>
+<li><a href="https://segmentfault.com/a/1190000008188655" target="_blank" rel="noopener">Redis中bitmap的妙用</a></li>
+<li><a href="https://blog.csdn.net/u011957758/article/details/74783347" target="_blank" rel="noopener">一看就懂系列之 详解redis的bitmap在亿级项目中的应用</a></li>
+<li><a href="https://blog.csdn.net/maoyuanming0806/article/details/81814610" target="_blank" rel="noopener">Redis：HyperLogLog使用与应用场景</a></li>
+<li><a href="https://mp.weixin.qq.com/s/-y1zvqWEJ3Tt4h39Z0WBJg" target="_blank" rel="noopener">天下无难试之Redis面试刁难大全</a></li>
+<li><a href="https://juejin.im/book/5afc2e5f6fb9a07a9b362527" target="_blank" rel="noopener">掘金小册-Redis 深度历险：核心原理与应用实践</a>（强推）</li>
+</ul>
+
+            
+        </div>
+
+        
+    </div>
+  
+  <!-- 赏 -->
+
+
+
+    
+        
+  <nav id="article-nav">
+    
+        
+          <a href="/articles/linux-download-file/" id="article-nav-older" class="article-nav-link-wrap">
+            <div class="article-nav-title">
+              Linux 命令---下载相关
+            </div>
+          </a>
+          
+  </nav>
+  
+    
+</article>
+
+
+<!-- 添加 disqus 评论框 -->
+
+    <section id="comments">
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+            var disqus_shortname = 'blog-percymong-com';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+
+</div>
+
+                <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+		<div class="footer-left">
+			&copy; 2016~2018 知秋
+		</div>
+      	<div class="footer-right">
+      		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a>
+      	</div>
+    </div>
+	</div>
+</footer>
+            </div>
+            
+            <script>
+	var yiliaConfig = {
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		open_in_new: false
+	}
+</script>
+
+<!-- 不蒜子 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/user.js"></script>
+
+
+<script src="/js/content-table.js"></script>
+
+
+<div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
+    <a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+        </div>
+    </body>
+</html>

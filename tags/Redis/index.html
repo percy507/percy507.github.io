@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         
-            更高效地使用搜索引擎 |
+            Tag: Redis |
         
         知秋的博客
     </title>
@@ -231,176 +231,63 @@
 </nav>
 
 
-                <div class="body-wrap"><article id="post-tool-search-engines" class="article article-type-post" itemscope="" itemprop="blogPost">
-
-    
-        <div class="article-meta">
-            <a href="#" class="article-date">
-  	<time datetime="2016-08-01T04:12:00.000Z" itemprop="datePublished">2016-08-01</time>
-</a>
-        </div>
+                <div class="body-wrap">
     
 
-    <div class="article-inner">
+    
 
         
-            <header class="article-header">
-                
+
+        
+            
+            
+            <section class="archives-wrap">
+                <div class="archive-year-wrap">
+                    <span href="#" class="archive-year">2018 年</span>   
+                </div>
+            <div class="archives">
+        
+
+        
+
+        
+        
+            <section class="archive-month-collection" data-date="201811">
+                <h5 class="archive-month">
+                    <span class="link-unstyled" href="#">11 月</span>
+                </h5>
+
+            
+        
+
+        <article class="archive-article archive-type-post">
+            <div class="archive-article-inner">
+                <header class="archive-article-header">
+                    <div class="article-meta">
+                        <a href="#" class="archive-article-date">
+  	<time datetime="2018-11-13T05:37:43.471Z" itemprop="datePublished">2018-11-13</time>
+</a>
+                    </div>
+                    
+                    
   
-    <h1 class="article-title" itemprop="name">
-      更高效地使用搜索引擎
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/articles/redis-note/">Redis 学习笔记</a>
     </h1>
   
 
-            </header>
-
-            
-                <div class="article-info article-info-post">
-                    
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-	</div>
-
                     <div class="clearfix"></div>
-                </div>
-            
-        
-
-        <div class="article-entry" itemprop="articleBody">
-            
-
-                <div class="article-moreinfo">
-                    <div class="lastModifiedDate">
-                        <span>最后更新：</span>
-                        <time datetime="2018-01-31T04:12:00.000Z" itemprop="dateLastModified">
-                        2018-01-31
-                        </time>
-                    </div>
-                    <div class="read-count">
-                        <span id="busuanzi_container_page_pv">
-                        阅读次数： <span id="busuanzi_value_page_pv"></span> 次
-                        </span>
-                    </div>
-                    <div class="copyright">
-                        <span>许可协议：</span>
-                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>
-                    </div>
-                </div>
-
-                <p><img src="/img/search-engine.jpg" alt="search-engine"></p>
-<p><a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E" target="_blank" rel="noopener">搜索引擎</a>指自动从因特网搜集信息，经过一定整理以后，提供给用户进行查询的系统。</p>
-<p>世界上现有的搜索引擎有很多（<code>bing</code>，<code>yahoo</code>，<code>搜狗</code>，<code>百度</code>，<code>google</code>，<code>有道</code>，<code>360</code>等等），我们平常最多用到的就是 <code>百度</code> 和 <code>google</code> 了！</p>
-<p>至于 <code>百度</code> 和 <code>Google</code> 吧，我个人都用，一般是查专业技术上的资料比较喜欢用 google，日常生活上的事用百度！至于搜索引擎的好坏，这里不作评价，也不想作。我还是觉得小平同志说的那句话好：<code>不管白猫黑猫，能抓住老鼠的就是好猫</code>！推荐大家看看最后参考资料的第一个链接，这是知乎上讨论的一个问题，强烈推荐大家看看那个最多好评的那个回答，真的很理性地回击了网友们对于 google 与百度之争的问题！</p>
-<p>好了，扯了这么多，该进入正题了！</p>
-<h3 id="搜索工具"><a href="#搜索工具" class="headerlink" title="搜索工具"></a>搜索工具</h3><p>搜索引擎自带的 <code>搜索工具</code> 估计很多人都没怎么注意过，但是它真的很好用，可以帮助你更精确地筛选信息。</p>
-<p>举个例子：比如你要搜索一些前端技术上的问题，而因为前端近几年发展迅速，很多技术文章已然过时，这时候，你就可以使用搜索工具里面对时间的限定，筛选出更有效的信息！</p>
-<p><img src="/img/baidu-search-tool.png" alt="baidu-search-tool"></p>
-<p><img src="/img/google-search-tool.png" alt="google-search-tool"></p>
-<h3 id="搜索命令"><a href="#搜索命令" class="headerlink" title="搜索命令"></a>搜索命令</h3><p><code>ps：所有命令符号均为英文字符</code></p>
-<ul>
-<li><p>符号： -（减号）</p>
-<ul>
-<li>作用： 去掉你不想见到的内容</li>
-</ul>
-</li>
-</ul>
-<p><img src="/img/minus-operator.png" alt="minus-operator"></p>
-<ul>
-<li><p>符号：””（引号）</p>
-<ul>
-<li>作用：更精确地搜索出你需要的信息</li>
-</ul>
-</li>
-</ul>
-<p><img src="/img/quotation-marks.png" alt="quotation-marks"></p>
-<ul>
-<li><p>语法：site:[domain_name]</p>
-<ul>
-<li>作用：限制搜索结果显示的网站</li>
-</ul>
-</li>
-</ul>
-<p><img src="/img/site-limit.png" alt="site-limit"></p>
-<ul>
-<li><p>语法：filetype:[file_type]</p>
-<ul>
-<li>作用：搜索指定格式的数据</li>
-</ul>
-</li>
-</ul>
-<p><img src="/img/search-filetype.png" alt="search-filetype"></p>
-<p>ps:这里是用来搜索一本书（SMACSS），可以发现，使用 <code>filetype:pdf</code> 和直接输入关键词 <code>pdf</code> 的结果还是不大一样的！</p>
-<p>搜索命令还有好多，但是我觉得自己一般用不到，这里就不列出来了！</p>
-<h3 id="搜索心得"><a href="#搜索心得" class="headerlink" title="搜索心得"></a>搜索心得</h3><ul>
-<li><strong>尽量使用关键字，关键字之间用<code>空格</code>隔开不推荐使用描述性语句，并且不要用标点符号</strong></li>
-</ul>
-<p>举例：找一本书，书名是：爱的艺术</p>
-<p><img src="/img/search-use-keywords.png" alt="search-use-keywords"></p>
-<ul>
-<li><strong>有时候中文找不到结果时，不妨试试英文搜索</strong></li>
-</ul>
-<p><img src="/img/english-search.png" alt="english-search"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li>【知乎】<a href="https://www.zhihu.com/question/22447908" target="_blank" rel="noopener">百度和 Google 的搜索技术是一个量级吗？</a></li>
-<li>【知乎】<a href="https://www.zhihu.com/question/20251786" target="_blank" rel="noopener">有哪些特殊的搜索引擎？</a></li>
-<li>【知乎】<a href="https://www.zhihu.com/question/28013848" target="_blank" rel="noopener">如何高效地使用搜索引擎？</a></li>
-<li>【文章】<a href="http://www.techrepublic.com/blog/10-things/10-tips-for-smarter-more-efficient-internet-searching/#postComments" target="_blank" rel="noopener">10 tips for smarter, more efficient Internet searching</a></li>
-<li>【文章】<a href="http://www.u148.net/article/18075.html" target="_blank" rel="noopener">网上搜索资料的 14 条技巧心得总结</a></li>
-</ul>
-
-            
-        </div>
-
-        
-    </div>
-  
-  <!-- 赏 -->
-
-
-
-    
-        
-  <nav id="article-nav">
-    
-      <a href="/articles/html-meta-tag-for-mobile/" id="article-nav-newer" class="article-nav-link-wrap">
-        <div class="article-nav-title">
-          
-            移动端的 meta 标签
-              
-        </div>
-      </a>
-      
-        
-          <a href="/articles/play-blog-record-optimize-yilia-theme/" id="article-nav-older" class="article-nav-link-wrap">
-            <div class="article-nav-title">
-              记录博客的优化
+                </header>
             </div>
-          </a>
-          
-  </nav>
-  
+        </article>
+
+        
+
     
-</article>
 
-
-<!-- 添加 disqus 评论框 -->
-
-    <section id="comments">
-        <div id="disqus_thread"></div>
-
-        <script type="text/javascript">
-            var disqus_shortname = 'blog-percymong-com';
-
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </section>
+    
+        </section></div></section>
+    
 
 </div>
 
@@ -422,9 +309,9 @@
 	var yiliaConfig = {
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		open_in_new: false
 	}
 </script>
@@ -437,8 +324,6 @@
 
 <script src="/js/user.js"></script>
 
-
-<script src="/js/content-table.js"></script>
 
 
 <div id="totop" style="position:fixed;z-index:666;bottom:50px;right:30px;cursor: pointer;">
